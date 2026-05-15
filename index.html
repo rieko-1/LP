@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="0歳〜6歳のお子さまと保護者の方へ。田園調布のモンテッソーリ教室で、お子さまが自ら育つ力を大切に見守ります。AMI国際資格保有・個別体験レッスン受付中。">
+  <title>モンテッソーリ体験レッスン | お子さまの"やりたい"を、そっと応援する場所</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* ===== VARIABLES ===== */
+    :root {
+      --white:       #FFFFFF;
+      --off-white:   #F8F6F3;
+      --warm-gray:   #EDE9E4;
+      --border:      #E0DAD2;
+      --text-dark:   #2A2520;
+      --text-mid:    #47403B;
+      --text-light:  #7C7570;
+      --green:       #3d8fa8;
+      --green-dark:  #2d7590;
+      --green-pale:  #EAF4F8;
+      --gold:        #C4A882;
+
+      --serif:  'Noto Serif JP', serif;
+      --sans:   'Noto Sans JP', sans-serif;
+
+      --max: 640px;
+      --pad: 96px 24px;
+      --r:   16px;
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--sans);
+      color: var(--text-dark);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ===== FADE-IN ANIMATION ===== */
+    .fi {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.75s cubic-bezier(0.22,1,0.36,1);
+    }
+    .fi.on { opacity: 1; transform: translateY(0); }
+    .fi.d1 { transition-delay: 0.08s; }
+    .fi.d2 { transition-delay: 0.16s; }
+    .fi.d3 { transition-delay: 0.24s; }
+    .fi.d4 { transition-delay: 0.32s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fi { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ===== SHARED LAYOUT ===== */
+    .inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .sec { padding: var(--pad); }
+    .bg-off  { background: var(--off-white); }
+    .bg-warm { background: var(--warm-gray); }
+    .bg-pale { background: var(--green-pale); }
+    .tc { text-align: center; }
+
+    /* ===== LABEL / TITLE / BODY ===== */
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.32em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .h2 {
+      font-family: var(--serif);
+      font-size: clamp(22px, 5.8vw, 28px);
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--text-dark);
+      letter-spacing: 0.03em;
+      margin-bottom: 28px;
+    }
+    .h3 {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--text-dark);
+      letter-spacing: 0.03em;
+    }
+    .body {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.95;
+      color: var(--text-mid);
+    }
+
+    /* ===== CTA BUTTON ===== */
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      background: var(--green);
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 18px 28px;
+      border-radius: 100px;
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      box-shadow: 0 5px 22px rgba(61,143,168,0.28);
+    }
+    .cta:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(61,143,168,0.38); }
+    .cta:active { transform: translateY(0); }
+    .cta svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .cta-note {
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.08em;
+      margin-top: 14px;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      z-index: 20;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+    }
+    .logo {
+      height: 120px;
+      width: auto;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 100svh;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      background-image: url('hero.png');
+      background-size: cover;
+      background-position: center 50%;
+      background-repeat: no-repeat;
+      filter: brightness(1.06) contrast(1.06);
+    }
+    @media (max-width: 640px) {
+      .hero-photo {
+        background-position: center 10%;
+      }
+    }
+    /* Bottom-only gradient — photo top is already white, no overlay needed there */
+    .hero-gradient {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 38%;
+      background: linear-gradient(to top,
+        rgba(248,246,243,1.00) 0%,
+        rgba(248,246,243,0.80) 50%,
+        rgba(248,246,243,0.00) 100%
+      );
+    }
+    @media (max-width: 640px) {
+      .hero-gradient {
+        height: 58%;
+        background: linear-gradient(to top,
+          rgba(248,246,243,1.00) 0%,
+          rgba(248,246,243,0.95) 45%,
+          rgba(248,246,243,0.00) 100%
+        );
+      }
+    }
+    /* Text block — left-bottom */
+    .hero-top {
+      position: relative;
+      z-index: 2;
+      padding: 0 32px 16px 40px;
+      text-align: left;
+      max-width: 520px;
+    }
+    /* CTA block — left-aligned */
+    .hero-bottom {
+      position: relative;
+      z-index: 2;
+      padding: 0 28px 56px 40px;
+      text-align: left;
+    }
+    .hero-bottom .cta {
+      margin: 0; /* 左寄せ */
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.75);
+      color: var(--green-dark);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      padding: 6px 18px;
+      border-radius: 100px;
+      margin-bottom: 18px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(17px, 4.4vw, 22px);
+      font-weight: 400;
+      line-height: 2.1;
+      color: var(--text-dark);
+      letter-spacing: 0.05em;
+      margin-bottom: 0;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--green-dark);
+    }
+    .hero-sub {
+      font-size: 10px;
+      font-weight: 300;
+      color: var(--text-light);
+      letter-spacing: 0.18em;
+    }
+    .scroll-hint {
+      position: absolute;
+      bottom: 26px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.35;
+    }
+    .scroll-line {
+      width: 1px;
+      height: 32px;
+      background: var(--text-dark);
+      animation: scrollDown 1.6s ease-in-out infinite;
+    }
+    @keyframes scrollDown {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: top; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* ===== PAIN SECTION ===== */
+    .pain-list { margin: 24px 0 32px; }
+    .pain-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+    .pain-item:first-child { border-top: 1px solid var(--border); }
+    .pain-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 9px;
+      flex-shrink: 0;
+    }
+    .pain-close {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--text-dark);
+      text-align: center;
+      padding: 28px 24px;
+      background: var(--white);
+      border-radius: var(--r);
+      border: 1px solid var(--border);
+      letter-spacing: 0.04em;
+      line-height: 1.8;
+    }
+
+    /* ===== MONTESSORI SECTION ===== */
+    .point-grid {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .point-card {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 20px 22px;
+      background: var(--green-pale);
+      border-radius: 12px;
+    }
+    .point-num {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--green);
+      flex-shrink: 0;
+      width: 28px;
+      line-height: 1;
+    }
+    .point-text {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.55;
+    }
+
+    /* ===== CHANGES SECTION ===== */
+    .change-list { margin-top: 32px; }
+    .change-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .change-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .change-item:first-child { padding-top: 0; }
+    .change-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .change-text {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* ===== TRIAL LESSON ===== */
+    .trial-card {
+      background: var(--off-white);
+      border-radius: var(--r);
+      padding: 28px 22px;
+      margin: 28px 0 36px;
+    }
+    .trial-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .trial-row:first-child { padding-top: 0; }
+    .trial-row:last-child  { border-bottom: none; padding-bottom: 0; }
+    .trial-lbl {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--green);
+      min-width: 52px;
+      padding-top: 4px;
+      flex-shrink: 0;
+    }
+    .trial-val {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .voice-cards {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .voice-card {
+      background: var(--white);
+      border-radius: var(--r);
+      padding: 28px 24px 24px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+    }
+    .voice-stars {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 3px;
+      margin-bottom: 14px;
+    }
+    .voice-text {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.9;
+      margin-bottom: 16px;
+      position: relative;
+      padding-left: 20px;
+    }
+    .voice-text::before {
+      content: '"';
+      font-family: var(--serif);
+      font-size: 36px;
+      color: var(--green-pale);
+      position: absolute;
+      left: -4px;
+      top: -8px;
+      line-height: 1;
+    }
+    .voice-heading {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.5;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    .voice-author {
+      font-size: 12px;
+      color: var(--text-light);
+      letter-spacing: 0.1em;
+    }
+
+    /* ===== INSTRUCTOR ===== */
+    .instructor-photo-wrap {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 28px;
+      border: 4px solid var(--off-white);
+      box-shadow:
+        0 0 0 1px var(--border),
+        0 8px 32px rgba(0,151,178,0.12);
+    }
+    .instructor-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .instructor-certs {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .cert-tag {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--text-mid);
+      letter-spacing: 0.04em;
+      line-height: 2;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    .cert-tag::after {
+      content: '　|　';
+      color: var(--border);
+    }
+    .cert-tag:last-child::after {
+      content: '';
+    }
+    .instructor-quote {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.8;
+      margin-bottom: 20px;
+      padding-left: 14px;
+      border-left: 2px solid var(--green);
+    }
+    .instructor-name {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+    .instructor-cert {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--green);
+      letter-spacing: 0.06em;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    /* ===== LINE CTA SECTION ===== */
+    .line-wrap { text-align: center; }
+    .line-benefits {
+      text-align: left;
+      max-width: 360px;
+      margin: 28px auto 36px;
+    }
+    .benefit-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(90,136,117,0.15);
+    }
+    .benefit-row:last-child { border-bottom: none; }
+    .benefit-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .benefit-text {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.55;
+    }
+    .line-guarantee {
+      font-size: 12px;
+      color: var(--text-light);
+      letter-spacing: 0.08em;
+      margin-top: 14px;
+    }
+
+    /* ===== LINE CTA セクション — 薄いターコイズで統一 ===== */
+    #line-cta { background: #EDF7FA; }
+    #line-cta .eyebrow { color: #5ca8c2; }
+    #line-cta .cta {
+      background: #5ca8c2;
+      box-shadow: 0 5px 22px rgba(92,168,194,0.25);
+    }
+    #line-cta .cta:hover {
+      background: #4a96b0;
+      box-shadow: 0 8px 28px rgba(92,168,194,0.35);
+    }
+    #line-cta .benefit-icon {
+      background: #5ca8c2;
+    }
+    #line-cta .benefit-row {
+      border-bottom-color: rgba(92,168,194,0.18);
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      width: 36px;
+      height: 1px;
+      background: var(--border);
+      margin: 0 auto 40px;
+    }
+
+    /* ===== ACCESS & PRICING ===== */
+    .price-block {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .price-tag {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 400;
+      padding: 18px 36px;
+      border-radius: var(--r);
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    .price-tag small {
+      font-size: 14px;
+      font-family: var(--sans);
+      font-weight: 300;
+    }
+    .price-before {
+      font-size: 12px;
+      color: var(--text-light);
+      text-decoration: line-through;
+    }
+    .access-rows { display: flex; flex-direction: column; }
+    .access-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .access-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .access-lbl {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--green);
+      min-width: 44px;
+      padding-top: 4px;
+      flex-shrink: 0;
+    }
+    .access-val {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+    .access-note {
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    /* ===== CLOSING ===== */
+    .closing-sec {
+      padding: 96px 24px 100px;
+      text-align: center;
+    }
+    .closing-title {
+      font-family: var(--serif);
+      font-size: clamp(22px, 5.8vw, 30px);
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--text-dark);
+      letter-spacing: 0.04em;
+      margin-bottom: 28px;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--text-dark);
+      padding: 36px 24px;
+      text-align: center;
+    }
+    .footer p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.12em;
+    }
+
+    /* ===== CTA BRIDGE ===== */
+    .cta-bridge {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--text-dark);
+      text-align: center;
+      line-height: 1.9;
+      letter-spacing: 0.03em;
+      margin-bottom: 28px;
+    }
+
+    /* ===== HERO EMPATHY ===== */
+    .hero-empathy {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--text-mid);
+      letter-spacing: 0.1em;
+      line-height: 2.3;
+      margin-top: 22px;
+    }
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 18px;
+    }
+    .hero-trust span {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--text-mid);
+      background: rgba(255,255,255,0.76);
+      padding: 4px 11px;
+      border-radius: 100px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    /* ===== CREDENTIALS BLOCK ===== */
+    .cred-list {
+      margin: 28px 0 8px;
+      display: flex;
+      flex-direction: column;
+    }
+    .cred-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.55;
+    }
+    .cred-item:first-child { border-top: 1px solid var(--border); }
+    .cred-mark {
+      font-family: var(--serif);
+      font-size: 16px;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+    .cred-close {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-dark);
+      text-align: center;
+      padding: 24px 20px;
+      background: var(--white);
+      border-radius: var(--r);
+      border: 1px solid var(--border);
+      letter-spacing: 0.03em;
+      line-height: 1.85;
+      margin-top: 24px;
+    }
+
+    /* ===== LINE GIFT BOX ===== */
+    .line-gift {
+      background: var(--white);
+      border-radius: var(--r);
+      padding: 22px 22px 20px;
+      margin: 24px 0 8px;
+      text-align: left;
+      border: 1px solid rgba(92,168,194,0.3);
+    }
+    .line-gift-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      color: #5ca8c2;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .line-gift-title {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+      letter-spacing: 0.03em;
+      line-height: 1.6;
+    }
+    .line-gift-items {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .line-gift-item {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.65;
+      padding-left: 14px;
+      position: relative;
+    }
+    .line-gift-item::before {
+      content: '·';
+      position: absolute;
+      left: 3px;
+      color: #5ca8c2;
+      font-size: 18px;
+      line-height: 1.1;
+    }
+
+    /* ===== CLOSING ADDENDUM ===== */
+    .closing-add {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 2;
+      text-align: center;
+      margin-top: 48px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ===== FEEDBACK BLOCK ===== */
+    .feedback-block {
+      margin: 40px 0 36px;
+      background: var(--green-pale);
+      border-radius: 16px;
+      padding: 36px 28px;
+      border: 1px solid rgba(61,143,168,0.14);
+    }
+    .feedback-eyebrow {
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .feedback-time {
+      font-family: var(--serif);
+      font-size: 13px;
+      color: var(--text-mid);
+      letter-spacing: 0.06em;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+    .feedback-num {
+      font-family: var(--serif);
+      font-size: 44px;
+      font-weight: 300;
+      color: var(--green);
+      line-height: 1;
+    }
+    .feedback-title {
+      font-family: var(--serif);
+      font-size: 19px;
+      color: var(--text-dark);
+      line-height: 1.75;
+      margin-bottom: 18px;
+      letter-spacing: 0.03em;
+    }
+    .feedback-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 18px;
+    }
+    .feedback-items li {
+      font-size: 13px;
+      color: var(--text-mid);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.7;
+    }
+    .feedback-items li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+    }
+    .feedback-note {
+      font-size: 11px;
+      color: var(--text-light);
+      line-height: 1.9;
+      padding-top: 16px;
+      border-top: 1px solid rgba(61,143,168,0.15);
+    }
+
+    /* ===== TRUST GRID ===== */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 28px 0;
+    }
+    .trust-item {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 22px 12px;
+      text-align: center;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+    .trust-num {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+    .trust-num span {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: var(--text-mid);
+    }
+    .trust-stars {
+      font-size: 14px;
+      color: var(--gold);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+    .trust-label {
+      font-size: 10px;
+      color: var(--text-mid);
+      letter-spacing: 0.1em;
+      line-height: 1.5;
+    }
+
+    /* ===== VOICE BOLD ===== */
+    .voice-text strong {
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    /* ===== CTA BRIDGE ===== */
+    .cta-lead {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.9;
+      text-align: center;
+      letter-spacing: 0.04em;
+      margin-bottom: 24px;
+    }
+
+    /* ===== STICKY CTA BAR ===== */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(248,246,243,0.96);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-top: 1px solid var(--border);
+      padding: 12px 24px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+    }
+    .sticky-bar.show { transform: translateY(0); }
+    .sticky-bar .cta { max-width: 360px; font-size: 14px; padding: 16px 24px; }
+    .sticky-bar .cta-note { font-size: 10px; }
+  </style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="site-header">
+  <img src="logo_transparent.png" alt="Mi Montessori JAPAN 子どもの部屋" class="logo">
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-gradient"></div>
+  <!-- テキストをヒーロー上部（白い壁・カーテン部分）に配置 -->
+  <div class="hero-top fi on">
+    <span class="hero-badge">対象｜0歳〜6歳</span>
+    <h1 class="hero-title">
+      お子さまの本来の力を、<br>
+      やさしく見守る<br>
+      モンテッソーリ教室
+    </h1>
+    <p class="hero-empathy">
+      落ち着きがない。<br>
+      つい叱ってしまう。<br><br>
+      お子さまを理解できると、<br>
+      毎日が少しずつ穏やかになっていきます。
+    </p>
+    <div class="hero-trust">
+      <span>AMI国際資格保有</span>
+      <span>保育士</span>
+      <span>栄養士</span>
+      <span>田園調布駅 徒歩4分</span>
+    </div>
+  </div>
+
+  <div class="hero-bottom fi on" style="transition-delay: 0.2s;">
+    <a href="https://lin.ee/v91Much" target="_blank" rel="noopener" class="cta">
+      <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
+      </svg>
+      まずは、教室の雰囲気をのぞいてみてください
+    </a>
+    <p class="cta-note" style="text-align: left; padding-left: 4px;">LINEで教室の様子をご覧いただけます</p>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ========== PAIN / EMPATHY ========== -->
+<section class="sec bg-off">
+  <div class="inner">
+    <p class="eyebrow fi">FOR PARENTS</p>
+    <h2 class="h2 fi d1">こんなお悩みは<br>ありませんか？</h2>
+    <ul class="pain-list fi d2">
+      <li class="pain-item">
+        <span class="pain-dot" aria-hidden="true"></span>
+        集中が続かない
+      </li>
+      <li class="pain-item">
+        <span class="pain-dot" aria-hidden="true"></span>
+        すぐに「できない」と言ってしまう
+      </li>
+      <li class="pain-item">
+        <span class="pain-dot" aria-hidden="true"></span>
+        癇癪やイヤイヤが増えてきた
+      </li>
+      <li class="pain-item">
+        <span class="pain-dot" aria-hidden="true"></span>
+        つい叱ってしまい、自己嫌悪になる
+      </li>
+      <li class="pain-item">
+        <span class="pain-dot" aria-hidden="true"></span>
+        どう関わればいいのか分からない
+      </li>
+      <li class="pain-item">
+        <span class="pain-dot" aria-hidden="true"></span>
+        自分でできる力を育てたい
+      </li>
+    </ul>
+    <p class="fi d3" style="font-family: var(--serif); font-size: 14px; color: var(--text-mid); text-align: center; line-height: 2; letter-spacing: 0.05em; margin: 0 0 22px;">
+      少しずつ、お子さまとの時間が穏やかになっていきます。
+    </p>
+    <div class="pain-close fi d3">
+      モンテッソーリ教育では、<br>お子さまの"できた"を大切に見守りながら、<br>自立心と安心感が、自然に育まれていきます。
+    </div>
+  </div>
+</section>
+
+<!-- ========== MONTESSORI PHILOSOPHY ========== -->
+<section class="sec">
+  <div class="inner">
+    <p class="eyebrow tc fi">montessori</p>
+    <h2 class="h2 tc fi d1">お子さまには、<br>自ら育つ力があります</h2>
+    <p class="body fi d2">
+      大人が先回りして教え込まなくても、<br>
+      お子さま自身が「やってみたい」と動き出す。<br><br>
+      自分で靴を履こうとする。<br>
+      同じお仕事を何度も繰り返す。<br>
+      一つのことに、静かに集中する。<br><br>
+      そんな姿が、少しずつ増えていきます。
+    </p>
+    <p class="body fi d3" style="margin-top: 28px;">
+      お子さまのことが少しずつわかってくると、<br>
+      そっと見守ることが、自然にできるようになる。<br><br>
+      保護者の方にとっても、<br>
+      安心できる時間が増えていきます。
+    </p>
+    <div class="point-grid fi d3" style="margin-top: 32px;">
+      <div class="point-card">
+        <span class="point-num">01</span>
+        <p class="point-text">0〜6歳の「敏感期」に合わせて、今伸びている力を大切に育てます</p>
+      </div>
+      <div class="point-card">
+        <span class="point-num">02</span>
+        <p class="point-text">「できた！」を積み重ねることで、次もやってみようという力が育まれる</p>
+      </div>
+      <div class="point-card">
+        <span class="point-num">03</span>
+        <p class="point-text">お子さまへの理解が深まると、安心して見守れるようになっていく</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CHANGES ========== -->
+<section class="sec bg-off">
+  <div class="inner">
+    <p class="eyebrow fi">what you'll gain</p>
+    <h2 class="h2 fi d1">体験レッスンで<br>育まれること</h2>
+    <div class="change-list fi d2">
+      <div class="change-item">
+        <div class="change-icon" aria-hidden="true">🌱</div>
+        <p class="change-text">お子さまが自分で「やりたい！」と動き出す</p>
+      </div>
+      <div class="change-item">
+        <div class="change-icon" aria-hidden="true">🌱</div>
+        <p class="change-text">保護者の方が環境づくりと見守り方に自信を持てるようになる</p>
+      </div>
+      <div class="change-item">
+        <div class="change-icon" aria-hidden="true">🌱</div>
+        <p class="change-text">毎日のイライラが少しずつ減っていく</p>
+      </div>
+      <div class="change-item">
+        <div class="change-icon" aria-hidden="true">🌱</div>
+        <p class="change-text">お子さまの「今この瞬間」がいとおしくなる</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TRIAL LESSON + ACCESS ========== -->
+<section class="sec">
+  <div class="inner">
+    <p class="eyebrow tc fi">experience lesson</p>
+    <h2 class="h2 tc fi d1">体験レッスンについて</h2>
+    <div class="trial-card fi d2">
+      <div class="trial-row">
+        <span class="trial-lbl">時間</span>
+        <span class="trial-val">60分</span>
+      </div>
+      <div class="trial-row">
+        <span class="trial-lbl">対象</span>
+        <span class="trial-val">0歳〜6歳のお子さまと保護者の方</span>
+      </div>
+      <div class="trial-row">
+        <span class="trial-lbl">形式</span>
+        <span class="trial-val">個別レッスン</span>
+      </div>
+      <div class="trial-row">
+        <span class="trial-lbl">料金</span>
+        <span class="trial-val">5,500円（税込）</span>
+      </div>
+      <div class="trial-row">
+        <span class="trial-lbl">場所</span>
+        <span class="trial-val">
+          東京都大田区田園調布２丁目４０番８号・１階<br>
+          Mi Montessori Japan 子どもの部屋｜田園調布<br>
+          <span style="font-size: 12px;">田園調布駅 徒歩4分</span>
+        </span>
+      </div>
+
+      <div class="trial-row" style="flex-direction: column; gap: 16px;">
+        <p class="trial-val">
+          お子さまの興味や敏感期を見ながら、<br>
+          ご家庭での環境や見守り方もお伝えしています。
+        </p>
+        <p class="trial-val">
+          日々の子育てのヒントを持ち帰っていただける時間です。
+        </p>
+      </div>
+    </div>
+
+    <!-- Individual Feedback Block -->
+    <div class="feedback-block fi d3">
+      <p class="feedback-eyebrow">individual feedback</p>
+      <div class="feedback-time">
+        <span class="feedback-num">24</span>時間以内にお届け
+      </div>
+      <p class="feedback-title">お子さまの"今"を、<br>丁寧にフィードバックいたします。</p>
+      <p style="font-size: 13px; color: var(--text-mid); line-height: 1.9; margin-bottom: 16px;">小さな変化や、今興味を持っていることを、<br>お子さま一人ひとりのために言葉にしてお届けしています。</p>
+      <ul class="feedback-items">
+        <li>今興味を持っていること</li>
+        <li>今伸びている力</li>
+        <li>おうちで環境を整えるヒント</li>
+      </ul>
+      <p class="feedback-note">単なる体験ではなく、<br>「お子さま理解」の時間として大切にしています。</p>
+    </div>
+
+    <div class="tc fi d4">
+      <p class="cta-lead">お子さまの"今"を、<br>一緒に見つめてみませんか。</p>
+      <a href="https://lin.ee/v91Much" target="_blank" rel="noopener" class="cta">
+        <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
+        </svg>
+        教室の雰囲気を見てみる
+      </a>
+      <p class="cta-note">無理な勧誘はありません</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="sec bg-warm">
+  <div class="inner">
+    <p class="eyebrow tc fi">voice</p>
+    <h2 class="h2 tc fi d1">保護者の方からの声</h2>
+    <div class="voice-cards">
+
+      <div class="voice-card fi d1">
+        <div class="voice-stars" aria-label="星5つ">★★★★★</div>
+        <p class="voice-heading">一人ひとりを、ちゃんと見てくれる</p>
+        <p class="voice-text">三兄弟でお世話になっています。<strong>年齢やその子の敏感期に合わせてレッスンを考えてくださる</strong>ので、大手のような一律のカリキュラムとは違うと感じています。毎回<strong>「楽しかった！」</strong>という言葉を聞けているのが一番うれしいです。</p>
+        <p class="voice-author">Uさん（3兄弟の保護者）</p>
+      </div>
+
+      <div class="voice-card fi d2">
+        <div class="voice-stars" aria-label="星5つ">★★★★★</div>
+        <p class="voice-heading">今までできなかったことが、教室でできていた</p>
+        <p class="voice-text">3歳から約4年間通っています。家では諦めてしまうことが多かったのですが、<strong>教室では難しい課題を最後まで一人でやり遂げていて、驚きました。</strong>数への理解が自然と深まっているのを感じています。</p>
+        <p class="voice-author">Tさん（6歳・男の子の保護者）</p>
+      </div>
+
+      <div class="voice-card fi d3">
+        <div class="voice-stars" aria-label="星5つ">★★★★★</div>
+        <p class="voice-heading">落ち着いて取り組めるようになりました</p>
+        <p class="voice-text">最初は集中することが難しかったのですが、温かく丁寧に見守ってくださる中で<strong>少しずつ「できた」を積み重ねていきました。</strong>家でも<strong>自分のことを進んでやったり、お手伝いをしてくれる</strong>ようになりました。</p>
+        <p class="voice-author">Tさん（5歳・男の子の保護者）</p>
+      </div>
+
+      <div class="voice-card fi d4">
+        <div class="voice-stars" aria-label="星5つ">★★★★★</div>
+        <p class="voice-heading">子育ての相談もできる、信頼できる場所</p>
+        <p class="voice-text">子育ての悩みにも親身に相談に乗ってくださいます。<strong>子どもが自分のペースで活動している様子を見るのが、毎回の楽しみ</strong>になっています。子どもにとっても、私にとっても、<strong>安心できる場所</strong>です。</p>
+        <p class="voice-author">Fさん（3歳・女の子の保護者）</p>
+      </div>
+
+    </div>
+
+    <!-- CTA bridge after testimonials -->
+    <div class="fi d4" style="margin-top: 44px; text-align: center;">
+      <p class="cta-lead">まずは、<br>教室の空気感をのぞいてみてください。</p>
+      <a href="https://lin.ee/v91Much" target="_blank" rel="noopener" class="cta" style="margin: 0 auto; font-size: 14px; padding: 16px 28px;">
+        <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
+        </svg>
+        教室の雰囲気を見てみる
+      </a>
+      <p class="cta-note">無理な勧誘はありません</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== INSTRUCTOR ========== -->
+<section class="sec">
+  <div class="inner">
+    <p class="eyebrow tc fi">instructor</p>
+    <h2 class="h2 tc fi d1">講師紹介</h2>
+    <div class="instructor-photo-wrap fi d2">
+      <img src="profile.png" alt="大野 理恵子" class="instructor-photo">
+    </div>
+    <h3 class="instructor-name fi d1">大野 理恵子</h3>
+    <div class="instructor-certs fi d2">
+      <span class="cert-tag">AMI 0〜3歳ディプロマ</span>
+      <span class="cert-tag">AMI 2.5〜6歳ディプロマ</span>
+      <span class="cert-tag">AMI 6〜12歳 入門コース修了</span>
+      <span class="cert-tag">保育士</span>
+      <span class="cert-tag">栄養士</span>
+      <span class="cert-tag">認定ベビーシッター</span>
+    </div>
+    <p class="instructor-quote fi d3">お子さまが「自分でできた」と嬉しそうに笑う瞬間が、何より好きです。</p>
+    <p class="body fi d3">男女二児を育てながら、絵本の読み聞かせ会に6年間所属。お子さまと関わることが大好きで、保育園補助・ベビーシッターの仕事を経験する中でモンテッソーリ教育に出会い、資格を取得しました。3年間で1,000件以上のお子さまのそばに寄り添い、すべて5つ星評価をいただいております。</p>
+
+    <div class="trust-grid fi d4">
+      <div class="trust-item">
+        <div class="trust-num">1,000<span>件以上</span></div>
+        <div class="trust-label">お子さまとの時間</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-stars">★★★★★</div>
+        <div class="trust-label">保護者の方からの評価</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num" style="font-size: 19px; letter-spacing: 0.04em;">AMI</div>
+        <div class="trust-label">国際モンテッソーリ資格</div>
+      </div>
+    </div>
+
+    <p class="body fi d4" style="margin-top: 8px;">自宅でのモンテッソーリ教室を開きながら、児童発達支援施設ではモンテッソーリ教育部門を担当。これまで多くのお子さまと保護者の方とともに、お子さまの育つ姿を見守ってまいりました。</p>
+    <p class="body fi d4" style="margin-top: 28px; font-size: 13px; letter-spacing: 0.06em; line-height: 2.2;">"教える"のではなく、<br>お子さまをそっと観察し、<br>その子に合った環境を整えること。<br><br>それが、私が大切にしていることです。</p>
+    <p class="cta-bridge fi d4" style="margin-top: 48px;">まずは一度、<br>お子さまと一緒にいらしてください。</p>
+  </div>
+</section>
+
+<!-- ========== LINE CTA — CTA #3 ========== -->
+<section class="sec bg-pale" id="line-cta">
+  <div class="inner line-wrap">
+    <p class="eyebrow tc fi">contact</p>
+    <h2 class="h2 tc fi d1">まずは、<br>教室の雰囲気をご覧ください</h2>
+    <p class="body tc fi d2">いきなり体験でなくても、大丈夫です。<br><br>まずは教室の様子を見たり、<br>気になることをご相談いただけます。</p>
+<ul class="line-benefits fi d3">
+      <li class="benefit-row">
+        <span class="benefit-icon" aria-hidden="true">✓</span>
+        <span class="benefit-text">体験レッスンの空き状況を優先的にご案内</span>
+      </li>
+      <li class="benefit-row">
+        <span class="benefit-icon" aria-hidden="true">✓</span>
+        <span class="benefit-text">ご家庭での環境づくりと見守り方のヒントを配信</span>
+      </li>
+    </ul>
+    <div class="fi d4">
+      <a href="https://lin.ee/v91Much" target="_blank" rel="noopener" class="cta">
+        <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
+        </svg>
+        教室の雰囲気を見てみる
+      </a>
+      <p class="line-guarantee">登録無料・勧誘なし・いつでも退会OK</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== CLOSING — CTA #4 ========== -->
+<section class="closing-sec">
+  <div class="inner">
+    <p class="eyebrow tc fi">closing</p>
+    <h2 class="closing-title fi d1">お子さまの"今"は、<br>今しかありません。</h2>
+    <div class="divider fi d2"></div>
+    <p class="body tc fi d3" style="margin-bottom: 48px;">
+      安心できる環境の中で、<br>
+      「やってみたい」「できた」を<br>
+      積み重ねていく。<br><br>
+      その小さな経験が、<br>
+      お子さまの中に静かに積み上がっていきます。
+    </p>
+    <div class="tc fi d4">
+      <p class="cta-lead">まずは一度、<br>教室の空気感に触れてみてください。</p>
+      <a href="https://lin.ee/v91Much" target="_blank" rel="noopener" class="cta">
+        <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
+        </svg>
+        教室の雰囲気を見てみる
+      </a>
+      <p class="cta-note">ご質問だけでも、お気軽にどうぞ。</p>
+    </div>
+    <p class="closing-add fi" style="transition-delay:0.4s;">
+      お子さまと一緒に、<br>いつでもいらしてください。<br><br>
+      お会いできるのを、楽しみにしております。
+    </p>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <p style="font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 0.14em; margin-bottom: 8px;">Mi Montessori Japan <span style="font-size: 16.5px; font-weight: 500; color: rgba(255,255,255,0.8); letter-spacing: 0.06em;">子どもの部屋｜田園調布</span></p>
+  <p style="font-size: 10px; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; margin-bottom: 12px;">東京都大田区田園調布２丁目４０番８号・１階</p>
+  <p>© 2024 モンテッソーリ教室. All rights reserved.</p>
+</footer>
+
+<!-- ========== STICKY CTA BAR ========== -->
+<div class="sticky-bar" id="sticky-bar" role="complementary" aria-label="LINE登録ボタン">
+  <a href="https://lin.ee/v91Much" target="_blank" rel="noopener" class="cta">
+    <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
+    </svg>
+    LINEで体験レッスンを予約する
+  </a>
+  <p class="cta-note">登録無料・30秒で完了</p>
+</div>
+
+<script>
+  // Fade-in on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('on');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -32px 0px' });
+
+  document.querySelectorAll('.fi').forEach(el => {
+    // Hero is already visible
+    if (!el.classList.contains('on')) io.observe(el);
+  });
+
+  // Sticky bar: show after scrolling past hero
+  const stickyBar = document.getElementById('sticky-bar');
+  const hero = document.querySelector('.hero');
+  const lineCta = document.getElementById('line-cta');
+
+  const stickyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.target === hero) {
+        stickyBar.classList.toggle('show', !entry.isIntersecting);
+      }
+      if (entry.target === lineCta && entry.isIntersecting) {
+        stickyBar.classList.remove('show');
+      }
+    });
+  }, { threshold: 0.05 });
+
+  stickyObserver.observe(hero);
+  stickyObserver.observe(lineCta);
+</script>
+</body>
+</html>

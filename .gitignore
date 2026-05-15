@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+
+# Node.js / tools (not needed for the site)
+node_modules/
+package.json
+package-lock.json
+
+# Scripts (not part of the published site)
+export_poster.py
+pdf.js
+screenshot.js
+
+# Unused files
+poster-a2.pdf
+poster-a2.png
+入稿ポスター.pdf
+ロゴのコピー.png
+ロゴ_枠付き透明.png
+完成ロゴ.png
+
+# Japanese-named original (replaced by hero.png)
+ゴムと鈴と赤ちゃん.png
