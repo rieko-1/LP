@@ -507,6 +507,24 @@
     .trust-stars { font-size: 13px; color: var(--gold); letter-spacing: 1px; margin-bottom: 4px; line-height: 1.4; }
     .trust-label { font-size: 10px; color: var(--text-mid); letter-spacing: 0.08em; line-height: 1.5; }
 
+    /* ===== SCHEDULE ===== */
+    .sched-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .sched-grid { display: flex; flex-direction: column; gap: 12px; }
+    .sched-day { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
+    .sched-day.weekend { border-color: rgba(61,143,168,0.35); }
+    .sched-day-label { font-family: var(--serif); font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: var(--text-mid); background: var(--off-white); padding: 8px 16px; border-bottom: 1px solid var(--border); }
+    .sched-day.weekend .sched-day-label { background: var(--green-pale); color: var(--green); }
+    .sched-slot { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid var(--border); gap: 12px; }
+    .sched-slot:last-child { border-bottom: none; }
+    .sched-slot.closed { opacity: 0.45; }
+    .sched-time { font-size: 12px; color: var(--text-light); letter-spacing: 0.04em; white-space: nowrap; flex-shrink: 0; }
+    .sched-closed-lbl { font-size: 11px; color: var(--text-light); letter-spacing: 0.1em; }
+    .sched-badge { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; padding: 4px 12px; border-radius: 100px; white-space: nowrap; }
+    .sched-badge.nido { background: var(--green-pale); color: var(--green); }
+    .sched-badge.ic { background: var(--green); color: white; }
+    .sched-badge.primary { background: var(--gold); color: white; }
+    .sched-badge.elem { background: #3a3530; color: white; }
+
     /* ===== VOICES ===== */
     .voice-full-list { display: flex; flex-direction: column; gap: 20px; }
     .voice-full-card { background: var(--white); border-radius: var(--r); border: 1px solid var(--border); padding: 24px 22px; }
@@ -931,18 +949,66 @@
   <div class="inner">
     <p class="eyebrow">schedule</p>
     <h2 class="sec-title">スケジュール</h2>
-    <div class="calendar-wrap">
-      <!--
-        ▼ Googleカレンダーの埋め込み手順
-        1. Googleカレンダーを開く
-        2. カレンダー名の横の「⋮」→「設定と共有」
-        3. 「カレンダーを埋め込む」→ 埋め込みコードをコピー
-        4. 下の <div class="calendar-placeholder"> を削除してコードを貼り付ける
-      -->
-      <div class="calendar-placeholder">
-        Googleカレンダーをここに埋め込みます<br>
-        <small>（設定方法はLINEでお問い合わせください）</small>
+    <!-- 凡例 -->
+    <div class="sched-legend">
+      <span class="sched-badge nido">ニド</span>
+      <span class="sched-badge ic">IC</span>
+      <span class="sched-badge primary">プライマリー</span>
+      <span class="sched-badge elem">小学生</span>
+    </div>
+
+    <!-- 週間スケジュール -->
+    <div class="sched-grid">
+
+      <div class="sched-day">
+        <p class="sched-day-label">月</p>
+        <div class="sched-slot"><span class="sched-time">10:00〜11:00</span><span class="sched-badge nido">ニド</span></div>
+        <div class="sched-slot"><span class="sched-time">14:30〜16:00</span><span class="sched-badge ic">IC</span></div>
+        <div class="sched-slot"><span class="sched-time">17:00〜18:30</span><span class="sched-badge elem">小学生</span></div>
       </div>
+
+      <div class="sched-day">
+        <p class="sched-day-label">火</p>
+        <div class="sched-slot"><span class="sched-time">10:00〜11:00</span><span class="sched-badge nido">ニド</span></div>
+        <div class="sched-slot closed"><span class="sched-time">午後</span><span class="sched-closed-lbl">閉室</span></div>
+      </div>
+
+      <div class="sched-day">
+        <p class="sched-day-label">水</p>
+        <div class="sched-slot"><span class="sched-time">10:00〜11:00</span><span class="sched-badge nido">ニド</span></div>
+        <div class="sched-slot"><span class="sched-time">14:30〜16:00</span><span class="sched-badge primary">プライマリー</span></div>
+      </div>
+
+      <div class="sched-day">
+        <p class="sched-day-label">木</p>
+        <div class="sched-slot"><span class="sched-time">10:00〜11:00</span><span class="sched-badge nido">ニド</span></div>
+        <div class="sched-slot closed"><span class="sched-time">午後</span><span class="sched-closed-lbl">閉室</span></div>
+      </div>
+
+      <div class="sched-day">
+        <p class="sched-day-label">金</p>
+        <div class="sched-slot"><span class="sched-time">10:00〜11:00</span><span class="sched-badge nido">ニド</span></div>
+        <div class="sched-slot"><span class="sched-time">13:00〜14:30</span><span class="sched-badge ic">IC</span></div>
+        <div class="sched-slot"><span class="sched-time">15:30〜17:00</span><span class="sched-badge primary">プライマリー</span></div>
+        <div class="sched-slot"><span class="sched-time">17:00〜18:30</span><span class="sched-badge elem">小学生</span></div>
+      </div>
+
+      <div class="sched-day weekend">
+        <p class="sched-day-label">土</p>
+        <div class="sched-slot"><span class="sched-time">8:30〜10:00</span><span class="sched-badge ic">IC</span></div>
+        <div class="sched-slot"><span class="sched-time">10:30〜12:00</span><span class="sched-badge primary">プライマリー</span></div>
+        <div class="sched-slot"><span class="sched-time">13:00〜14:30</span><span class="sched-badge primary">プライマリー</span></div>
+        <div class="sched-slot"><span class="sched-time">15:00〜16:30</span><span class="sched-badge elem">小学生</span></div>
+      </div>
+
+      <div class="sched-day weekend">
+        <p class="sched-day-label">日</p>
+        <div class="sched-slot"><span class="sched-time">8:30〜10:00</span><span class="sched-badge ic">IC</span></div>
+        <div class="sched-slot"><span class="sched-time">10:30〜12:00</span><span class="sched-badge primary">プライマリー</span></div>
+        <div class="sched-slot"><span class="sched-time">13:00〜14:30</span><span class="sched-badge primary">プライマリー</span></div>
+        <div class="sched-slot"><span class="sched-time">15:00〜16:30</span><span class="sched-badge elem">小学生</span></div>
+      </div>
+
     </div>
     <p class="schedule-note">
       空き状況・日程のご確認はLINEよりどうぞ。<br>
