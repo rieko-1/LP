@@ -545,6 +545,76 @@
     .voice-full-text { font-size: 13px; color: var(--text-mid); line-height: 2; font-weight: 300; }
     .voice-full-author { margin-top: 16px; font-size: 12px; color: var(--text-light); letter-spacing: 0.08em; text-align: right; }
 
+    /* ===== FAQ ===== */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+    }
+    .faq-item summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dark);
+      line-height: 1.6;
+      gap: 12px;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-q-label {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+    .faq-q-text { flex: 1; }
+    .faq-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--green-pale);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 300;
+      flex-shrink: 0;
+      transition: transform 0.25s ease, background 0.2s;
+      line-height: 1;
+    }
+    .faq-item[open] .faq-icon {
+      transform: rotate(45deg);
+      background: var(--green);
+      color: white;
+    }
+    .faq-answer {
+      padding: 0 20px 20px;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 2;
+      border-top: 1px solid var(--warm-gray);
+      padding-top: 16px;
+    }
+    .faq-a-label {
+      display: inline-block;
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
     /* ===== ACCESS ===== */
     .access-rows { display: flex; flex-direction: column; }
     .access-row {
@@ -640,6 +710,7 @@
       <a href="#schedule">スケジュール</a>
       <a href="#instructor">講師</a>
       <a href="#voices">保護者の声</a>
+      <a href="#faq">FAQ</a>
       <a href="#access">アクセス</a>
     </nav>
     <a href="#access" class="nav-line-btn">
@@ -1130,6 +1201,161 @@
   </div>
 </section>
 
+<!-- ========== FAQ ========== -->
+<section class="sec" id="faq">
+  <div class="inner">
+    <p class="eyebrow">faq</p>
+    <h2 class="sec-title">よくある質問</h2>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">体験レッスンはどのような流れですか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          まずLINEまたはお問い合わせフォームからご連絡ください。日程を調整のうえ、当日は教室をご案内しながら約60〜90分の体験レッスンを行います。お子さまの様子をじっくり観察しながらモンテッソーリ教具をご体験いただき、レッスン後に発達段階や今後の見通しについてフィードバックをお伝えします。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">祝日にレッスンがお休みになる場合、振替はできますか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          はい、振替をご相談いただけます。祝日でお休みになった場合は、同月または翌月中に振替日を設定いたします。詳しくはLINEまたはフォームよりご連絡ください。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">入会金はいつ支払うのですか？また、入会するとプレゼントがあると聞きました。</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          入会金 ¥19,800（税込）は、ご入会の手続き時にお支払いいただきます。体験レッスン当日から24時間以内にご入会いただいた場合は、体験レッスン費（¥5,500）を差し引き、実質 ¥14,300 となります。また、ご入会時にお仕事用エプロンと上履きをプレゼントいたします。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">年度の途中からでも入会できますか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          はい、年間を通じていつでもご入会いただけます。年の途中からのご入会の場合は、残りのレッスン回数に応じた月謝をご案内いたします。まずはお気軽にご相談ください。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">兄弟・姉妹割引について教えてください。</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          2人目以降のお子さまは、入会金が半額になるほか、月謝が20%引きとなります。ご兄弟・ご姉妹でご通室のご家庭は、ご入会手続きの際にお申し出ください。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">モンテッソーリ教育と一般的な習い事はどう違うのですか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          一般的な習い事は講師主導で「教える」スタイルですが、モンテッソーリ教育は子どもの「自分でやりたい」という意欲を大切にし、子ども自身が選んで活動します。教具はすべて子どもの発達段階に合わせて科学的に設計されており、「手を使って考える」ことで集中力・自立心・問題解決力が自然に育まれます。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">お母さん・お父さん、どちらが参加してもいいですか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          もちろんです。お母さまでもお父さまでも、保護者の方であればどなたでもご参加いただけます。ご家族がレッスンの内容を共有することで、ご家庭でのモンテッソーリ環境づくりにもつなげていただけます。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">服装に決まりはありますか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          特に決まりはありませんが、お子さまが動きやすい服装でお越しください。室内での活動になりますので、上履きをご用意いただくかご入会時のプレゼントをご利用ください。水・砂・食材などを使う活動もあるため、汚れても差し支えない服装をおすすめします。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">レッスン中、子どもが泣いたり走り回ったりしても大丈夫ですか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          大丈夫です。特に最初のうちは環境に慣れるまで時間がかかるお子さまも多く、泣いたり動き回ったりすることは自然なことです。講師が一人ひとりのペースを見守りながら関わりますので、焦らず安心してお越しください。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">退会はいつでもできますか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          はい、1ヶ月前にご連絡いただくことでいつでも退会いただけます。やむを得ない事情がある場合はご相談ください。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">月謝以外に費用はかかりますか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          月謝にはレッスン料・教材費・管理費・施設維持費がすべて含まれています。別途かかるものとして、ご入会時の入会金（¥19,800税込）のみです。訪問レッスンは別料金となります。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">訪問レッスンの場合、駐車場はどうすればいいですか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          訪問レッスンでは教具を車で運搬いたします。近隣のコインパーキング等をご案内いただけますと幸いです。駐車場代は別途実費でご負担をお願いしております。駐車場のご手配が難しい場合はご相談ください。
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
 <!-- ========== ACCESS ========== -->
 <section class="sec" id="access">
   <div class="inner">
@@ -1201,6 +1427,7 @@
     <a href="#schedule">スケジュール</a>
     <a href="#instructor">講師紹介</a>
     <a href="#voices">保護者の声</a>
+    <a href="#faq">FAQ</a>
     <a href="#access">アクセス</a>
   </nav>
 
