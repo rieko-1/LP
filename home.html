@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="田園調布のモンテッソーリ教室。AMI国際資格保有・0〜6歳の個別体験レッスン受付中。東京都大田区田園調布、田園調布駅 徒歩4分。">
+  <title>Mi Montessori Japan 子どもの部屋｜田園調布</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* ===== VARIABLES ===== */
+    :root {
+      --white:      #FFFFFF;
+      --off-white:  #F8F6F3;
+      --warm-gray:  #EDE9E4;
+      --border:     #E0DAD2;
+      --text-dark:  #2A2520;
+      --text-mid:   #47403B;
+      --text-light: #7C7570;
+      --green:      #3d8fa8;
+      --green-dark: #2d7590;
+      --green-pale: #EAF4F8;
+      --gold:       #C4A882;
+      --serif: 'Noto Serif JP', serif;
+      --sans:  'Noto Sans JP', sans-serif;
+      --max: 680px;
+      --r:   16px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--sans);
+      color: var(--text-dark);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: calc(var(--max) + 48px);
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 58px;
+    }
+    .nav-logo {
+      height: 40px;
+      width: auto;
+      flex-shrink: 0;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--text-mid);
+      padding: 8px 10px;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--green); }
+    .nav-line-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--green);
+      color: white;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 8px 14px;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .nav-line-btn:hover { background: var(--green-dark); }
+    .nav-line-btn svg { width: 13px; height: 13px; }
+
+    /* ===== LAYOUT ===== */
+    .inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .sec { padding: 88px 24px; }
+    .bg-off  { background: var(--off-white); }
+    .bg-warm { background: var(--warm-gray); }
+    .bg-pale { background: var(--green-pale); }
+
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.32em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .sec-title {
+      font-family: var(--serif);
+      font-size: clamp(21px, 5vw, 26px);
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--text-dark);
+      letter-spacing: 0.03em;
+      margin-bottom: 32px;
+    }
+    .body {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.95;
+      color: var(--text-mid);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 130px 24px 88px;
+      background: var(--off-white);
+      text-align: center;
+    }
+    .hero-logo {
+      height: 96px;
+      width: auto;
+      margin: 0 auto 28px;
+    }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(18px, 5vw, 24px);
+      font-weight: 400;
+      line-height: 1.95;
+      color: var(--text-dark);
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+    .hero-sub {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--text-light);
+      letter-spacing: 0.14em;
+      line-height: 2;
+      margin-bottom: 28px;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+    .hero-tag {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--text-mid);
+      background: var(--white);
+      padding: 5px 14px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+    }
+    .line-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      background: var(--green);
+      color: white;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 16px 28px;
+      border-radius: 100px;
+      box-shadow: 0 5px 22px rgba(61,143,168,0.28);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      width: 100%;
+      max-width: 320px;
+    }
+    .line-btn:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(61,143,168,0.38); }
+    .line-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    /* ===== NEWS ===== */
+    .news-list { display: flex; flex-direction: column; }
+    .news-item {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+    .news-item:first-child { border-top: 1px solid var(--border); }
+    .news-date {
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .news-cat {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--green);
+      background: var(--green-pale);
+      padding: 3px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .news-text { flex: 1; min-width: 0; }
+
+    /* ===== CLASSES ===== */
+    .class-card {
+      background: var(--white);
+      border-radius: var(--r);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .class-head {
+      background: var(--green);
+      padding: 22px 28px;
+      color: white;
+    }
+    .class-label {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      opacity: 0.8;
+      margin-bottom: 6px;
+    }
+    .class-name {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+    .class-body { padding: 24px 28px; }
+    .class-rows { display: flex; flex-direction: column; }
+    .class-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+    .class-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .class-lbl {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--green);
+      min-width: 48px;
+      padding-top: 3px;
+      flex-shrink: 0;
+    }
+    .price-num {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--green);
+      line-height: 1.2;
+    }
+    .price-num small {
+      font-size: 13px;
+      font-family: var(--sans);
+      font-weight: 300;
+    }
+    .price-note {
+      font-size: 11px;
+      color: var(--text-light);
+      margin-top: 6px;
+      letter-spacing: 0.04em;
+    }
+    .content-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .content-list li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+    .content-list li::before {
+      content: '·';
+      position: absolute;
+      left: 2px;
+      color: var(--green);
+      font-size: 18px;
+      line-height: 1.1;
+    }
+    .class-cta-wrap { margin-top: 24px; text-align: center; }
+    .class-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--green);
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 16px 24px;
+      border-radius: 100px;
+      width: 100%;
+      max-width: 320px;
+      box-shadow: 0 4px 16px rgba(61,143,168,0.25);
+      transition: background 0.2s, transform 0.15s;
+    }
+    .class-cta:hover { background: var(--green-dark); transform: translateY(-2px); }
+    .class-cta svg { width: 18px; height: 18px; }
+    .class-note {
+      font-size: 11px;
+      color: var(--text-light);
+      letter-spacing: 0.08em;
+      margin-top: 10px;
+    }
+
+    /* ===== SCHEDULE ===== */
+    .calendar-wrap {
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    /* Googleカレンダーのiframe はここに入ります */
+    .calendar-placeholder {
+      background: var(--warm-gray);
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: var(--text-light);
+      text-align: center;
+      line-height: 2.2;
+    }
+    .schedule-note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: var(--text-mid);
+      text-align: center;
+      line-height: 2;
+    }
+    .schedule-note a {
+      color: var(--green);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ===== INSTRUCTOR ===== */
+    .instructor-photo-wrap {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 24px;
+      border: 4px solid var(--white);
+      box-shadow: 0 0 0 1px var(--border), 0 8px 32px rgba(0,151,178,0.12);
+    }
+    .instructor-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .instructor-name {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      text-align: center;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+    .instructor-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 22px;
+    }
+    .instructor-tag {
+      font-size: 11px;
+      color: var(--text-mid);
+      background: var(--green-pale);
+      padding: 4px 12px;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+    }
+    .instructor-quote {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.85;
+      margin-bottom: 20px;
+      padding-left: 14px;
+      border-left: 2px solid var(--green);
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 24px 0;
+    }
+    .trust-item {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 20px 10px;
+      text-align: center;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .trust-num {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+    .trust-num span { font-size: 10px; color: var(--text-mid); letter-spacing: 0.06em; }
+    .trust-stars { font-size: 13px; color: var(--gold); letter-spacing: 1px; margin-bottom: 4px; line-height: 1.4; }
+    .trust-label { font-size: 10px; color: var(--text-mid); letter-spacing: 0.08em; line-height: 1.5; }
+
+    /* ===== ACCESS ===== */
+    .access-rows { display: flex; flex-direction: column; }
+    .access-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .access-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .access-lbl {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--green);
+      min-width: 44px;
+      padding-top: 3px;
+      flex-shrink: 0;
+    }
+    .access-val {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.8;
+    }
+    .access-val a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
+    .map-wrap {
+      margin-top: 28px;
+      border-radius: var(--r);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    /* Googleマップのiframe はここに入ります */
+    .map-placeholder {
+      background: var(--warm-gray);
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: var(--text-light);
+      text-align: center;
+      line-height: 2.4;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--text-dark);
+      padding: 44px 24px;
+      text-align: center;
+    }
+    .footer-logo {
+      height: 56px;
+      width: auto;
+      margin: 0 auto 20px;
+      opacity: 0.6;
+    }
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px 14px;
+      margin-bottom: 20px;
+    }
+    .footer-nav a {
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+    .footer-nav a:hover { color: rgba(255,255,255,0.85); }
+    .footer p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.1em;
+      line-height: 2;
+    }
+    .footer a { color: rgba(255,255,255,0.45); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 400px) {
+      .nav-links a { padding: 8px 8px; font-size: 10px; }
+      .hero-logo { height: 76px; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .trust-item:last-child { grid-column: span 2; }
+      .class-body { padding: 20px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVIGATION ========== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#home" aria-label="トップへ">
+      <img src="logo_transparent.png" alt="Mi Montessori Japan 子どもの部屋" class="nav-logo">
+    </a>
+    <nav class="nav-links" aria-label="メインナビゲーション">
+      <a href="#news">お知らせ</a>
+      <a href="#classes">クラス</a>
+      <a href="#schedule">スケジュール</a>
+      <a href="#instructor">講師</a>
+      <a href="#access">アクセス</a>
+    </nav>
+    <a href="https://lin.ee/v91Much" target="_blank" rel="noopener" class="nav-line-btn">
+      <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
+      </svg>
+      LINE
+    </a>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="home">
+  <img src="logo_transparent.png" alt="Mi Montessori Japan 子どもの部屋" class="hero-logo">
+  <h1 class="hero-title">
+    お子さまの"やりたい"を、<br>
+    そっと応援する場所
+  </h1>
+  <p class="hero-sub">
+    田園調布のモンテッソーリ教室<br>
+    Mi Montessori Japan 子どもの部屋
+  </p>
+  <div class="hero-tags">
+    <span class="hero-tag">AMI国際資格保有</span>
+    <span class="hero-tag">0歳〜6歳</span>
+    <span class="hero-tag">個別レッスン</span>
+    <span class="hero-tag">田園調布駅 徒歩4分</span>
+  </div>
+  <a href="https://lin.ee/v91Much" target="_blank" rel="noopener" class="line-btn">
+    <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
+    </svg>
+    LINEでお問い合わせ・ご予約
+  </a>
+</section>
+
+<!-- ========== NEWS ========== -->
+<section class="sec" id="news">
+  <div class="inner">
+    <p class="eyebrow">news</p>
+    <h2 class="sec-title">お知らせ</h2>
+    <ul class="news-list">
+
+      <li class="news-item">
+        <span class="news-date">2026.05.17</span>
+        <span class="news-cat">お知らせ</span>
+        <span class="news-text">ホームページを開設しました。</span>
+      </li>
+
+      <!-- ↓ お知らせを追加するときはここにコピーして使ってください
+      <li class="news-item">
+        <span class="news-date">2026.00.00</span>
+        <span class="news-cat">お知らせ</span>
+        <span class="news-text">内容をここに書きます。</span>
+      </li>
+      -->
+
+    </ul>
+  </div>
+</section>
+
+<!-- ========== CLASSES ========== -->
+<section class="sec bg-off" id="classes">
+  <div class="inner">
+    <p class="eyebrow">classes</p>
+    <h2 class="sec-title">クラスメニュー</h2>
+    <div class="class-card">
+      <div class="class-head">
+        <p class="class-label">experience lesson</p>
+        <p class="class-name">体験レッスン</p>
+      </div>
+      <div class="class-body">
+        <div class="class-rows">
+          <div class="class-row">
+            <span class="class-lbl">対象</span>
+            <span>0歳〜6歳のお子さまと保護者の方</span>
+          </div>
+          <div class="class-row">
+            <span class="class-lbl">時間</span>
+            <span>60分</span>
+          </div>
+          <div class="class-row">
+            <span class="class-lbl">形式</span>
+            <span>個別レッスン</span>
+          </div>
+          <div class="class-row">
+            <span class="class-lbl">料金</span>
+            <div>
+              <p class="price-num">5,500円<small>（税込）</small></p>
+              <p class="price-note">※継続レッスンについてはLINEよりご相談ください</p>
+            </div>
+          </div>
+          <div class="class-row">
+            <span class="class-lbl">内容</span>
+            <ul class="content-list">
+              <li>モンテッソーリの教具を使ったお仕事体験</li>
+              <li>お子さまの敏感期・興味のご説明</li>
+              <li>ご家庭での環境づくりと見守り方のアドバイス</li>
+              <li>レッスン後24時間以内に個別フィードバックをお届け</li>
+            </ul>
+          </div>
+        </div>
+        <div class="class-cta-wrap">
+          <a href="https://lin.ee/v91Much" target="_blank" rel="noopener" class="class-cta">
+            <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
+            </svg>
+            LINEで体験レッスンを予約する
+          </a>
+          <p class="class-note">登録無料・無理な勧誘はありません</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SCHEDULE ========== -->
+<section class="sec" id="schedule">
+  <div class="inner">
+    <p class="eyebrow">schedule</p>
+    <h2 class="sec-title">スケジュール</h2>
+    <div class="calendar-wrap">
+      <!--
+        ▼ Googleカレンダーの埋め込み手順
+        1. Googleカレンダーを開く
+        2. カレンダー名の横の「⋮」→「設定と共有」
+        3. 「カレンダーを埋め込む」セクションの「埋め込みコード」をコピー
+        4. 下の <div class="calendar-placeholder"> を削除して、コードを貼り付ける
+        例: <iframe src="https://calendar.google.com/calendar/embed?..." width="100%" height="400" ...></iframe>
+      -->
+      <div class="calendar-placeholder">
+        Googleカレンダーをここに埋め込みます<br>
+        <small>（設定方法はLINEでお問い合わせください）</small>
+      </div>
+    </div>
+    <p class="schedule-note">
+      空き状況・日程のご確認はLINEよりどうぞ。<br>
+      <a href="https://lin.ee/v91Much" target="_blank" rel="noopener">LINEでお問い合わせ →</a>
+    </p>
+  </div>
+</section>
+
+<!-- ========== INSTRUCTOR ========== -->
+<section class="sec bg-off" id="instructor">
+  <div class="inner" style="text-align: center;">
+    <p class="eyebrow">instructor</p>
+    <h2 class="sec-title">講師紹介</h2>
+    <div class="instructor-photo-wrap">
+      <img src="profile.png" alt="大野 理恵子" class="instructor-photo">
+    </div>
+    <h3 class="instructor-name">大野 理恵子</h3>
+    <div class="instructor-tags">
+      <span class="instructor-tag">AMI 0〜3歳ディプロマ</span>
+      <span class="instructor-tag">AMI 2.5〜6歳ディプロマ</span>
+      <span class="instructor-tag">AMI 6〜12歳 入門コース修了</span>
+      <span class="instructor-tag">保育士</span>
+      <span class="instructor-tag">栄養士</span>
+      <span class="instructor-tag">認定ベビーシッター</span>
+    </div>
+    <p class="instructor-quote" style="text-align: left;">お子さまが「自分でできた」と嬉しそうに笑う瞬間が、何より好きです。</p>
+    <p class="body" style="text-align: left;">男女二児を育てながら、絵本の読み聞かせ会に6年間所属。保育園補助・ベビーシッターの仕事を経験する中でモンテッソーリ教育に出会い、資格を取得しました。3年間で1,000件以上のお子さまのそばに寄り添い、すべて5つ星評価をいただいております。</p>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-num">1,000<span>件以上</span></div>
+        <div class="trust-label">お子さまとの時間</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-stars">★★★★★</div>
+        <div class="trust-label">保護者の方からの評価</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num" style="font-size: 17px; letter-spacing: 0.04em;">AMI</div>
+        <div class="trust-label">国際モンテッソーリ資格</div>
+      </div>
+    </div>
+    <p class="body" style="text-align: left; margin-top: 8px;">自宅でのモンテッソーリ教室を開きながら、児童発達支援施設ではモンテッソーリ教育部門を担当。これまで多くのお子さまと保護者の方とともに、お子さまの育つ姿を見守ってまいりました。</p>
+  </div>
+</section>
+
+<!-- ========== ACCESS ========== -->
+<section class="sec" id="access">
+  <div class="inner">
+    <p class="eyebrow">access</p>
+    <h2 class="sec-title">アクセス</h2>
+    <div class="access-rows">
+      <div class="access-row">
+        <span class="access-lbl">住所</span>
+        <span class="access-val">
+          東京都大田区田園調布２丁目４０番８号<br>
+          ・１階（玄関入って左の扉）
+        </span>
+      </div>
+      <div class="access-row">
+        <span class="access-lbl">最寄駅</span>
+        <span class="access-val">東急東横線・目黒線 田園調布駅 徒歩4分</span>
+      </div>
+      <div class="access-row">
+        <span class="access-lbl">電話</span>
+        <span class="access-val">
+          <a href="tel:09053132501">090-5313-2501</a>
+        </span>
+      </div>
+      <div class="access-row">
+        <span class="access-lbl">LINE</span>
+        <span class="access-val">
+          <a href="https://lin.ee/v91Much" target="_blank" rel="noopener">LINEでのお問い合わせはこちら</a>
+        </span>
+      </div>
+    </div>
+    <div class="map-wrap">
+      <!--
+        ▼ Googleマップの埋め込み手順
+        1. maps.google.com で住所「東京都大田区田園調布２丁目４０番８号」を検索
+        2. 「共有」→「地図を埋め込む」→「HTMLをコピー」
+        3. 下の <div class="map-placeholder"> を削除して、コードを貼り付ける
+        例: <iframe src="https://www.google.com/maps/embed?..." width="100%" height="280" ...></iframe>
+      -->
+      <div class="map-placeholder">
+        Googleマップをここに埋め込みます
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <img src="logo_transparent.png" alt="Mi Montessori Japan 子どもの部屋" class="footer-logo">
+  <nav class="footer-nav" aria-label="フッターナビゲーション">
+    <a href="#news">お知らせ</a>
+    <a href="#classes">クラス</a>
+    <a href="#schedule">スケジュール</a>
+    <a href="#instructor">講師紹介</a>
+    <a href="#access">アクセス</a>
+  </nav>
+  <p>東京都大田区田園調布２丁目４０番８号・１階</p>
+  <p><a href="tel:09053132501">090-5313-2501</a></p>
+  <p style="margin-top: 16px;">© 2025 Mi Montessori Japan 子どもの部屋. All rights reserved.</p>
+</footer>
+
+<script>
+  // ナビのアクティブ表示
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { threshold: 0.35 });
+  sections.forEach(s => io.observe(s));
+</script>
+
+</body>
+</html>
