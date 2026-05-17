@@ -18,8 +18,8 @@
       --text-dark:  #2A2520;
       --text-mid:   #47403B;
       --text-light: #7C7570;
-      --green:      #3d8fa8;
-      --green-dark: #2d7590;
+      --green:      #3FA5C0;
+      --green-dark: #3090AA;
       --green-pale: #EAF4F8;
       --gold:       #D4BC72;
       --serif: 'Noto Serif JP', serif;
@@ -314,8 +314,9 @@
       justify-content: space-between;
       gap: 12px;
     }
-    .ccard-head.nido-head { background: #A0689A; }
-    .ccard-head.dark { background: #6A7FA8; }
+    .ccard-head.nido-head { background: #C9A8B4; }
+    .ccard-head.primary-head { background: #8AAE86; }
+    .ccard-head.dark { background: #8A9EB8; }
     .ccard-head-left { flex: 1; }
     .ccard-en { font-size: 9px; letter-spacing: 0.2em; opacity: 0.65; margin-bottom: 4px; }
     .ccard-name { font-family: var(--serif); font-size: 18px; font-weight: 400; letter-spacing: 0.04em; line-height: 1.3; }
@@ -513,10 +514,10 @@
     /* ===== SCHEDULE ===== */
     .sched-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
     .sched-badge { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; padding: 4px 12px; border-radius: 100px; white-space: nowrap; }
-    .sched-badge.nido { background: #F2E8F0; color: #A0689A; }
+    .sched-badge.nido { background: #F2ECF0; color: #C9A8B4; }
     .sched-badge.ic { background: var(--green); color: white; }
-    .sched-badge.primary { background: var(--gold); color: white; }
-    .sched-badge.elem { background: #6A7FA8; color: white; }
+    .sched-badge.primary { background: #E6EFE5; color: #6E9C6A; }
+    .sched-badge.elem { background: #E4E9F0; color: #8A9EB8; }
     .timetable-outer { overflow-x: auto; border-radius: var(--r); border: 1px solid var(--border); margin-bottom: 20px; }
     .timetable {
       display: grid;
@@ -532,10 +533,10 @@
     .tt-time.major { font-size: 9.5px; color: var(--text-mid); font-weight: 500; border-bottom-color: #e0dad2; }
     .tt-class { margin: 2px; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 10px; font-weight: 500; letter-spacing: 0.04em; line-height: 1.4; z-index: 2; }
     .tt-class small { font-size: 8.5px; font-weight: 300; opacity: 0.85; display: block; margin-top: 2px; }
-    .tt-class.nido { background: #F2E8F0; color: #A0689A; border: 1px solid rgba(160,104,154,0.25); }
+    .tt-class.nido { background: #F2ECF0; color: #C9A8B4; border: 1px solid rgba(201,168,180,0.35); }
     .tt-class.ic { background: var(--green); color: white; }
-    .tt-class.primary { background: var(--gold); color: white; }
-    .tt-class.elem { background: #6A7FA8; color: white; }
+    .tt-class.primary { background: #8AAE86; color: white; }
+    .tt-class.elem { background: #8A9EB8; color: white; }
     .tt-closed { background: #f3f1ef; margin: 2px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #c8c4c0; letter-spacing: 0.1em; z-index: 2; }
 
     /* ===== VOICES ===== */
@@ -834,7 +835,7 @@
       </div>
 
       <div class="ccard">
-        <div class="ccard-head">
+        <div class="ccard-head primary-head">
           <div class="ccard-head-left">
             <p class="ccard-en">primary class</p>
             <p class="ccard-name">プライマリークラス</p>
@@ -1217,7 +1218,7 @@
         </summary>
         <div class="faq-answer">
           <span class="faq-a-label">A</span><br>
-          まずLINEまたはお問い合わせフォームからご連絡ください。日程を調整のうえ、当日は60分の体験レッスンを行います。お子さまの興味や敏感期をじっくり観察しながらモンテッソーリ教具をご体験いただき、ご家庭での環境整備や日々の見守り方もあわせてお伝えします。子育てのヒントをお持ち帰りいただける充実したお時間です。レッスン後24時間以内に文章でフィードバックをお届けします。
+          まずLINEまたはお問い合わせフォームからご連絡ください。日程を調整のうえ、当日は60分の体験レッスンを行います。お子さまの興味や敏感期をじっくり観察しながらモンテッソーリ教具をご体験いただき、ご家庭での環境作りや日々の見守り方もあわせてお伝えします。子育てのヒントをお持ち帰りいただける充実したお時間です。レッスン後24時間以内に文章でフィードバックをお届けします。
         </div>
       </details>
 
