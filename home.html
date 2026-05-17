@@ -284,6 +284,98 @@
     .class-cta svg { width: 18px; height: 18px; }
     .class-note { font-size: 11px; color: var(--text-light); letter-spacing: 0.08em; margin-top: 10px; }
 
+    /* ===== CLASS GRID (MULTI) ===== */
+    .class-group-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--text-light);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .classes-grid { display: flex; flex-direction: column; gap: 14px; }
+    .ccard {
+      background: var(--white);
+      border-radius: var(--r);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+    .ccard-head {
+      background: var(--green);
+      padding: 16px 22px 14px;
+      color: white;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .ccard-head.dark { background: #3a3530; }
+    .ccard-head-left { flex: 1; }
+    .ccard-en { font-size: 9px; letter-spacing: 0.2em; opacity: 0.65; margin-bottom: 4px; }
+    .ccard-name { font-family: var(--serif); font-size: 18px; font-weight: 400; letter-spacing: 0.04em; line-height: 1.3; }
+    .ccard-age { font-size: 11px; letter-spacing: 0.06em; opacity: 0.8; margin-top: 4px; }
+    .ccard-badge {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      background: rgba(255,255,255,0.18);
+      padding: 4px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .ccard-body { padding: 16px 22px 18px; }
+    .ccard-metas { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .ccard-meta {
+      font-size: 11px;
+      color: var(--text-mid);
+      background: var(--off-white);
+      padding: 4px 11px;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+      border: 1px solid var(--border);
+    }
+    .ccard-features {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .ccard-features li {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--text-mid);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.7;
+    }
+    .ccard-features li::before { content: '·'; position: absolute; left: 2px; color: var(--green); font-size: 18px; line-height: 1.1; }
+    .ccard-features li.notice { color: var(--text-light); font-size: 11px; }
+    .ccard-features li.notice::before { color: var(--border); }
+    .ccard-price { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text-dark); line-height: 1; }
+    .ccard-price small { font-size: 11px; font-family: var(--sans); font-weight: 300; color: var(--text-light); }
+    .ccard-price-note { font-size: 11px; color: var(--text-light); margin-top: 4px; line-height: 1.7; }
+    .trial-strip {
+      margin-top: 32px;
+      background: var(--green-pale);
+      border: 1px solid rgba(61,143,168,0.2);
+      border-radius: var(--r);
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      justify-content: space-between;
+    }
+    .trial-strip-text { font-family: var(--serif); font-size: 14px; color: var(--text-dark); line-height: 1.6; }
+    .trial-strip-text small { display: block; font-family: var(--sans); font-size: 11px; color: var(--text-light); margin-top: 3px; letter-spacing: 0.04em; }
+    .trial-strip-price { font-family: var(--serif); font-size: 20px; color: var(--green); white-space: nowrap; flex-shrink: 0; }
+    .trial-strip-price small { font-size: 11px; font-family: var(--sans); color: var(--text-light); }
+
     /* ===== CURRICULUM ===== */
     .curriculum-intro {
       font-size: 14px;
@@ -577,54 +669,180 @@
 <section class="sec bg-off" id="classes">
   <div class="inner">
     <p class="eyebrow">classes</p>
-    <h2 class="sec-title">クラスメニュー</h2>
-    <div class="class-card">
-      <div class="class-head">
-        <p class="class-label">experience lesson</p>
-        <p class="class-name">体験レッスン</p>
-      </div>
-      <div class="class-body">
-        <div class="class-rows">
-          <div class="class-row">
-            <span class="class-lbl">対象</span>
-            <span>0歳〜6歳のお子さまと保護者の方</span>
+    <h2 class="sec-title">クラスメニュー・料金</h2>
+
+    <!-- 少人数クラス -->
+    <p class="class-group-label">少人数クラス（月謝制 · 月4回）</p>
+    <div class="classes-grid">
+
+      <div class="ccard">
+        <div class="ccard-head">
+          <div class="ccard-head-left">
+            <p class="ccard-en">nido class</p>
+            <p class="ccard-name">ニドクラス</p>
+            <p class="ccard-age">0ヶ月〜歩行が安定するまで</p>
           </div>
-          <div class="class-row">
-            <span class="class-lbl">時間</span>
-            <span>60分</span>
-          </div>
-          <div class="class-row">
-            <span class="class-lbl">形式</span>
-            <span>個別レッスン</span>
-          </div>
-          <div class="class-row">
-            <span class="class-lbl">料金</span>
-            <div>
-              <p class="price-num">5,500円<small>（税込）</small></p>
-              <p class="price-note">※継続レッスンについてはLINEよりご相談ください</p>
-            </div>
-          </div>
-          <div class="class-row">
-            <span class="class-lbl">内容</span>
-            <ul class="content-list">
-              <li>モンテッソーリの教具を使ったお仕事体験</li>
-              <li>お子さまの敏感期・興味のご説明</li>
-              <li>ご家庭での環境づくりと見守り方のアドバイス</li>
-              <li>レッスン後24時間以内に個別フィードバックをお届け</li>
-            </ul>
-          </div>
+          <span class="ccard-badge">親子同室</span>
         </div>
-        <div class="class-cta-wrap">
-          <a href="https://lin.ee/v91Much" target="_blank" rel="noopener" class="class-cta">
-            <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
-            </svg>
-            LINEで体験レッスンを予約する
-          </a>
-          <p class="class-note">登録無料・無理な勧誘はありません</p>
+        <div class="ccard-body">
+          <div class="ccard-metas">
+            <span class="ccard-meta">月4回</span>
+            <span class="ccard-meta">60分 / 回</span>
+            <span class="ccard-meta">親子同室</span>
+          </div>
+          <ul class="ccard-features">
+            <li>モンテッソーリ教具を使った活動</li>
+            <li>教具の無料貸し出し有り</li>
+          </ul>
+          <p class="ccard-price">¥20,000<small>（税抜）/ 月</small></p>
         </div>
       </div>
+
+      <div class="ccard">
+        <div class="ccard-head">
+          <div class="ccard-head-left">
+            <p class="ccard-en">infant community</p>
+            <p class="ccard-name">ICクラス</p>
+            <p class="ccard-age">1歳半〜3歳</p>
+          </div>
+          <span class="ccard-badge">少人数</span>
+        </div>
+        <div class="ccard-body">
+          <div class="ccard-metas">
+            <span class="ccard-meta">月4回</span>
+            <span class="ccard-meta">90分 / 回</span>
+            <span class="ccard-meta">母子分離</span>
+          </div>
+          <ul class="ccard-features">
+            <li>歩行が安定したお子さまの少人数クラス</li>
+            <li>教具の無料貸し出し有り</li>
+          </ul>
+          <p class="ccard-price">¥32,000<small>（税抜）/ 月</small></p>
+        </div>
+      </div>
+
+      <div class="ccard">
+        <div class="ccard-head">
+          <div class="ccard-head-left">
+            <p class="ccard-en">primary class</p>
+            <p class="ccard-name">プライマリークラス</p>
+            <p class="ccard-age">3歳〜6歳</p>
+          </div>
+          <span class="ccard-badge">少人数</span>
+        </div>
+        <div class="ccard-body">
+          <div class="ccard-metas">
+            <span class="ccard-meta">月4回</span>
+            <span class="ccard-meta">90分 / 回</span>
+            <span class="ccard-meta">少人数</span>
+          </div>
+          <ul class="ccard-features">
+            <li>日常生活・感覚・言語・数教育の総合レッスン</li>
+            <li>教具の無料貸し出し有り</li>
+          </ul>
+          <p class="ccard-price">¥32,000<small>（税抜）/ 月</small></p>
+        </div>
+      </div>
+
+      <div class="ccard">
+        <div class="ccard-head dark">
+          <div class="ccard-head-left">
+            <p class="ccard-en">elementary class</p>
+            <p class="ccard-name">小学生クラス</p>
+            <p class="ccard-age">小学生 · 算数検定10級レベルまで</p>
+          </div>
+          <span class="ccard-badge">少人数</span>
+        </div>
+        <div class="ccard-body">
+          <div class="ccard-metas">
+            <span class="ccard-meta">月4回</span>
+            <span class="ccard-meta">90分 / 回</span>
+            <span class="ccard-meta">宿題あり</span>
+          </div>
+          <ul class="ccard-features">
+            <li>算数・数学検定10級レベルの少人数クラス</li>
+            <li class="notice">※本クラスはモンテッソーリ教育ではありません</li>
+          </ul>
+          <p class="ccard-price">¥32,000<small>（税抜）/ 月</small></p>
+        </div>
+      </div>
+
     </div>
+
+    <!-- 個別・訪問 -->
+    <p class="class-group-label" style="margin-top: 36px;">個別・訪問レッスン</p>
+    <div class="classes-grid">
+
+      <div class="ccard">
+        <div class="ccard-head">
+          <div class="ccard-head-left">
+            <p class="ccard-en">private lesson · 入会金不要</p>
+            <p class="ccard-name">個別レッスン</p>
+            <p class="ccard-age">0歳〜6歳 · 小学生（算数検定対策）</p>
+          </div>
+          <span class="ccard-badge">個別</span>
+        </div>
+        <div class="ccard-body">
+          <div class="ccard-metas">
+            <span class="ccard-meta">90分 / 回</span>
+            <span class="ccard-meta">入会金不要</span>
+            <span class="ccard-meta">都度払い</span>
+          </div>
+          <ul class="ccard-features">
+            <li>発達に合わせた完全個別レッスン</li>
+            <li>小学生の算数検定対策にも対応</li>
+            <li>定期受講の方には教具の貸し出し有り</li>
+          </ul>
+          <p class="ccard-price">¥14,000<small>（税抜）/ 回</small></p>
+        </div>
+      </div>
+
+      <div class="ccard">
+        <div class="ccard-head">
+          <div class="ccard-head-left">
+            <p class="ccard-en">home visit lesson</p>
+            <p class="ccard-name">訪問レッスン</p>
+            <p class="ccard-age">全年齢対応 · ご自宅へ伺います</p>
+          </div>
+          <span class="ccard-badge">訪問</span>
+        </div>
+        <div class="ccard-body">
+          <div class="ccard-metas">
+            <span class="ccard-meta">2時間</span>
+            <span class="ccard-meta">別途交通費</span>
+          </div>
+          <ul class="ccard-features">
+            <li>ご自宅に伺い、教具を使ったレッスンをご提供</li>
+            <li>ご自宅の玩具を活用した発達に合わせた遊びのご提案</li>
+            <li>お手伝いの導入・生活環境設定のアドバイス</li>
+            <li class="notice">※遠方（地方等）の場合は要相談</li>
+          </ul>
+          <p class="ccard-price">¥33,000<small>（税込）+ 交通費</small></p>
+          <p class="ccard-price-note">遠方の場合はお気軽にご相談ください</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 体験レッスン -->
+    <div class="trial-strip">
+      <div class="trial-strip-text">
+        はじめての方へ — 体験レッスン
+        <small>60分 · 0歳〜6歳 · 個別 · 入会金不要</small>
+      </div>
+      <div class="trial-strip-price">¥5,500<small>（税込）</small></div>
+    </div>
+
+    <div style="margin-top: 28px; text-align: center;">
+      <a href="https://lin.ee/v91Much" target="_blank" rel="noopener" class="class-cta">
+        <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
+        </svg>
+        ご入会・ご予約はLINEから
+      </a>
+      <p class="class-note">ご質問だけでもお気軽にどうぞ</p>
+    </div>
+
   </div>
 </section>
 
