@@ -60,11 +60,7 @@
       gap: 8px;
       height: 58px;
     }
-    .nav-logo {
-      height: 40px;
-      width: auto;
-      flex-shrink: 0;
-    }
+    .nav-logo { height: 40px; width: auto; flex-shrink: 0; }
     .nav-links {
       display: flex;
       align-items: center;
@@ -78,7 +74,7 @@
       font-weight: 400;
       letter-spacing: 0.1em;
       color: var(--text-mid);
-      padding: 8px 10px;
+      padding: 8px 9px;
       white-space: nowrap;
       transition: color 0.2s;
     }
@@ -102,15 +98,11 @@
     .nav-line-btn svg { width: 13px; height: 13px; }
 
     /* ===== LAYOUT ===== */
-    .inner {
-      max-width: var(--max);
-      margin: 0 auto;
-    }
+    .inner { max-width: var(--max); margin: 0 auto; }
     .sec { padding: 88px 24px; }
     .bg-off  { background: var(--off-white); }
     .bg-warm { background: var(--warm-gray); }
     .bg-pale { background: var(--green-pale); }
-
     .eyebrow {
       font-size: 10px;
       font-weight: 400;
@@ -141,11 +133,7 @@
       background: var(--off-white);
       text-align: center;
     }
-    .hero-logo {
-      height: 96px;
-      width: auto;
-      margin: 0 auto 28px;
-    }
+    .hero-logo { height: 96px; width: auto; margin: 0 auto 28px; }
     .hero-title {
       font-family: var(--serif);
       font-size: clamp(18px, 5vw, 24px);
@@ -186,7 +174,6 @@
       gap: 9px;
       background: var(--green);
       color: white;
-      font-family: var(--sans);
       font-size: 14px;
       font-weight: 500;
       letter-spacing: 0.05em;
@@ -215,13 +202,7 @@
       line-height: 1.7;
     }
     .news-item:first-child { border-top: 1px solid var(--border); }
-    .news-date {
-      font-size: 11px;
-      color: var(--text-light);
-      letter-spacing: 0.08em;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
+    .news-date { font-size: 11px; color: var(--text-light); letter-spacing: 0.08em; white-space: nowrap; flex-shrink: 0; }
     .news-cat {
       font-size: 9px;
       font-weight: 500;
@@ -243,23 +224,9 @@
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
-    .class-head {
-      background: var(--green);
-      padding: 22px 28px;
-      color: white;
-    }
-    .class-label {
-      font-size: 10px;
-      letter-spacing: 0.22em;
-      opacity: 0.8;
-      margin-bottom: 6px;
-    }
-    .class-name {
-      font-family: var(--serif);
-      font-size: 22px;
-      font-weight: 400;
-      letter-spacing: 0.04em;
-    }
+    .class-head { background: var(--green); padding: 22px 28px; color: white; }
+    .class-label { font-size: 10px; letter-spacing: 0.22em; opacity: 0.8; margin-bottom: 6px; }
+    .class-name { font-family: var(--serif); font-size: 22px; font-weight: 400; letter-spacing: 0.04em; }
     .class-body { padding: 24px 28px; }
     .class-rows { display: flex; flex-direction: column; }
     .class-row {
@@ -283,29 +250,10 @@
       padding-top: 3px;
       flex-shrink: 0;
     }
-    .price-num {
-      font-family: var(--serif);
-      font-size: 26px;
-      font-weight: 400;
-      color: var(--green);
-      line-height: 1.2;
-    }
-    .price-num small {
-      font-size: 13px;
-      font-family: var(--sans);
-      font-weight: 300;
-    }
-    .price-note {
-      font-size: 11px;
-      color: var(--text-light);
-      margin-top: 6px;
-      letter-spacing: 0.04em;
-    }
-    .content-list {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
+    .price-num { font-family: var(--serif); font-size: 26px; font-weight: 400; color: var(--green); line-height: 1.2; }
+    .price-num small { font-size: 13px; font-family: var(--sans); font-weight: 300; }
+    .price-note { font-size: 11px; color: var(--text-light); margin-top: 6px; letter-spacing: 0.04em; }
+    .content-list { display: flex; flex-direction: column; gap: 6px; }
     .content-list li {
       position: relative;
       padding-left: 14px;
@@ -313,14 +261,7 @@
       color: var(--text-mid);
       line-height: 1.7;
     }
-    .content-list li::before {
-      content: '·';
-      position: absolute;
-      left: 2px;
-      color: var(--green);
-      font-size: 18px;
-      line-height: 1.1;
-    }
+    .content-list li::before { content: '·'; position: absolute; left: 2px; color: var(--green); font-size: 18px; line-height: 1.1; }
     .class-cta-wrap { margin-top: 24px; text-align: center; }
     .class-cta {
       display: inline-flex;
@@ -341,20 +282,55 @@
     }
     .class-cta:hover { background: var(--green-dark); transform: translateY(-2px); }
     .class-cta svg { width: 18px; height: 18px; }
-    .class-note {
-      font-size: 11px;
-      color: var(--text-light);
-      letter-spacing: 0.08em;
-      margin-top: 10px;
+    .class-note { font-size: 11px; color: var(--text-light); letter-spacing: 0.08em; margin-top: 10px; }
+
+    /* ===== CURRICULUM ===== */
+    .curriculum-intro {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 2;
+      margin-bottom: 32px;
+    }
+    .curriculum-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .curriculum-card {
+      background: var(--white);
+      border-radius: var(--r);
+      padding: 26px 26px 28px;
+      border: 1px solid rgba(61,143,168,0.18);
+      box-shadow: 0 2px 14px rgba(0,0,0,0.04);
+    }
+    .curriculum-num {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+    .curriculum-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-dark);
+      letter-spacing: 0.03em;
+      margin-bottom: 14px;
+      line-height: 1.5;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .curriculum-body {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 2.1;
     }
 
     /* ===== SCHEDULE ===== */
-    .calendar-wrap {
-      border-radius: var(--r);
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    /* Googleカレンダーのiframe はここに入ります */
+    .calendar-wrap { border-radius: var(--r); overflow: hidden; border: 1px solid var(--border); }
     .calendar-placeholder {
       background: var(--warm-gray);
       height: 260px;
@@ -366,18 +342,8 @@
       text-align: center;
       line-height: 2.2;
     }
-    .schedule-note {
-      margin-top: 20px;
-      font-size: 13px;
-      color: var(--text-mid);
-      text-align: center;
-      line-height: 2;
-    }
-    .schedule-note a {
-      color: var(--green);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
+    .schedule-note { margin-top: 20px; font-size: 13px; color: var(--text-mid); text-align: center; line-height: 2; }
+    .schedule-note a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
 
     /* ===== INSTRUCTOR ===== */
     .instructor-photo-wrap {
@@ -389,12 +355,7 @@
       border: 4px solid var(--white);
       box-shadow: 0 0 0 1px var(--border), 0 8px 32px rgba(0,151,178,0.12);
     }
-    .instructor-photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
+    .instructor-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
     .instructor-name {
       font-family: var(--serif);
       font-size: 22px;
@@ -424,15 +385,22 @@
       font-weight: 400;
       color: var(--text-dark);
       line-height: 1.85;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       padding-left: 14px;
       border-left: 2px solid var(--green);
     }
+    .instructor-bio {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 2;
+    }
+    .instructor-bio + .instructor-bio { margin-top: 16px; }
     .trust-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
-      margin: 24px 0;
+      margin: 28px 0;
     }
     .trust-item {
       background: var(--white);
@@ -442,14 +410,7 @@
       border: 1px solid var(--border);
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
-    .trust-num {
-      font-family: var(--serif);
-      font-size: 22px;
-      font-weight: 400;
-      color: var(--text-dark);
-      line-height: 1.2;
-      margin-bottom: 4px;
-    }
+    .trust-num { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text-dark); line-height: 1.2; margin-bottom: 4px; }
     .trust-num span { font-size: 10px; color: var(--text-mid); letter-spacing: 0.06em; }
     .trust-stars { font-size: 13px; color: var(--gold); letter-spacing: 1px; margin-bottom: 4px; line-height: 1.4; }
     .trust-label { font-size: 10px; color: var(--text-mid); letter-spacing: 0.08em; line-height: 1.5; }
@@ -473,73 +434,64 @@
       padding-top: 3px;
       flex-shrink: 0;
     }
-    .access-val {
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--text-dark);
-      line-height: 1.8;
-    }
+    .access-val { font-size: 14px; font-weight: 300; color: var(--text-dark); line-height: 1.8; }
     .access-val a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
-    .map-wrap {
-      margin-top: 28px;
-      border-radius: var(--r);
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    /* Googleマップのiframe はここに入ります */
-    .map-placeholder {
-      background: var(--warm-gray);
-      height: 260px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      color: var(--text-light);
-      text-align: center;
-      line-height: 2.4;
-    }
+    .map-wrap { margin-top: 28px; border-radius: var(--r); overflow: hidden; border: 1px solid var(--border); }
 
     /* ===== FOOTER ===== */
-    .footer {
-      background: var(--text-dark);
-      padding: 44px 24px;
-      text-align: center;
-    }
-    .footer-logo {
-      height: 56px;
-      width: auto;
-      margin: 0 auto 20px;
-      opacity: 0.6;
-    }
+    .footer { background: var(--text-dark); padding: 48px 24px; text-align: center; }
+    .footer-logo { height: 56px; width: auto; margin: 0 auto 20px; opacity: 0.6; }
     .footer-nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 4px 14px;
-      margin-bottom: 20px;
+      margin-bottom: 28px;
     }
-    .footer-nav a {
-      font-size: 11px;
-      color: rgba(255,255,255,0.45);
+    .footer-nav a { font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 0.08em; transition: color 0.2s; }
+    .footer-nav a:hover { color: rgba(255,255,255,0.85); }
+
+    .footer-qr {
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      margin-bottom: 28px;
+    }
+    .qr-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .qr-img {
+      width: 96px;
+      height: 96px;
+      border-radius: 10px;
+      background: white;
+      padding: 6px;
+      display: block;
+    }
+    .qr-label { font-size: 10px; color: rgba(255,255,255,0.45); letter-spacing: 0.1em; line-height: 1.9; text-align: center; }
+
+    .footer-sns { margin-bottom: 20px; }
+    .sns-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: rgba(255,255,255,0.5);
+      font-size: 12px;
       letter-spacing: 0.08em;
       transition: color 0.2s;
     }
-    .footer-nav a:hover { color: rgba(255,255,255,0.85); }
-    .footer p {
-      font-size: 11px;
-      color: rgba(255,255,255,0.35);
-      letter-spacing: 0.1em;
-      line-height: 2;
-    }
+    .sns-btn:hover { color: rgba(255,255,255,0.9); }
+
+    .footer p { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; line-height: 2; }
     .footer a { color: rgba(255,255,255,0.45); }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 400px) {
-      .nav-links a { padding: 8px 8px; font-size: 10px; }
+      .nav-links a { padding: 8px 7px; font-size: 10px; }
       .hero-logo { height: 76px; }
       .trust-grid { grid-template-columns: 1fr 1fr; }
       .trust-item:last-child { grid-column: span 2; }
       .class-body { padding: 20px 18px; }
+      .curriculum-card { padding: 20px 18px 22px; }
+      .footer-qr { gap: 24px; }
     }
   </style>
 </head>
@@ -554,6 +506,7 @@
     <nav class="nav-links" aria-label="メインナビゲーション">
       <a href="#news">お知らせ</a>
       <a href="#classes">クラス</a>
+      <a href="#curriculum">レッスン</a>
       <a href="#schedule">スケジュール</a>
       <a href="#instructor">講師</a>
       <a href="#access">アクセス</a>
@@ -672,6 +625,60 @@
   </div>
 </section>
 
+<!-- ========== CURRICULUM ========== -->
+<section class="sec bg-pale" id="curriculum">
+  <div class="inner">
+    <p class="eyebrow">curriculum</p>
+    <h2 class="sec-title">レッスン内容</h2>
+    <p class="curriculum-intro">
+      子どもの部屋では、モンテッソーリ教育の4つの領域を軸に、
+      お子さま一人ひとりの発達段階と興味に合わせて活動をご用意しています。
+      「自分でできた！」という体験を積み重ねることが、
+      生きる力の土台になると考えています。
+    </p>
+    <div class="curriculum-grid">
+
+      <div class="curriculum-card">
+        <p class="curriculum-num">01 · practical life</p>
+        <h3 class="curriculum-title">日常生活の練習</h3>
+        <p class="curriculum-body">
+          子どもは、大人のやっていることをやりたくて仕方ありません。子どもサイズの道具を揃え、繰り返し行うことは、子どもを満足させ、動きや手先を洗練させていきます。<br><br>
+          水を注いだり、スポンジを絞ることから始まり、胡麻をする、植物の手入れ、花をいけることなどの活動を通して、一人でできることの喜びや人の役に立てる喜びを感じた子どもは、自己肯定感を高め、落ち着いていきます。<br><br>
+          また、日常生活の練習の様々なプロセスは、後の言語教育や数教育につながっていきます。季節感のある様々な活動をご用意してお待ちしております。
+        </p>
+      </div>
+
+      <div class="curriculum-card">
+        <p class="curriculum-num">02 · sensorial</p>
+        <h3 class="curriculum-title">感覚教育</h3>
+        <p class="curriculum-body">
+          感覚教育では、教具を使い視覚・触覚・聴覚・味覚・嗅覚を洗練させていきます。そして、五感で得た情報をお子さまが数学的頭脳を使い分析、整理していきます。<br><br>
+          お子さまが楽しく活動できるよう、教具は魅力的で、目的があり、誤りを自己訂正できるように作られています。感覚を通して世界を深く理解する力が、知性の土台となっていきます。
+        </p>
+      </div>
+
+      <div class="curriculum-card">
+        <p class="curriculum-num">03 · language</p>
+        <h3 class="curriculum-title">言語教育</h3>
+        <p class="curriculum-body">
+          言葉あそびなどの話し言葉から、言語の豊かさ、おもしろさ、使い方を学んでいきます。レッスンでは、本物の野菜・果物・花を五感を使いながら紹介したり、ミニチュアやカードを使ってたくさんの名詞を紹介しています。<br><br>
+          書くことに興味を持ち始めた時期のお子さまには、様々な教具を発達に合わせて紹介することで、無理なく読み書きを習得していきます。
+        </p>
+      </div>
+
+      <div class="curriculum-card">
+        <p class="curriculum-num">04 · mathematics</p>
+        <h3 class="curriculum-title">数教育</h3>
+        <p class="curriculum-body">
+          ゼロや１〜１０といった抽象的な概念を、具体物の助けを借りて「数」のおもしろさに導きます。抽象的な算数を学ぶ前のお子さまに具体物を使い「量」を体感していただくことで、身のまわりの様々なものや場面の秩序や規則性への気付きへつながる活動です。<br><br>
+          数そのものを楽しむ体験が、算数・数学への自然な興味へとつながっていきます。
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ========== SCHEDULE ========== -->
 <section class="sec" id="schedule">
   <div class="inner">
@@ -682,9 +689,8 @@
         ▼ Googleカレンダーの埋め込み手順
         1. Googleカレンダーを開く
         2. カレンダー名の横の「⋮」→「設定と共有」
-        3. 「カレンダーを埋め込む」セクションの「埋め込みコード」をコピー
-        4. 下の <div class="calendar-placeholder"> を削除して、コードを貼り付ける
-        例: <iframe src="https://calendar.google.com/calendar/embed?..." width="100%" height="400" ...></iframe>
+        3. 「カレンダーを埋め込む」→ 埋め込みコードをコピー
+        4. 下の <div class="calendar-placeholder"> を削除してコードを貼り付ける
       -->
       <div class="calendar-placeholder">
         Googleカレンダーをここに埋め込みます<br>
@@ -710,28 +716,34 @@
     <div class="instructor-tags">
       <span class="instructor-tag">AMI 0〜3歳ディプロマ</span>
       <span class="instructor-tag">AMI 2.5〜6歳ディプロマ</span>
-      <span class="instructor-tag">AMI 6〜12歳 入門コース修了</span>
       <span class="instructor-tag">保育士</span>
       <span class="instructor-tag">栄養士</span>
       <span class="instructor-tag">認定ベビーシッター</span>
     </div>
-    <p class="instructor-quote" style="text-align: left;">お子さまが「自分でできた」と嬉しそうに笑う瞬間が、何より好きです。</p>
-    <p class="body" style="text-align: left;">男女二児を育てながら、絵本の読み聞かせ会に6年間所属。保育園補助・ベビーシッターの仕事を経験する中でモンテッソーリ教育に出会い、資格を取得しました。3年間で1,000件以上のお子さまのそばに寄り添い、すべて5つ星評価をいただいております。</p>
     <div class="trust-grid">
       <div class="trust-item">
-        <div class="trust-num">1,000<span>件以上</span></div>
-        <div class="trust-label">お子さまとの時間</div>
+        <div class="trust-num" style="font-size:17px; letter-spacing:0.04em;">AMI</div>
+        <div class="trust-label">国際モンテッソーリ<br>公認教師（0〜6歳）</div>
       </div>
       <div class="trust-item">
         <div class="trust-stars">★★★★★</div>
-        <div class="trust-label">保護者の方からの評価</div>
+        <div class="trust-label">保護者の方からの<br>評価</div>
       </div>
       <div class="trust-item">
-        <div class="trust-num" style="font-size: 17px; letter-spacing: 0.04em;">AMI</div>
-        <div class="trust-label">国際モンテッソーリ資格</div>
+        <div class="trust-num">2023<span>年〜</span></div>
+        <div class="trust-label">モンテッソーリ<br>教室を主宰</div>
       </div>
     </div>
-    <p class="body" style="text-align: left; margin-top: 8px;">自宅でのモンテッソーリ教室を開きながら、児童発達支援施設ではモンテッソーリ教育部門を担当。これまで多くのお子さまと保護者の方とともに、お子さまの育つ姿を見守ってまいりました。</p>
+    <p class="instructor-quote" style="text-align: left;">お子さまが「自分でできた」と嬉しそうに笑う瞬間が、何より好きです。</p>
+    <p class="instructor-bio" style="text-align: left;">
+      二児の子育てをしながら、絵本の読み聞かせ会に所属。子育てがひと息ついてから、保育園補助とベビーシッター業に従事。子育て経験を生かし、シッター業では小学校受験を希望されるご家庭で具体物を使った家庭学習のフォローを得意としてきました。
+    </p>
+    <p class="instructor-bio" style="text-align: left; margin-top: 16px;">
+      そんな中、モンテッソーリスクールやモンテッソーリ教育を実践するご家庭に触れ、そのメソッドをもっと深く学びたいと資格取得を決意。東京国際教師トレーニングセンター（AMI）にて2.5〜6歳の資格を取得、その後0〜3歳の資格を取得しました。
+    </p>
+    <p class="instructor-bio" style="text-align: left; margin-top: 16px;">
+      北馬込の自宅でモンテッソーリ教室を2023年に立ち上げ、レッスンのほか各ご家庭への訪問・環境整備のアドバイス、教具を持参した訪問レッスンも行ってまいりました。この度、田園調布駅徒歩4分の地に移転し、保護者の皆様にも一緒に学んでいただける教室を開講いたしました。皆様のお越しをお待ちしております。
+    </p>
   </div>
 </section>
 
@@ -754,9 +766,7 @@
       </div>
       <div class="access-row">
         <span class="access-lbl">電話</span>
-        <span class="access-val">
-          <a href="tel:09053132501">090-5313-2501</a>
-        </span>
+        <span class="access-val"><a href="tel:09053132501">090-5313-2501</a></span>
       </div>
       <div class="access-row">
         <span class="access-lbl">LINE</span>
@@ -764,18 +774,24 @@
           <a href="https://lin.ee/v91Much" target="_blank" rel="noopener">LINEでのお問い合わせはこちら</a>
         </span>
       </div>
+      <div class="access-row">
+        <span class="access-lbl">Instagram</span>
+        <span class="access-val">
+          <a href="https://www.instagram.com/rieko_montessori.japan/" target="_blank" rel="noopener">@rieko_montessori.japan</a>
+        </span>
+      </div>
     </div>
     <div class="map-wrap">
-      <!--
-        ▼ Googleマップの埋め込み手順
-        1. maps.google.com で住所「東京都大田区田園調布２丁目４０番８号」を検索
-        2. 「共有」→「地図を埋め込む」→「HTMLをコピー」
-        3. 下の <div class="map-placeholder"> を削除して、コードを貼り付ける
-        例: <iframe src="https://www.google.com/maps/embed?..." width="100%" height="280" ...></iframe>
-      -->
-      <div class="map-placeholder">
-        Googleマップをここに埋め込みます
-      </div>
+      <iframe
+        src="https://maps.google.com/maps?q=東京都大田区田園調布2丁目40番8号&output=embed&hl=ja&z=16"
+        width="100%"
+        height="280"
+        style="border:0; display:block;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Mi Montessori Japan 子どもの部屋 地図">
+      </iframe>
     </div>
   </div>
 </section>
@@ -786,17 +802,50 @@
   <nav class="footer-nav" aria-label="フッターナビゲーション">
     <a href="#news">お知らせ</a>
     <a href="#classes">クラス</a>
+    <a href="#curriculum">レッスン</a>
     <a href="#schedule">スケジュール</a>
     <a href="#instructor">講師紹介</a>
     <a href="#access">アクセス</a>
   </nav>
+
+  <div class="footer-qr">
+    <div class="qr-item">
+      <a href="https://lin.ee/v91Much" target="_blank" rel="noopener">
+        <img
+          src="https://qr-official.line.me/gs/M_891nylpn_BW.png?oat_content=qr"
+          alt="LINE QRコード"
+          class="qr-img">
+      </a>
+      <p class="qr-label">LINE<br>お友達登録</p>
+    </div>
+    <div class="qr-item">
+      <a href="https://maps.google.com/maps?q=東京都大田区田園調布2丁目40番8号" target="_blank" rel="noopener">
+        <img
+          src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fmaps.google.com%2Fmaps%3Fq%3D%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%A4%A7%E7%94%B0%E5%8C%BA%E7%94%B0%E5%9C%92%E8%AA%BF%E5%B8%832%E4%B8%81%E7%9B%AE40%E7%95%AA8%E5%8F%B7"
+          alt="Googleマップ QRコード"
+          class="qr-img">
+      </a>
+      <p class="qr-label">Google マップ<br>で見る</p>
+    </div>
+  </div>
+
+  <div class="footer-sns">
+    <a href="https://www.instagram.com/rieko_montessori.japan/" target="_blank" rel="noopener" class="sns-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+      </svg>
+      @rieko_montessori.japan
+    </a>
+  </div>
+
   <p>東京都大田区田園調布２丁目４０番８号・１階</p>
   <p><a href="tel:09053132501">090-5313-2501</a></p>
   <p style="margin-top: 16px;">© 2025 Mi Montessori Japan 子どもの部屋. All rights reserved.</p>
 </footer>
 
 <script>
-  // ナビのアクティブ表示
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   const io = new IntersectionObserver((entries) => {
