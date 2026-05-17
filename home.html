@@ -508,22 +508,32 @@
     .trust-label { font-size: 10px; color: var(--text-mid); letter-spacing: 0.08em; line-height: 1.5; }
 
     /* ===== SCHEDULE ===== */
-    .sched-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-    .sched-grid { display: flex; flex-direction: column; gap: 12px; }
-    .sched-day { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
-    .sched-day.weekend { border-color: rgba(61,143,168,0.35); }
-    .sched-day-label { font-family: var(--serif); font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: var(--text-mid); background: var(--off-white); padding: 8px 16px; border-bottom: 1px solid var(--border); }
-    .sched-day.weekend .sched-day-label { background: var(--green-pale); color: var(--green); }
-    .sched-slot { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid var(--border); gap: 12px; }
-    .sched-slot:last-child { border-bottom: none; }
-    .sched-slot.closed { opacity: 0.45; }
-    .sched-time { font-size: 12px; color: var(--text-light); letter-spacing: 0.04em; white-space: nowrap; flex-shrink: 0; }
-    .sched-closed-lbl { font-size: 11px; color: var(--text-light); letter-spacing: 0.1em; }
+    .sched-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
     .sched-badge { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; padding: 4px 12px; border-radius: 100px; white-space: nowrap; }
     .sched-badge.nido { background: var(--green-pale); color: var(--green); }
     .sched-badge.ic { background: var(--green); color: white; }
     .sched-badge.primary { background: var(--gold); color: white; }
     .sched-badge.elem { background: #3a3530; color: white; }
+    .timetable-outer { overflow-x: auto; border-radius: var(--r); border: 1px solid var(--border); margin-bottom: 20px; }
+    .timetable {
+      display: grid;
+      grid-template-columns: 40px repeat(7, 1fr);
+      grid-template-rows: 34px repeat(21, 30px);
+      min-width: 500px;
+      background: var(--white);
+    }
+    .tt-th { background: var(--off-white); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: var(--text-mid); border-bottom: 2px solid var(--border); border-right: 1px solid #ede9e4; }
+    .tt-th:last-child { border-right: none; }
+    .tt-th.weekend { color: var(--green); background: var(--green-pale); }
+    .tt-time { display: flex; align-items: flex-start; justify-content: flex-end; padding: 3px 5px 0 0; font-size: 9px; color: var(--text-light); border-right: 1px solid var(--border); border-bottom: 1px solid #f3f0ed; background: var(--off-white); grid-column: 1; }
+    .tt-time.major { font-size: 9.5px; color: var(--text-mid); font-weight: 500; border-bottom-color: #e0dad2; }
+    .tt-class { margin: 2px; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 10px; font-weight: 500; letter-spacing: 0.04em; line-height: 1.4; z-index: 2; }
+    .tt-class small { font-size: 8.5px; font-weight: 300; opacity: 0.85; display: block; margin-top: 2px; }
+    .tt-class.nido { background: var(--green-pale); color: var(--green); border: 1px solid rgba(61,143,168,0.25); }
+    .tt-class.ic { background: var(--green); color: white; }
+    .tt-class.primary { background: var(--gold); color: white; }
+    .tt-class.elem { background: #3a3530; color: white; }
+    .tt-closed { background: #f3f1ef; margin: 2px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #c8c4c0; letter-spacing: 0.1em; z-index: 2; }
 
     /* ===== VOICES ===== */
     .voice-full-list { display: flex; flex-direction: column; gap: 20px; }
@@ -957,58 +967,69 @@
       <span class="sched-badge elem">小学生</span>
     </div>
 
-    <!-- 週間スケジュール -->
-    <div class="sched-grid">
-
-      <div class="sched-day">
-        <p class="sched-day-label">月</p>
-        <div class="sched-slot"><span class="sched-time">10:00〜11:00</span><span class="sched-badge nido">ニド</span></div>
-        <div class="sched-slot"><span class="sched-time">14:30〜16:00</span><span class="sched-badge ic">IC</span></div>
-        <div class="sched-slot"><span class="sched-time">17:00〜18:30</span><span class="sched-badge elem">小学生</span></div>
+    <!-- 週間タイムテーブル -->
+    <div class="timetable-outer">
+      <div class="timetable">
+        <!-- ヘッダー -->
+        <div class="tt-th"></div>
+        <div class="tt-th">月</div>
+        <div class="tt-th">火</div>
+        <div class="tt-th">水</div>
+        <div class="tt-th">木</div>
+        <div class="tt-th">金</div>
+        <div class="tt-th weekend">土</div>
+        <div class="tt-th weekend">日</div>
+        <!-- 時刻ラベル -->
+        <div class="tt-time major" style="grid-row:2">8:30</div>
+        <div class="tt-time" style="grid-row:3">9:00</div>
+        <div class="tt-time" style="grid-row:4">9:30</div>
+        <div class="tt-time major" style="grid-row:5">10:00</div>
+        <div class="tt-time" style="grid-row:6">10:30</div>
+        <div class="tt-time major" style="grid-row:7">11:00</div>
+        <div class="tt-time" style="grid-row:8">11:30</div>
+        <div class="tt-time major" style="grid-row:9">12:00</div>
+        <div class="tt-time" style="grid-row:10">12:30</div>
+        <div class="tt-time major" style="grid-row:11">13:00</div>
+        <div class="tt-time" style="grid-row:12">13:30</div>
+        <div class="tt-time major" style="grid-row:13">14:00</div>
+        <div class="tt-time major" style="grid-row:14">14:30</div>
+        <div class="tt-time major" style="grid-row:15">15:00</div>
+        <div class="tt-time" style="grid-row:16">15:30</div>
+        <div class="tt-time major" style="grid-row:17">16:00</div>
+        <div class="tt-time" style="grid-row:18">16:30</div>
+        <div class="tt-time major" style="grid-row:19">17:00</div>
+        <div class="tt-time" style="grid-row:20">17:30</div>
+        <div class="tt-time major" style="grid-row:21">18:00</div>
+        <div class="tt-time major" style="grid-row:22">18:30</div>
+        <!-- 月曜 -->
+        <div class="tt-class nido" style="grid-column:2;grid-row:5/7">ニド<small>10:00〜11:00</small></div>
+        <div class="tt-class ic"   style="grid-column:2;grid-row:14/17">IC<small>14:30〜16:00</small></div>
+        <div class="tt-class elem" style="grid-column:2;grid-row:19/22">小学生<small>17:00〜18:30</small></div>
+        <!-- 火曜 -->
+        <div class="tt-class nido"  style="grid-column:3;grid-row:5/7">ニド<small>10:00〜11:00</small></div>
+        <div class="tt-closed"      style="grid-column:3;grid-row:11/23">閉室</div>
+        <!-- 水曜 -->
+        <div class="tt-class nido"    style="grid-column:4;grid-row:5/7">ニド<small>10:00〜11:00</small></div>
+        <div class="tt-class primary" style="grid-column:4;grid-row:14/17">プライマリー<small>14:30〜16:00</small></div>
+        <!-- 木曜 -->
+        <div class="tt-class nido" style="grid-column:5;grid-row:5/7">ニド<small>10:00〜11:00</small></div>
+        <div class="tt-closed"     style="grid-column:5;grid-row:11/23">閉室</div>
+        <!-- 金曜 -->
+        <div class="tt-class nido"    style="grid-column:6;grid-row:5/7">ニド<small>10:00〜11:00</small></div>
+        <div class="tt-class ic"      style="grid-column:6;grid-row:11/14">IC<small>13:00〜14:30</small></div>
+        <div class="tt-class primary" style="grid-column:6;grid-row:16/19">プライマリー<small>15:30〜17:00</small></div>
+        <div class="tt-class elem"    style="grid-column:6;grid-row:19/22">小学生<small>17:00〜18:30</small></div>
+        <!-- 土曜 -->
+        <div class="tt-class ic"      style="grid-column:7;grid-row:2/5">IC<small>8:30〜10:00</small></div>
+        <div class="tt-class primary" style="grid-column:7;grid-row:6/9">プライマリー<small>10:30〜12:00</small></div>
+        <div class="tt-class primary" style="grid-column:7;grid-row:11/14">プライマリー<small>13:00〜14:30</small></div>
+        <div class="tt-class elem"    style="grid-column:7;grid-row:15/18">小学生<small>15:00〜16:30</small></div>
+        <!-- 日曜 -->
+        <div class="tt-class ic"      style="grid-column:8;grid-row:2/5">IC<small>8:30〜10:00</small></div>
+        <div class="tt-class primary" style="grid-column:8;grid-row:6/9">プライマリー<small>10:30〜12:00</small></div>
+        <div class="tt-class primary" style="grid-column:8;grid-row:11/14">プライマリー<small>13:00〜14:30</small></div>
+        <div class="tt-class elem"    style="grid-column:8;grid-row:15/18">小学生<small>15:00〜16:30</small></div>
       </div>
-
-      <div class="sched-day">
-        <p class="sched-day-label">火</p>
-        <div class="sched-slot"><span class="sched-time">10:00〜11:00</span><span class="sched-badge nido">ニド</span></div>
-        <div class="sched-slot closed"><span class="sched-time">午後</span><span class="sched-closed-lbl">閉室</span></div>
-      </div>
-
-      <div class="sched-day">
-        <p class="sched-day-label">水</p>
-        <div class="sched-slot"><span class="sched-time">10:00〜11:00</span><span class="sched-badge nido">ニド</span></div>
-        <div class="sched-slot"><span class="sched-time">14:30〜16:00</span><span class="sched-badge primary">プライマリー</span></div>
-      </div>
-
-      <div class="sched-day">
-        <p class="sched-day-label">木</p>
-        <div class="sched-slot"><span class="sched-time">10:00〜11:00</span><span class="sched-badge nido">ニド</span></div>
-        <div class="sched-slot closed"><span class="sched-time">午後</span><span class="sched-closed-lbl">閉室</span></div>
-      </div>
-
-      <div class="sched-day">
-        <p class="sched-day-label">金</p>
-        <div class="sched-slot"><span class="sched-time">10:00〜11:00</span><span class="sched-badge nido">ニド</span></div>
-        <div class="sched-slot"><span class="sched-time">13:00〜14:30</span><span class="sched-badge ic">IC</span></div>
-        <div class="sched-slot"><span class="sched-time">15:30〜17:00</span><span class="sched-badge primary">プライマリー</span></div>
-        <div class="sched-slot"><span class="sched-time">17:00〜18:30</span><span class="sched-badge elem">小学生</span></div>
-      </div>
-
-      <div class="sched-day weekend">
-        <p class="sched-day-label">土</p>
-        <div class="sched-slot"><span class="sched-time">8:30〜10:00</span><span class="sched-badge ic">IC</span></div>
-        <div class="sched-slot"><span class="sched-time">10:30〜12:00</span><span class="sched-badge primary">プライマリー</span></div>
-        <div class="sched-slot"><span class="sched-time">13:00〜14:30</span><span class="sched-badge primary">プライマリー</span></div>
-        <div class="sched-slot"><span class="sched-time">15:00〜16:30</span><span class="sched-badge elem">小学生</span></div>
-      </div>
-
-      <div class="sched-day weekend">
-        <p class="sched-day-label">日</p>
-        <div class="sched-slot"><span class="sched-time">8:30〜10:00</span><span class="sched-badge ic">IC</span></div>
-        <div class="sched-slot"><span class="sched-time">10:30〜12:00</span><span class="sched-badge primary">プライマリー</span></div>
-        <div class="sched-slot"><span class="sched-time">13:00〜14:30</span><span class="sched-badge primary">プライマリー</span></div>
-        <div class="sched-slot"><span class="sched-time">15:00〜16:30</span><span class="sched-badge elem">小学生</span></div>
-      </div>
-
     </div>
     <p class="schedule-note">
       空き状況・日程のご確認はLINEよりどうぞ。<br>
