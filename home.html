@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="田園調布のモンテッソーリ教室。AMI国際資格保有・0〜6歳の個別体験レッスン受付中。東京都大田区田園調布、田園調布駅 徒歩4分。">
+  <title>Mi Montessori Japan 子どもの部屋｜田園調布</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* ===== VARIABLES ===== */
+    :root {
+      --white:      #FFFFFF;
+      --off-white:  #F8F6F3;
+      --warm-gray:  #EDE9E4;
+      --border:     #E0DAD2;
+      --text-dark:  #2A2520;
+      --text-mid:   #47403B;
+      --text-light: #7C7570;
+      --green:      #3FA5C0;
+      --green-dark: #3090AA;
+      --green-pale: #EAF4F8;
+      --gold:       #D4BC72;
+      --serif: 'Noto Serif JP', serif;
+      --sans:  'Noto Sans JP', sans-serif;
+      --max: 680px;
+      --r:   16px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--sans);
+      color: var(--text-dark);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: calc(var(--max) + 48px);
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 58px;
+    }
+    .nav-logo { height: 40px; width: auto; flex-shrink: 0; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--text-mid);
+      padding: 8px 9px;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--green); }
+    .nav-line-btn {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--green);
+      color: white;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 8px 14px;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .nav-line-btn:hover { background: var(--green-dark); }
+    .nav-line-btn svg { width: 13px; height: 13px; }
+
+    /* ===== LAYOUT ===== */
+    .inner { max-width: var(--max); margin: 0 auto; }
+    .sec { padding: 88px 24px; }
+    .bg-off  { background: var(--off-white); }
+    .bg-warm { background: var(--warm-gray); }
+    .bg-pale { background: var(--green-pale); }
+    .eyebrow {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.32em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .sec-title {
+      font-family: var(--serif);
+      font-size: clamp(21px, 5vw, 26px);
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--text-dark);
+      letter-spacing: 0.03em;
+      margin-bottom: 32px;
+    }
+    .body {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.95;
+      color: var(--text-mid);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 130px 24px 88px;
+      background: var(--off-white);
+      text-align: center;
+    }
+    .hero-logo { height: 200px; width: auto; margin: 0 auto 28px; }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(18px, 5vw, 24px);
+      font-weight: 400;
+      line-height: 1.95;
+      color: var(--text-dark);
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+    .hero-sub {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--text-light);
+      letter-spacing: 0.14em;
+      line-height: 2;
+      margin-bottom: 28px;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+    .hero-tag {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--text-mid);
+      background: var(--white);
+      padding: 5px 14px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+    }
+    .line-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      background: var(--green-pale);
+      color: var(--green);
+      border: 1.5px solid rgba(61,143,168,0.35);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 16px 28px;
+      border-radius: 100px;
+      box-shadow: 0 3px 14px rgba(61,143,168,0.12);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      width: 100%;
+      max-width: 320px;
+    }
+    .line-btn:hover { background: #d8eef5; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(61,143,168,0.2); }
+    .line-btn svg { width: 18px; height: 18px; flex-shrink: 0; fill: var(--green); }
+
+    /* ===== NEWS ===== */
+    .news-list { display: flex; flex-direction: column; }
+    .news-item {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+    .news-item:first-child { border-top: 1px solid var(--border); }
+    .news-date { font-size: 11px; color: var(--text-light); letter-spacing: 0.08em; white-space: nowrap; flex-shrink: 0; }
+    .news-cat {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--green);
+      background: var(--green-pale);
+      padding: 3px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .news-text { flex: 1; min-width: 0; }
+
+    /* ===== CLASSES ===== */
+    .class-card {
+      background: var(--white);
+      border-radius: var(--r);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .class-head { background: var(--green); padding: 22px 28px; color: white; }
+    .class-label { font-size: 10px; letter-spacing: 0.22em; opacity: 0.8; margin-bottom: 6px; }
+    .class-name { font-family: var(--serif); font-size: 22px; font-weight: 400; letter-spacing: 0.04em; }
+    .class-body { padding: 24px 28px; }
+    .class-rows { display: flex; flex-direction: column; }
+    .class-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+    .class-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .class-lbl {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--green);
+      min-width: 48px;
+      padding-top: 3px;
+      flex-shrink: 0;
+    }
+    .price-num { font-family: var(--serif); font-size: 26px; font-weight: 400; color: var(--green); line-height: 1.2; }
+    .price-num small { font-size: 13px; font-family: var(--sans); font-weight: 300; }
+    .price-note { font-size: 11px; color: var(--text-light); margin-top: 6px; letter-spacing: 0.04em; }
+    .content-list { display: flex; flex-direction: column; gap: 6px; }
+    .content-list li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+    .content-list li::before { content: '·'; position: absolute; left: 2px; color: var(--green); font-size: 18px; line-height: 1.1; }
+    .class-cta-wrap { margin-top: 24px; text-align: center; }
+    .class-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--green-pale);
+      color: var(--green);
+      border: 1.5px solid rgba(61,143,168,0.35);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 16px 24px;
+      border-radius: 100px;
+      width: 100%;
+      max-width: 320px;
+      box-shadow: 0 3px 12px rgba(61,143,168,0.1);
+      transition: background 0.2s, transform 0.15s;
+    }
+    .class-cta:hover { background: #d8eef5; transform: translateY(-2px); }
+    .class-cta svg { width: 18px; height: 18px; fill: var(--green); }
+    .class-note { font-size: 11px; color: var(--text-light); letter-spacing: 0.08em; margin-top: 10px; }
+
+    /* ===== CLASS GRID (MULTI) ===== */
+    .class-group-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--text-light);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .classes-grid { display: flex; flex-direction: column; gap: 14px; }
+    .ccard {
+      background: var(--white);
+      border-radius: var(--r);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+    .ccard-head {
+      background: var(--green);
+      padding: 16px 22px 14px;
+      color: white;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .ccard-head.nido-head { background: #A87898; }
+    .ccard-head.primary-head { background: #8AAE86; }
+    .ccard-head.dark { background: #8A9EB8; }
+    .ccard-head-left { flex: 1; }
+    .ccard-en { font-size: 9px; letter-spacing: 0.2em; opacity: 0.65; margin-bottom: 4px; }
+    .ccard-name { font-family: var(--serif); font-size: 18px; font-weight: 400; letter-spacing: 0.04em; line-height: 1.3; }
+    .ccard-age { font-size: 11px; letter-spacing: 0.06em; opacity: 0.8; margin-top: 4px; }
+    .ccard-badge {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      background: rgba(255,255,255,0.18);
+      padding: 4px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .ccard-body { padding: 16px 22px 18px; }
+    .ccard-metas { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .ccard-meta {
+      font-size: 11px;
+      color: var(--text-mid);
+      background: var(--off-white);
+      padding: 4px 11px;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+      border: 1px solid var(--border);
+    }
+    .ccard-features {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .ccard-features li {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--text-mid);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.7;
+    }
+    .ccard-features li::before { content: '·'; position: absolute; left: 2px; color: var(--green); font-size: 18px; line-height: 1.1; }
+    .ccard-features li.notice { color: var(--text-light); font-size: 11px; }
+    .ccard-features li.notice::before { color: var(--border); }
+    .ccard-price { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text-dark); line-height: 1; }
+    .ccard-price small { font-size: 11px; font-family: var(--sans); font-weight: 300; color: var(--text-light); }
+    .ccard-price-note { font-size: 11px; color: var(--text-light); margin-top: 4px; line-height: 1.7; }
+    .trial-strip {
+      margin-top: 32px;
+      background: var(--green-pale);
+      border: 1px solid rgba(61,143,168,0.2);
+      border-radius: var(--r);
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      justify-content: space-between;
+    }
+    .trial-strip-text { font-family: var(--serif); font-size: 14px; color: var(--text-dark); line-height: 1.6; }
+    .trial-strip-text small { display: block; font-family: var(--sans); font-size: 11px; color: var(--text-light); margin-top: 3px; letter-spacing: 0.04em; }
+    .trial-strip-price { font-family: var(--serif); font-size: 20px; color: var(--green); white-space: nowrap; flex-shrink: 0; }
+    .trial-strip-price small { font-size: 11px; font-family: var(--sans); color: var(--text-light); }
+
+    /* ===== CURRICULUM ===== */
+    .curriculum-intro {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 2;
+      margin-bottom: 32px;
+    }
+    .curriculum-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .curriculum-card {
+      background: var(--white);
+      border-radius: var(--r);
+      padding: 26px 26px 28px;
+      border: 1px solid rgba(61,143,168,0.18);
+      box-shadow: 0 2px 14px rgba(0,0,0,0.04);
+    }
+    .curriculum-num {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+    .curriculum-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-dark);
+      letter-spacing: 0.03em;
+      margin-bottom: 14px;
+      line-height: 1.5;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .curriculum-body {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 2.1;
+    }
+
+    /* ===== SCHEDULE ===== */
+    .calendar-wrap { border-radius: var(--r); overflow: hidden; border: 1px solid var(--border); }
+    .calendar-placeholder {
+      background: var(--warm-gray);
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: var(--text-light);
+      text-align: center;
+      line-height: 2.2;
+    }
+    .schedule-note { margin-top: 20px; font-size: 13px; color: var(--text-mid); text-align: center; line-height: 2; }
+    .schedule-note a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ===== INSTRUCTOR ===== */
+    .instructor-photo-wrap {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 24px;
+      border: 4px solid var(--white);
+      box-shadow: 0 0 0 1px var(--border), 0 8px 32px rgba(0,151,178,0.12);
+    }
+    .instructor-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .instructor-name {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      text-align: center;
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+    .instructor-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 22px;
+    }
+    .instructor-tag {
+      font-size: 11px;
+      color: var(--text-mid);
+      background: var(--green-pale);
+      padding: 4px 12px;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+    }
+    .instructor-quote {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.85;
+      margin-bottom: 24px;
+      padding-left: 14px;
+      border-left: 2px solid var(--green);
+    }
+    .instructor-bio {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 2;
+    }
+    .instructor-bio + .instructor-bio { margin-top: 16px; }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 28px 0;
+    }
+    .trust-item {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 20px 10px;
+      text-align: center;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .trust-num { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--text-dark); line-height: 1.2; margin-bottom: 4px; }
+    .trust-num span { font-size: 10px; color: var(--text-mid); letter-spacing: 0.06em; }
+    .trust-stars { font-size: 13px; color: var(--gold); letter-spacing: 1px; margin-bottom: 4px; line-height: 1.4; }
+    .trust-label { font-size: 10px; color: var(--text-mid); letter-spacing: 0.08em; line-height: 1.5; }
+
+    /* ===== SCHEDULE ===== */
+    .sched-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .sched-badge { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; padding: 4px 12px; border-radius: 100px; white-space: nowrap; }
+    .sched-badge.nido { background: #F0E8EF; color: #A87898; }
+    .sched-badge.ic { background: var(--green); color: white; }
+    .sched-badge.primary { background: #E6EFE5; color: #6E9C6A; }
+    .sched-badge.elem { background: #E4E9F0; color: #8A9EB8; }
+    .timetable-outer { overflow-x: auto; border-radius: var(--r); border: 1px solid var(--border); margin-bottom: 20px; }
+    .timetable {
+      display: grid;
+      grid-template-columns: 40px repeat(7, 1fr);
+      grid-template-rows: 34px repeat(21, 30px);
+      min-width: 500px;
+      background: var(--white);
+    }
+    .tt-th { background: var(--off-white); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: var(--text-mid); border-bottom: 2px solid var(--border); border-right: 1px solid #ede9e4; }
+    .tt-th:last-child { border-right: none; }
+    .tt-th.weekend { color: var(--green); background: var(--green-pale); }
+    .tt-time { display: flex; align-items: flex-start; justify-content: flex-end; padding: 3px 5px 0 0; font-size: 9px; color: var(--text-light); border-right: 1px solid var(--border); border-bottom: 1px solid #f3f0ed; background: var(--off-white); grid-column: 1; }
+    .tt-time.major { font-size: 9.5px; color: var(--text-mid); font-weight: 500; border-bottom-color: #e0dad2; }
+    .tt-class { margin: 2px; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 10px; font-weight: 500; letter-spacing: 0.04em; line-height: 1.4; z-index: 2; }
+    .tt-class small { font-size: 8.5px; font-weight: 300; opacity: 0.85; display: block; margin-top: 2px; }
+    .tt-class.nido { background: #F0E8EF; color: #A87898; border: 1px solid rgba(168,120,152,0.3); }
+    .tt-class.ic { background: var(--green); color: white; }
+    .tt-class.primary { background: #8AAE86; color: white; }
+    .tt-class.elem { background: #8A9EB8; color: white; }
+    .tt-closed { background: #f3f1ef; margin: 2px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #c8c4c0; letter-spacing: 0.1em; z-index: 2; }
+
+    /* ===== VOICES ===== */
+    .voice-full-list { display: flex; flex-direction: column; gap: 20px; }
+    .voice-full-card { background: var(--white); border-radius: var(--r); border: 1px solid var(--border); padding: 24px 22px; }
+    .voice-full-stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; margin-bottom: 10px; }
+    .voice-full-heading { font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--text-dark); margin-bottom: 12px; line-height: 1.6; }
+    .voice-full-text { font-size: 13px; color: var(--text-mid); line-height: 2; font-weight: 300; }
+    .voice-full-author { margin-top: 16px; font-size: 12px; color: var(--text-light); letter-spacing: 0.08em; text-align: right; }
+
+    /* ===== FAQ ===== */
+    .faq-list { display: flex; flex-direction: column; gap: 10px; }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+    }
+    .faq-item summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dark);
+      line-height: 1.6;
+      gap: 12px;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-q-label {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+    .faq-q-text { flex: 1; }
+    .faq-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--green-pale);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 300;
+      flex-shrink: 0;
+      transition: transform 0.25s ease, background 0.2s;
+      line-height: 1;
+    }
+    .faq-item[open] .faq-icon {
+      transform: rotate(45deg);
+      background: var(--green);
+      color: white;
+    }
+    .faq-answer {
+      padding: 0 20px 20px;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 2;
+      border-top: 1px solid var(--warm-gray);
+      padding-top: 16px;
+    }
+    .faq-a-label {
+      display: inline-block;
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    /* ===== ACCESS ===== */
+    .access-rows { display: flex; flex-direction: column; }
+    .access-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .access-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .access-lbl {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--green);
+      min-width: 44px;
+      padding-top: 3px;
+      flex-shrink: 0;
+    }
+    .access-val { font-size: 14px; font-weight: 300; color: var(--text-dark); line-height: 1.8; }
+    .access-val a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
+    .map-wrap { margin-top: 28px; border-radius: var(--r); overflow: hidden; border: 1px solid var(--border); }
+
+    /* ===== FOOTER ===== */
+    .footer { background: var(--text-dark); padding: 48px 24px; text-align: center; }
+    .footer-logo { height: 56px; width: auto; margin: 0 auto 20px; opacity: 0.6; }
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px 14px;
+      margin-bottom: 28px;
+    }
+    .footer-nav a { font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 0.08em; transition: color 0.2s; }
+    .footer-nav a:hover { color: rgba(255,255,255,0.85); }
+
+    .footer-qr {
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      margin-bottom: 28px;
+    }
+    .qr-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .qr-img {
+      width: 96px;
+      height: 96px;
+      border-radius: 10px;
+      background: white;
+      padding: 6px;
+      display: block;
+    }
+    .qr-label { font-size: 10px; color: rgba(255,255,255,0.45); letter-spacing: 0.1em; line-height: 1.9; text-align: center; }
+
+    .footer-sns { margin-bottom: 20px; }
+    .sns-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: rgba(255,255,255,0.5);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+    .sns-btn:hover { color: rgba(255,255,255,0.9); }
+
+    .footer p { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; line-height: 2; }
+    .footer a { color: rgba(255,255,255,0.45); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 400px) {
+      .nav-links a { padding: 8px 7px; font-size: 10px; }
+      .hero-logo { height: 76px; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .trust-item:last-child { grid-column: span 2; }
+      .class-body { padding: 20px 18px; }
+      .curriculum-card { padding: 20px 18px 22px; }
+      .footer-qr { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVIGATION ========== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#home" aria-label="トップへ">
+      <img src="logo_transparent.png" alt="Mi Montessori Japan 子どもの部屋" class="nav-logo">
+    </a>
+    <nav class="nav-links" aria-label="メインナビゲーション">
+      <a href="#news">お知らせ</a>
+      <a href="#classes">クラス</a>
+      <a href="#curriculum">レッスン</a>
+      <a href="#schedule">スケジュール</a>
+      <a href="#instructor">講師</a>
+      <a href="#voices">保護者の声</a>
+      <a href="#faq">FAQ</a>
+      <a href="#access">アクセス</a>
+    </nav>
+    <a href="#access" class="nav-line-btn">
+      まずはご相談
+    </a>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="home">
+  <img src="logo_framed.png" alt="Mi Montessori Japan 子どもの部屋" class="hero-logo">
+  <h1 class="hero-title">
+    お子さまの"やりたい"を、<br>
+    そっと応援する場所
+  </h1>
+  <p class="hero-sub">
+    田園調布のモンテッソーリ教室<br>
+    Mi Montessori Japan 子どもの部屋｜田園調布
+  </p>
+  <div class="hero-tags">
+    <span class="hero-tag">AMI国際資格保有</span>
+    <span class="hero-tag">0歳〜6歳</span>
+    <span class="hero-tag">個別レッスン</span>
+    <span class="hero-tag">少人数レッスン</span>
+    <span class="hero-tag">小学生数学検定クラス</span>
+    <span class="hero-tag">訪問レッスン</span>
+    <span class="hero-tag">田園調布駅 徒歩4分</span>
+  </div>
+  <a href="https://line.me/R/ti/p/@891nylpn" target="_blank" rel="noopener" class="line-btn">
+    <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
+    </svg>
+    LINEでお問い合わせ・ご予約
+  </a>
+</section>
+
+<!-- ========== NEWS ========== -->
+<section class="sec" id="news">
+  <div class="inner">
+    <p class="eyebrow">news</p>
+    <h2 class="sec-title">お知らせ</h2>
+    <ul class="news-list">
+
+      <li class="news-item">
+        <span class="news-date">2026.05.17</span>
+        <span class="news-cat">お知らせ</span>
+        <span class="news-text">ホームページを開設しました。</span>
+      </li>
+
+      <!-- ↓ お知らせを追加するときはここにコピーして使ってください
+      <li class="news-item">
+        <span class="news-date">2026.00.00</span>
+        <span class="news-cat">お知らせ</span>
+        <span class="news-text">内容をここに書きます。</span>
+      </li>
+      -->
+
+    </ul>
+  </div>
+</section>
+
+<!-- ========== CLASSES ========== -->
+<section class="sec bg-off" id="classes">
+  <div class="inner">
+    <p class="eyebrow">classes</p>
+    <h2 class="sec-title">クラスメニュー・料金</h2>
+
+    <!-- 少人数クラス -->
+    <p class="class-group-label">少人数クラス（月謝制 · 年間42回）</p>
+    <div class="classes-grid">
+
+      <div class="ccard">
+        <div class="ccard-head nido-head">
+          <div class="ccard-head-left">
+            <p class="ccard-en">nido class</p>
+            <p class="ccard-name">ニドクラス</p>
+            <p class="ccard-age">0ヶ月〜歩行が安定するまで</p>
+          </div>
+          <span class="ccard-badge">親子同室</span>
+        </div>
+        <div class="ccard-body">
+          <div class="ccard-metas">
+            <span class="ccard-meta">年42回</span>
+            <span class="ccard-meta">60分 / 回</span>
+            <span class="ccard-meta">親子同室</span>
+            <span class="ccard-meta">定員3名</span>
+          </div>
+          <ul class="ccard-features">
+            <li>モンテッソーリ教具を使った活動</li>
+            <li>教具の無料貸し出し有り</li>
+          </ul>
+          <p class="ccard-price">¥19,800<small>（税抜）/ 月</small></p>
+          <p class="ccard-price-note">レッスン料・教材費・管理費・施設維持費を含む</p>
+        </div>
+      </div>
+
+      <div class="ccard">
+        <div class="ccard-head">
+          <div class="ccard-head-left">
+            <p class="ccard-en">infant community</p>
+            <p class="ccard-name">ICクラス</p>
+            <p class="ccard-age">1歳半〜3歳</p>
+          </div>
+          <span class="ccard-badge">少人数</span>
+        </div>
+        <div class="ccard-body">
+          <div class="ccard-metas">
+            <span class="ccard-meta">年42回</span>
+            <span class="ccard-meta">90分 / 回</span>
+            <span class="ccard-meta">母子分離</span>
+            <span class="ccard-meta">定員3名</span>
+          </div>
+          <ul class="ccard-features">
+            <li>歩行が安定したお子さまの少人数クラス</li>
+            <li>教具の無料貸し出し有り</li>
+          </ul>
+          <p class="ccard-price">¥32,000<small>（税抜）/ 月</small></p>
+          <p class="ccard-price-note">レッスン料・教材費・管理費・施設維持費を含む</p>
+        </div>
+      </div>
+
+      <div class="ccard">
+        <div class="ccard-head primary-head">
+          <div class="ccard-head-left">
+            <p class="ccard-en">primary class</p>
+            <p class="ccard-name">プライマリークラス</p>
+            <p class="ccard-age">3歳〜6歳</p>
+          </div>
+          <span class="ccard-badge">少人数</span>
+        </div>
+        <div class="ccard-body">
+          <div class="ccard-metas">
+            <span class="ccard-meta">年42回</span>
+            <span class="ccard-meta">90分 / 回</span>
+            <span class="ccard-meta">少人数</span>
+            <span class="ccard-meta">定員3名</span>
+          </div>
+          <ul class="ccard-features">
+            <li>日常生活・感覚・言語・数教育の総合レッスン</li>
+            <li>教具の無料貸し出し有り</li>
+          </ul>
+          <p class="ccard-price">¥32,000<small>（税抜）/ 月</small></p>
+          <p class="ccard-price-note">レッスン料・教材費・管理費・施設維持費を含む</p>
+        </div>
+      </div>
+
+      <div class="ccard">
+        <div class="ccard-head dark">
+          <div class="ccard-head-left">
+            <p class="ccard-en">elementary class</p>
+            <p class="ccard-name">小学生クラス</p>
+            <p class="ccard-age">小学生 · 算数検定10級レベルまで</p>
+          </div>
+          <span class="ccard-badge">少人数</span>
+        </div>
+        <div class="ccard-body">
+          <div class="ccard-metas">
+            <span class="ccard-meta">年42回</span>
+            <span class="ccard-meta">90分 / 回</span>
+            <span class="ccard-meta">宿題あり</span>
+            <span class="ccard-meta">定員3名</span>
+          </div>
+          <ul class="ccard-features">
+            <li>算数・数学検定10級レベルの少人数クラス</li>
+            <li class="notice">※本クラスはモンテッソーリ教育ではありません</li>
+          </ul>
+          <p class="ccard-price">¥32,000<small>（税抜）/ 月</small></p>
+          <p class="ccard-price-note">レッスン料・教材費・管理費・施設維持費を含む</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 個別・訪問 -->
+    <p class="class-group-label" style="margin-top: 36px;">個別・訪問レッスン</p>
+    <div class="classes-grid">
+
+      <div class="ccard">
+        <div class="ccard-head">
+          <div class="ccard-head-left">
+            <p class="ccard-en">private lesson · 入室金不要</p>
+            <p class="ccard-name">個別レッスン</p>
+            <p class="ccard-age">0歳〜6歳 · 小学生（算数検定対策）</p>
+          </div>
+          <span class="ccard-badge">個別</span>
+        </div>
+        <div class="ccard-body">
+          <div class="ccard-metas">
+            <span class="ccard-meta">90分 / 回</span>
+            <span class="ccard-meta">入室金不要</span>
+            <span class="ccard-meta">都度払い</span>
+          </div>
+          <ul class="ccard-features">
+            <li>発達に合わせた完全個別レッスン</li>
+            <li>小学生の算数検定対策にも対応</li>
+            <li>定期受講の方は、教具の貸し出しと無料個別相談１回付き</li>
+          </ul>
+          <p class="ccard-price">¥14,000<small>（税抜）/ 回</small></p>
+          <p class="ccard-price-note">レッスン料・教材費・管理費・施設維持費を含む</p>
+        </div>
+      </div>
+
+      <div class="ccard">
+        <div class="ccard-head">
+          <div class="ccard-head-left">
+            <p class="ccard-en">home visit lesson</p>
+            <p class="ccard-name">訪問レッスン</p>
+            <p class="ccard-age">全年齢対応 · ご自宅へ伺います</p>
+          </div>
+          <span class="ccard-badge">訪問</span>
+        </div>
+        <div class="ccard-body">
+          <div class="ccard-metas">
+            <span class="ccard-meta">2時間</span>
+            <span class="ccard-meta">車での訪問</span>
+          </div>
+          <ul class="ccard-features">
+            <li>ご自宅に伺い、教具を使ったレッスンをご提供</li>
+            <li>ご自宅の玩具を活用した発達に合わせた遊びのご提案</li>
+            <li>お手伝いの導入・生活環境設定のアドバイス</li>
+            <li>教具を車でお持ちするため、別途ガソリン代・駐車場代を実費にていただきます</li>
+            <li style="color: var(--green); font-size: 12px;">ご自宅に駐車スペースがある場合はガソリン代のみ</li>
+            <li class="notice">※遠方（地方等）の場合は要相談</li>
+          </ul>
+          <p class="ccard-price">¥30,000<small>（税抜）〜</small></p>
+          <p class="ccard-price-note">+ ガソリン代・駐車場代（実費） / 遠方はご相談ください</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 体験レッスン -->
+    <div class="trial-strip">
+      <div class="trial-strip-text">
+        はじめての方へ — 体験レッスン
+        <small>60分 · 0歳〜6歳 · 個別</small>
+      </div>
+      <div class="trial-strip-price">¥5,500<small>（税込）</small></div>
+    </div>
+    <p style="font-size: 12px; color: var(--text-light); letter-spacing: 0.06em; line-height: 1.9; margin-top: 12px; padding-left: 4px;">
+      ※ 年間42回（お盆・年末年始を除く）。祝日は基本営業ですが、休講の場合は振替をご相談ください。<br>
+      ※ 月謝制クラスへのご入会の際は、別途入室金 <strong style="color: var(--text-mid);">¥19,800（税込）</strong> が必要です。<br>
+      体験レッスン後24時間以内にご入会された方は、体験レッスン費用（¥5,500）を入室金より差し引き、<strong style="color: var(--text-mid);">実質 ¥14,300</strong> となります。<br>
+      また、ご入会時にお仕事用エプロンと室内履きをプレゼントいたします。<br>
+      個別レッスン・訪問レッスンは入室金不要です。<br>
+      <strong style="color: var(--text-mid);">兄弟・姉妹割引：</strong>二人目以降は入室金半額 ＋ レッスン料 20%引き<br><br>
+      月謝にはレッスン料・教材費・管理費・施設維持費をすべて含みます。<br>
+      モンテッソーリ教育では季節の生花・野菜・果物も教材として使用します。本物の素材を通じ、五感を育む豊かな体験をご提供しています。
+    </p>
+
+    <div style="margin-top: 28px; text-align: center;">
+      <a href="https://line.me/R/ti/p/@891nylpn" target="_blank" rel="noopener" class="class-cta">
+        <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
+        </svg>
+        ご入会・ご予約はLINEから
+      </a>
+      <p class="class-note">ご質問だけでもお気軽にどうぞ</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== CURRICULUM ========== -->
+<section class="sec bg-pale" id="curriculum">
+  <div class="inner">
+    <p class="eyebrow">curriculum</p>
+    <h2 class="sec-title">レッスン内容</h2>
+    <p class="curriculum-intro">
+      子どもの部屋では、モンテッソーリ教育の4つの領域を軸に、
+      お子さま一人ひとりの発達段階と興味に合わせて活動をご用意しています。
+      「自分でできた！」という体験を積み重ねることが、
+      生きる力の土台になると考えています。
+    </p>
+    <div class="curriculum-grid">
+
+      <div class="curriculum-card">
+        <p class="curriculum-num">01 · practical life</p>
+        <h3 class="curriculum-title">日常生活の練習</h3>
+        <p class="curriculum-body">
+          お子さまは、大人のやっていることをやりたくて仕方ありません。お子さまサイズの道具を揃え、繰り返し行うことは、お子さまを満足させ、動きや手先を洗練させていきます。<br><br>
+          水を注いだり、スポンジを絞ることから始まり、胡麻をする、植物の手入れ、花をいけることなどの活動を通して、一人でできることの喜びや人の役に立てる喜びを感じたお子さまは、自己肯定感を高め、落ち着いていきます。<br><br>
+          また、日常生活の練習の様々なプロセスは、後の言語教育や数教育につながっていきます。季節感のある様々な活動をご用意してお待ちしております。
+        </p>
+      </div>
+
+      <div class="curriculum-card">
+        <p class="curriculum-num">02 · sensorial</p>
+        <h3 class="curriculum-title">感覚教育</h3>
+        <p class="curriculum-body">
+          感覚教育では、教具を使い視覚・触覚・聴覚・味覚・嗅覚を洗練させていきます。そして、五感で得た情報をお子さまが数学的頭脳を使い分析、整理していきます。<br><br>
+          お子さまが楽しく活動できるよう、教具は魅力的で、目的があり、誤りを自己訂正できるように作られています。感覚を通して世界を深く理解する力が、知性の土台となっていきます。
+        </p>
+      </div>
+
+      <div class="curriculum-card">
+        <p class="curriculum-num">03 · language</p>
+        <h3 class="curriculum-title">言語教育</h3>
+        <p class="curriculum-body">
+          言葉あそびなどの話し言葉から、言語の豊かさ、おもしろさ、使い方を学んでいきます。レッスンでは、本物の野菜・果物・花を五感を使いながら紹介したり、ミニチュアやカードを使ってたくさんの名詞を紹介しています。<br><br>
+          書くことに興味を持ち始めた時期のお子さまには、様々な教具を発達に合わせて紹介することで、無理なく読み書きを習得していきます。
+        </p>
+      </div>
+
+      <div class="curriculum-card">
+        <p class="curriculum-num">04 · mathematics</p>
+        <h3 class="curriculum-title">数教育</h3>
+        <p class="curriculum-body">
+          ゼロや１〜１０といった抽象的な概念を、具体物の助けを借りて「数」のおもしろさに導きます。抽象的な算数を学ぶ前のお子さまに具体物を使い「量」を体感していただくことで、身のまわりの様々なものや場面の秩序や規則性への気付きへつながる活動です。<br><br>
+          数そのものを楽しむ体験が、算数・数学への自然な興味へとつながっていきます。
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== SCHEDULE ========== -->
+<section class="sec" id="schedule">
+  <div class="inner">
+    <p class="eyebrow">schedule</p>
+    <h2 class="sec-title">スケジュール</h2>
+    <!-- 凡例 -->
+    <div class="sched-legend">
+      <span class="sched-badge nido">ニド</span>
+      <span class="sched-badge ic">IC</span>
+      <span class="sched-badge primary">プライマリー</span>
+      <span class="sched-badge elem">小学生</span>
+    </div>
+
+    <!-- 週間タイムテーブル -->
+    <div class="timetable-outer">
+      <div class="timetable">
+        <!-- ヘッダー -->
+        <div class="tt-th"></div>
+        <div class="tt-th">月</div>
+        <div class="tt-th">火</div>
+        <div class="tt-th">水</div>
+        <div class="tt-th">木</div>
+        <div class="tt-th">金</div>
+        <div class="tt-th weekend">土</div>
+        <div class="tt-th weekend">日</div>
+        <!-- 時刻ラベル -->
+        <div class="tt-time major" style="grid-row:2">8:30</div>
+        <div class="tt-time" style="grid-row:3">9:00</div>
+        <div class="tt-time" style="grid-row:4">9:30</div>
+        <div class="tt-time major" style="grid-row:5">10:00</div>
+        <div class="tt-time" style="grid-row:6">10:30</div>
+        <div class="tt-time major" style="grid-row:7">11:00</div>
+        <div class="tt-time" style="grid-row:8">11:30</div>
+        <div class="tt-time major" style="grid-row:9">12:00</div>
+        <div class="tt-time" style="grid-row:10">12:30</div>
+        <div class="tt-time major" style="grid-row:11">13:00</div>
+        <div class="tt-time" style="grid-row:12">13:30</div>
+        <div class="tt-time major" style="grid-row:13">14:00</div>
+        <div class="tt-time major" style="grid-row:14">14:30</div>
+        <div class="tt-time major" style="grid-row:15">15:00</div>
+        <div class="tt-time" style="grid-row:16">15:30</div>
+        <div class="tt-time major" style="grid-row:17">16:00</div>
+        <div class="tt-time" style="grid-row:18">16:30</div>
+        <div class="tt-time major" style="grid-row:19">17:00</div>
+        <div class="tt-time" style="grid-row:20">17:30</div>
+        <div class="tt-time major" style="grid-row:21">18:00</div>
+        <div class="tt-time major" style="grid-row:22">18:30</div>
+        <!-- 月曜 -->
+        <div class="tt-class nido"    style="grid-column:2;grid-row:5/7">ニド<small>10:00〜11:00</small></div>
+        <div class="tt-class ic"      style="grid-column:2;grid-row:11/14">IC<small>13:00〜14:30</small></div>
+        <div class="tt-class primary" style="grid-column:2;grid-row:16/19">プライマリー<small>15:30〜17:00</small></div>
+        <div class="tt-class elem"    style="grid-column:2;grid-row:19/22">小学生<small>17:00〜18:30</small></div>
+        <!-- 火曜 -->
+        <div class="tt-class nido"  style="grid-column:3;grid-row:5/7">ニド<small>10:00〜11:00</small></div>
+        <div class="tt-closed"      style="grid-column:3;grid-row:11/23">閉室</div>
+        <!-- 水曜 -->
+        <div class="tt-class nido"    style="grid-column:4;grid-row:5/7">ニド<small>10:00〜11:00</small></div>
+        <div class="tt-class ic"      style="grid-column:4;grid-row:11/14">IC<small>13:00〜14:30</small></div>
+        <div class="tt-class primary" style="grid-column:4;grid-row:16/19">プライマリー<small>15:30〜17:00</small></div>
+        <div class="tt-class elem"    style="grid-column:4;grid-row:19/22">小学生<small>17:00〜18:30</small></div>
+        <!-- 木曜 -->
+        <div class="tt-class nido" style="grid-column:5;grid-row:5/7">ニド<small>10:00〜11:00</small></div>
+        <div class="tt-closed"     style="grid-column:5;grid-row:11/23">閉室</div>
+        <!-- 金曜 -->
+        <div class="tt-class nido"    style="grid-column:6;grid-row:5/7">ニド<small>10:00〜11:00</small></div>
+        <div class="tt-class ic"      style="grid-column:6;grid-row:11/14">IC<small>13:00〜14:30</small></div>
+        <div class="tt-class primary" style="grid-column:6;grid-row:16/19">プライマリー<small>15:30〜17:00</small></div>
+        <div class="tt-class elem"    style="grid-column:6;grid-row:19/22">小学生<small>17:00〜18:30</small></div>
+        <!-- 土曜 -->
+        <div class="tt-class ic"      style="grid-column:7;grid-row:2/5">IC<small>8:30〜10:00</small></div>
+        <div class="tt-class primary" style="grid-column:7;grid-row:6/9">プライマリー<small>10:30〜12:00</small></div>
+        <div class="tt-class primary" style="grid-column:7;grid-row:11/14">プライマリー<small>13:00〜14:30</small></div>
+        <div class="tt-class elem"    style="grid-column:7;grid-row:15/18">小学生<small>15:00〜16:30</small></div>
+        <!-- 日曜 -->
+        <div class="tt-class ic"      style="grid-column:8;grid-row:2/5">IC<small>8:30〜10:00</small></div>
+        <div class="tt-class primary" style="grid-column:8;grid-row:6/9">プライマリー<small>10:30〜12:00</small></div>
+        <div class="tt-class primary" style="grid-column:8;grid-row:11/14">プライマリー<small>13:00〜14:30</small></div>
+        <div class="tt-class elem"    style="grid-column:8;grid-row:15/18">小学生<small>15:00〜16:30</small></div>
+      </div>
+    </div>
+    <p class="schedule-note">
+      空き状況・日程のご確認はLINEよりどうぞ。<br>
+      <a href="https://line.me/R/ti/p/@891nylpn" target="_blank" rel="noopener">LINEでお問い合わせ →</a>
+    </p>
+  </div>
+</section>
+
+<!-- ========== INSTRUCTOR ========== -->
+<section class="sec bg-off" id="instructor">
+  <div class="inner" style="text-align: center;">
+    <p class="eyebrow">instructor</p>
+    <h2 class="sec-title">講師紹介</h2>
+    <div class="instructor-photo-wrap">
+      <img src="profile.png" alt="大野 理恵子" class="instructor-photo">
+    </div>
+    <p style="font-size: 12px; color: var(--text-light); letter-spacing: 0.1em; margin: 14px 0 0; line-height: 2;">
+      2023年 北馬込に自宅教室を開設<br>
+      2026年 田園調布に移転・新たなスタート
+    </p>
+    <h3 class="instructor-name">大野 理恵子</h3>
+    <div class="instructor-tags">
+      <span class="instructor-tag">AMI 0〜3歳ディプロマ</span>
+      <span class="instructor-tag">AMI 2.5〜6歳ディプロマ</span>
+      <span class="instructor-tag">保育士</span>
+      <span class="instructor-tag">栄養士</span>
+      <span class="instructor-tag">認定ベビーシッター</span>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-num">1,000<span>件以上</span></div>
+        <div class="trust-label">シッティング<br>実績</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-stars">★★★★★</div>
+        <div class="trust-label">全件<br>5つ星評価</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num" style="font-size:17px; letter-spacing:0.04em;">AMI</div>
+        <div class="trust-label">国際モンテッソーリ<br>公認教師</div>
+      </div>
+    </div>
+    <p class="instructor-quote" style="text-align: left;">お子さまが「自分でできた」と嬉しそうに笑う瞬間が、何より好きです。</p>
+    <p class="instructor-bio" style="text-align: left;">
+      二児の子育てをしながら絵本の読み聞かせ会に所属し、子育てがひと息ついてから保育園補助とベビーシッター業に従事。シッター業ではインターナショナルスクール・小学校受験を希望されるご家庭を中心に、具体物を使った家庭学習のフォローを得意としてきました。
+    </p>
+    <p class="instructor-bio" style="text-align: left; margin-top: 16px;">
+      そんな中でモンテッソーリスクールやモンテッソーリ教育を実践するご家庭に触れ、そのメソッドをもっと深く学びたいと資格取得を決意。東京国際教師トレーニングセンター（AMI）にて2.5〜6歳の資格を取得後、0〜3歳の資格も取得。さらにAMIエレメンタリー（6〜12歳）の入門クラスも修了し、幅広い年齢への理解を深めています。資格取得後は児童発達支援施設のモンテッソーリ教育部門を約1年半担当し、多くのお子様の個別レッスンを通じて実践経験を積みました。
+    </p>
+    <p class="instructor-bio" style="text-align: left; margin-top: 16px;">
+      2023年に北馬込の自宅でモンテッソーリ教室を開設し、レッスンのほか各ご家庭への訪問・環境づくりのアドバイス、教具を持参した訪問レッスンも行ってまいりました。この度、田園調布駅徒歩4分の地に移転し、保護者の皆様にも一緒に学んでいただける教室を開講いたしました。皆様のお越しをお待ちしております。
+    </p>
+  </div>
+</section>
+
+<!-- ========== VOICES ========== -->
+<section class="sec bg-pale" id="voices">
+  <div class="inner">
+    <p class="eyebrow">voice</p>
+    <h2 class="sec-title">保護者の方からの声</h2>
+    <div class="voice-full-list">
+
+      <div class="voice-full-card">
+        <div class="voice-full-stars">★★★★★</div>
+        <p class="voice-full-heading">一人ひとりを、ちゃんと見てくれる</p>
+        <p class="voice-full-text">三兄弟でお世話になっています。年齢やその子の敏感期にあったレッスンを考えてくださるので、大手のマニュアル通りのレッスンとは違い、とても手厚いなと思っています。教具を使ったレッスンはもちろんですが、日常の生活に繋がっている活動や感覚器官にアプローチしていただけます。２時間程度で盛りだくさん、私もモンテッソーリの勉強をしたつもりでいましたが、自分では中々あの量と質は子どもに提供できないので、プロだなと感じます。先生は、言葉が綺麗で丁寧です。どんな時も落ち着いています。そして愛があります。報告書は読んでいると状況が目に浮かぶように記載していただけるので、いつも楽しみにしています。なんといっても、我が家では子どもたちの「楽しかった！」という感想を大事にしているので、毎回それが聞ける大野先生のレッスンは続けていきたい習い事のひとつです。</p>
+        <p class="voice-full-author">U さん（3兄弟の保護者）</p>
+      </div>
+
+      <div class="voice-full-card">
+        <div class="voice-full-stars">★★★★★</div>
+        <p class="voice-full-heading">今までできなかったことが、教室でできていた</p>
+        <p class="voice-full-text">子どもが3歳の頃から、約4年間にわたり大変お世話になりました。モンテッソーリ教育を通して、子どもの集中力が高まり、数への興味や数学的なセンスが育っているのを日々感じています。もともとパズルが好きで、家でもよく取り組んでいましたが、難しくなると途中で諦めてしまうことが多くありました。ところが教室では、難しい三項式キューブの課題に自ら挑戦し、最後まで一人で完成させており、大変驚きました。また、数のビーズを使った活動では、数を「触れて・動かして」体感しながら学べたおかげで、しっかりと理解できたようです。小学生になった今では計算が得意で、四桁・五桁の足し算や引き算も問題なくできています。そして何より、大野先生がとても親しみやすく、子どもの小さな成長にも温かく寄り添い、見守ってくださったことに感謝しています。子どもがここまで成長できたのは先生の温かいご指導と、この素晴らしい教室のおかげです。子どもの可能性を大きく伸ばしていただき、ありがとうございました。</p>
+        <p class="voice-full-author">T さん（6歳・男の子の保護者）</p>
+      </div>
+
+      <div class="voice-full-card">
+        <div class="voice-full-stars">★★★★★</div>
+        <p class="voice-full-heading">落ち着いて取り組めるようになりました</p>
+        <p class="voice-full-text">初めは、なかなかお仕事に集中するのが難しかったわが子ですが、先生が温かく丁寧に見守ってくださる中で、少しずつ「できた！」という経験を積み重ね、自信をもって取り組めるようになってきました。モンテッソーリのお教室は、落ち着いた雰囲気の中で子どもたちが自分のペースで学べる、とても魅力的な環境だと感じています。実際に手を使って学ぶ教材はどれも興味深く、数や文字といった知育面でも自然に学びが深まっているようです。おうちでも、自分の身の回りのことを進んでやったり、お手伝いをしてくれたりと、教室での経験がしっかり日常にも活かされていて、とても嬉しく思っています。また、先生が先輩ママとして子育ての悩みにも親身に相談に乗ってくださり、毎回楽しみで安心して通わせることができました。子どもにとっても、私にとっても、本当にあたたかく信頼できる場所です。これからも引き続きお世話になりたいと思っています。</p>
+        <p class="voice-full-author">T さん（5歳・男の子の保護者）</p>
+      </div>
+
+      <div class="voice-full-card">
+        <div class="voice-full-stars">★★★★★</div>
+        <p class="voice-full-heading">子育ての相談もできる、信頼できる場所</p>
+        <p class="voice-full-text">子育ての悩みにも親身に相談に乗ってくださいます。モンテッソーリのお教室は落ち着いた空間で、子どもが自分のペースでのびのびと活動している様子を見るのが、毎回の楽しみになっています。先生の丁寧な関わりのおかげで、子どもが「自分でできた」という経験を積み重ねているのを感じます。子どもにとっても、私にとっても、安心して通い続けられる大切な場所です。</p>
+        <p class="voice-full-author">F さん（3歳・女の子の保護者）</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="sec" id="faq">
+  <div class="inner">
+    <p class="eyebrow">faq</p>
+    <h2 class="sec-title">よくある質問</h2>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">体験レッスンはどのような流れですか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          まずLINEまたはお問い合わせフォームからご連絡ください。日程を調整のうえ、当日は60分の体験レッスンを行います。お子さまの興味や敏感期をじっくり観察しながらモンテッソーリ教具をご体験いただき、ご家庭での環境作りや日々の見守り方もあわせてお伝えします。子育てのヒントをお持ち帰りいただける充実したお時間です。レッスン後24時間以内に文章でフィードバックをお届けします。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">祝日にレッスンがお休みになる場合、振替はできますか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          祝日は基本的に通常営業しています。やむを得ず休講となる場合は、同月または翌月中に振替日を設定いたします。なお、お盆・年末年始はお休みとなります。詳しくはLINEまたはフォームよりお気軽にお問い合わせください。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">入会金はいつ支払うのですか？また、入会するとプレゼントがあると聞きました。</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          入会金 ¥19,800（税込）は、ご入会の手続き時にお支払いいただきます。体験レッスン当日から24時間以内にご入会いただいた場合は、体験レッスン費（¥5,500）を差し引き、実質 ¥14,300 となります。また、ご入会時にお仕事用エプロンと室内履きをプレゼントいたします。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">年度の途中からでも入会できますか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          はい、年間を通じていつでもご入会いただけます。入会時期にかかわらず月謝は一定です。まずはお気軽にご相談ください。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">兄弟・姉妹割引について教えてください。</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          2人目以降のお子さまは、入会金が半額になるほか、月謝が20%引きとなります。ご兄弟・ご姉妹でご通室のご家庭は、ご入会手続きの際にお申し出ください。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">モンテッソーリ教育と一般的な習い事はどう違うのですか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          一般的な習い事は講師主導で「教える」スタイルですが、モンテッソーリ教育はお子さまの「自分でやりたい」という意欲を大切にし、お子さま自身が選んで活動します。教具はお子さまの発達段階にあわせて環境に用意され、特に感覚教育の教具は数学的に正確につくられています。「手を使って考える」ことを大切にしており、自分で選択した活動を心が満足するまで繰り返すことで、お子さまが「自分でできた」という喜びを積み重ね、集中力・主体性・自己肯定感が自然に育まれていきます。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">お母さん・お父さん、どちらが参加してもいいですか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          もちろんです。お母さまでもお父さまでも、保護者の方であればどなたでもご参加いただけます。ご家族がレッスンの内容を共有することで、ご家庭でのモンテッソーリ環境づくりにもつなげていただけます。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">服装に決まりはありますか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          特に決まりはありませんが、お子さまが動きやすい服装でお越しください。室内での活動になりますので、室内履きをご用意いただくかご入会時のプレゼントをご利用ください。水・食材・絵具・マジックなどを使う活動もあるため、汚れても差し支えない服装をおすすめします。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">レッスン中、お子さまが泣いたり走り回ったりしても大丈夫ですか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          大丈夫です。特に最初のうちは環境に慣れるまで時間がかかるお子さまも多く、泣いたり動き回ったりすることは自然なことです。お子さま一人ひとりのペースを見守りながら関わりますので、焦らず安心してお越しください。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">退会はいつでもできますか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          はい、1ヶ月前にご連絡いただくことでいつでも退会いただけます。やむを得ない事情がある場合はご相談ください。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">月謝以外に費用はかかりますか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          月謝にはレッスン料・教材費・管理費・施設維持費がすべて含まれています。別途かかるものとして、ご入会時の入会金（¥19,800税込）のみです。訪問レッスンは別料金となります。
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span class="faq-q-label">Q</span>
+          <span class="faq-q-text">訪問レッスンの場合、駐車場はどうすればいいですか？</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <span class="faq-a-label">A</span><br>
+          訪問レッスンでは教具を車で運搬いたします。近隣のコインパーキング等をご案内いただけますと幸いです。駐車場代は別途実費でご負担をお願いしております。駐車場のご手配が難しい場合はご相談ください。
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== ACCESS ========== -->
+<section class="sec" id="access">
+  <div class="inner">
+    <p class="eyebrow">access</p>
+    <h2 class="sec-title">アクセス</h2>
+    <div class="access-rows">
+      <div class="access-row">
+        <span class="access-lbl">住所</span>
+        <span class="access-val">
+          東京都大田区田園調布２丁目４０番８号<br>
+          ・１階（玄関入って左の扉）
+        </span>
+      </div>
+      <div class="access-row">
+        <span class="access-lbl">最寄駅</span>
+        <span class="access-val">東急東横線・目黒線 田園調布駅 徒歩4分</span>
+      </div>
+      <div class="access-row">
+        <span class="access-lbl">LINE</span>
+        <span class="access-val">
+          <a href="https://line.me/R/ti/p/@891nylpn" target="_blank" rel="noopener">LINEでのお問い合わせはこちら</a><br>
+          <small style="color:var(--text-light); font-size:11px;">体験のご予約・急ぎのご相談はこちら</small>
+        </span>
+      </div>
+      <div class="access-row">
+        <span class="access-lbl">フォーム</span>
+        <span class="access-val">
+          <a href="https://forms.gle/HTi16cov2KRMMVCa6" target="_blank" rel="noopener">お問い合わせフォームはこちら</a><br>
+          <small style="color:var(--text-light); font-size:11px;">じっくりご記入の上、ご相談いただく場合はこちら</small>
+        </span>
+      </div>
+      <div class="access-row">
+        <span class="access-lbl">Instagram</span>
+        <span class="access-val">
+          <a href="https://www.instagram.com/rieko_montessori.japan/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; background:linear-gradient(135deg,#f9a826,#e1306c,#833ab4); color:white; padding:8px 16px; border-radius:100px; text-decoration:none; font-size:13px; font-weight:500; letter-spacing:0.05em;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            @rieko_montessori.japan
+          </a>
+        </span>
+      </div>
+    </div>
+    <div class="map-wrap">
+      <iframe
+        src="https://maps.google.com/maps?q=東京都大田区田園調布2丁目40番8号&output=embed&hl=ja&z=16"
+        width="100%"
+        height="280"
+        style="border:0; display:block;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Mi Montessori Japan 子どもの部屋 地図">
+      </iframe>
+    </div>
+    <a href="https://maps.google.com/maps?q=東京都大田区田園調布2丁目40番8号" target="_blank" rel="noopener"
+       style="display:flex; align-items:center; justify-content:center; gap:8px; margin-top:12px; padding:12px; background:var(--green-pale); border:1px solid rgba(61,143,168,0.25); border-radius:var(--r); color:var(--green); font-size:13px; font-weight:500; letter-spacing:0.06em; text-decoration:none;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Googleマップで開く
+    </a>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <img src="logo_transparent.png" alt="Mi Montessori Japan 子どもの部屋" class="footer-logo">
+  <nav class="footer-nav" aria-label="フッターナビゲーション">
+    <a href="#news">お知らせ</a>
+    <a href="#classes">クラス</a>
+    <a href="#curriculum">レッスン</a>
+    <a href="#schedule">スケジュール</a>
+    <a href="#instructor">講師紹介</a>
+    <a href="#voices">保護者の声</a>
+    <a href="#faq">FAQ</a>
+    <a href="#access">アクセス</a>
+  </nav>
+
+  <div class="footer-qr">
+    <div class="qr-item">
+      <a href="https://line.me/R/ti/p/@891nylpn" target="_blank" rel="noopener">
+        <img
+          src="https://qr-official.line.me/gs/M_891nylpn_BW.png?oat_content=qr"
+          alt="LINE QRコード"
+          class="qr-img">
+      </a>
+      <p class="qr-label">LINE<br>お友達登録</p>
+    </div>
+    <div class="qr-item">
+      <a href="https://maps.google.com/maps?q=東京都大田区田園調布2丁目40番8号" target="_blank" rel="noopener">
+        <img
+          src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fmaps.google.com%2Fmaps%3Fq%3D%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%A4%A7%E7%94%B0%E5%8C%BA%E7%94%B0%E5%9C%92%E8%AA%BF%E5%B8%832%E4%B8%81%E7%9B%AE40%E7%95%AA8%E5%8F%B7"
+          alt="Googleマップ QRコード"
+          class="qr-img">
+      </a>
+      <p class="qr-label">Google マップ<br>で見る</p>
+    </div>
+  </div>
+
+  <div class="footer-sns">
+    <a href="https://www.instagram.com/rieko_montessori.japan/" target="_blank" rel="noopener" class="sns-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+      </svg>
+      @rieko_montessori.japan
+    </a>
+  </div>
+
+  <p>東京都大田区田園調布２丁目４０番８号・１階</p>
+  <p><a href="tel:09053132501">090-5313-2501</a></p>
+  <p style="margin-top: 16px;">© 2026 Mi Montessori Japan 子どもの部屋. All rights reserved.</p>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { threshold: 0.35 });
+  sections.forEach(s => io.observe(s));
+</script>
+
+</body>
+</html>
