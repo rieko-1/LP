@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Montessori JAPAN — 壁面ポスター A2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200;300;400&family=Noto+Serif+JP:wght@200;300;400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+
+    :root {
+      --white:     #FFFFFF;
+      --off-white: #F8F6F3;
+      --border:    #DDD8D1;
+      --dark:      #2A2520;
+      --mid:       #5A534D;
+      --light:     #9C9590;
+      --teal:      #3d8fa8;
+      --teal-dark: #2d7590;
+      --serif:     'Noto Serif JP', serif;
+      --sans:      'Noto Sans JP', sans-serif;
+      --en:        'Cormorant Garamond', serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #C8C3BC;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 24px 72px;
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ══════════════════════════════════════
+       POSTER SHELL — A2 比率 (520 × 736px)
+       ══════════════════════════════════════ */
+    .poster {
+      width: 520px;
+      height: 736px;
+      background: var(--off-white);
+      position: relative;
+      overflow: hidden;
+      box-shadow:
+        0 2px 8px rgba(0,0,0,0.10),
+        0 20px 56px rgba(0,0,0,0.18);
+    }
+
+    /* ══════════════════════════════════════
+       PHOTO — 上部 55%  (≈404px)
+       ══════════════════════════════════════ */
+    .photo {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 55%;
+      overflow: hidden;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+      display: block;
+    }
+
+    .photo::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 50%;
+      background: linear-gradient(
+        to bottom,
+        rgba(248,246,243,0)  0%,
+        rgba(248,246,243,.6) 55%,
+        rgba(248,246,243,1) 100%
+      );
+    }
+
+    /* ══════════════════════════════════════
+       LOGO — 写真左上
+       ══════════════════════════════════════ */
+    .logo {
+      position: absolute;
+      top: 14px;
+      left: 28px;
+      z-index: 10;
+      mix-blend-mode: multiply;
+    }
+
+    .logo img {
+      height: 150px;
+      width: auto;
+      display: block;
+    }
+
+    /* ══════════════════════════════════════
+       縦書き添え文字 — 写真右端
+       ══════════════════════════════════════ */
+    .vertical-caption {
+      position: absolute;
+      right: 38px;
+      top: calc(55% - 350px);
+      z-index: 8;
+      writing-mode: vertical-rl;
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 300;
+      letter-spacing: 0.40em;
+      color: rgba(42,37,32,.70);
+    }
+
+    /* ══════════════════════════════════════
+       COPY AREA — 写真下の全スペース
+       個々の要素を absolute で確実に配置
+       ══════════════════════════════════════ */
+
+    /* 写真直下の細い罫線 */
+    .copy-rule {
+      position: absolute;
+      top: 55%;
+      left: 40px; right: 40px;
+      height: 0.75px;
+      background: var(--border);
+    }
+
+    /* ── ブランドブロック（罫線直下） ── */
+    .brand-block {
+      position: absolute;
+      top: calc(55% + 24px);
+      left: 40px; right: 40px;
+    }
+
+    .brand-en {
+      font-family: var(--en);
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      color: var(--dark);
+      line-height: 1;
+      margin-bottom: 7px;
+    }
+
+    .brand-ja {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      color: var(--dark);
+      line-height: 1;
+    }
+
+    .brand-method {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .method-rule {
+      flex: 1;
+      height: 0.5px;
+      background: var(--border);
+    }
+
+    .method-text {
+      font-family: var(--sans);
+      font-size: 7.5px;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: var(--mid);
+      white-space: nowrap;
+    }
+
+    /* ── メインコピー（ブランドブロック下） ── */
+    .main-block {
+      position: absolute;
+      top: calc(55% + 88px);
+      left: 40px; right: 40px;
+    }
+
+    .main-heading {
+      font-family: var(--serif);
+      font-size: 27px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--dark);
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+
+    /* 「0歳からの」— 販促感を抑えるため一段小さく */
+    .heading-line1 {
+      font-size: 21px;
+      letter-spacing: 0.1em;
+    }
+
+    /* 「モンテッソーリ教室」— 字間を7%広げ知性的に */
+    .heading-line2 {
+      letter-spacing: 0.14em;
+    }
+
+    .main-sub {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--dark);
+      line-height: 2.2;
+    }
+
+    /* ── QRブロック（右、体験レッスン受付中・QR・詳細） ── */
+    .qr-block {
+      position: absolute;
+      right: 40px;
+      bottom: 84px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .qr-label-top {
+      font-family: var(--sans);
+      font-size: 7.5px;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      color: var(--teal-dark);
+      white-space: nowrap;
+    }
+
+    .qr-frame {
+      width: 68px;
+      height: 68px;
+      padding: 4px;
+      background: var(--white);
+      border: 1px solid var(--border);
+    }
+
+    .qr-frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .qr-label-bottom {
+      font-family: var(--sans);
+      font-size: 8.5px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: var(--mid);
+      white-space: nowrap;
+    }
+
+    /* ── 入り口バー（最下部に固定） ── */
+    .entrance-bar {
+      position: absolute;
+      left: 40px; right: 40px;
+      bottom: 30px;
+      display: flex;
+      align-items: center;
+      padding-top: 14px;
+      border-top: 0.75px solid var(--border);
+    }
+
+    .cta-arrow {
+      font-size: 20px;
+      color: var(--teal-dark);
+      margin-right: 12px;
+      font-weight: 500;
+      line-height: 1;
+      -webkit-text-stroke: 0.8px var(--teal-dark);
+    }
+
+    .cta-text {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      color: var(--teal-dark);
+      line-height: 1;
+      border-bottom: 0.75px solid rgba(45,117,144,.4);
+      padding-bottom: 2px;
+      white-space: nowrap;
+    }
+
+    /* ══════════════════════════════════════
+       PRINT — @page A2  入稿用
+       ══════════════════════════════════════ */
+    @media print {
+      @page {
+        size: 420mm 594mm;   /* A2 正寸 */
+        margin: 0;
+      }
+      * { -webkit-print-color-adjust: exact !important;
+              print-color-adjust: exact !important; }
+      html, body {
+        width: 420mm;
+        height: 594mm;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .ui-label, .ui-note { display: none; }
+      .poster {
+        width: 420mm;
+        height: 594mm;
+        box-shadow: none;
+        page-break-after: avoid;
+      }
+
+      .logo img          { height: 347pt; }
+      .brand-en          { font-size: 51pt; }
+      .brand-ja          { font-size: 32pt; }
+      .main-heading      { font-size: 62pt; }
+      .main-sub          { font-size: 30pt; }
+      .qr-frame          { width: 158pt; height: 158pt; padding: 9pt; }
+      .qr-label-top      { font-size: 17pt; }
+      .qr-label-bottom   { font-size: 20pt; }
+      .cta-arrow         { font-size: 46pt; }
+      .cta-text          { font-size: 37pt; }
+      .vertical-caption  { font-size: 35pt; right: 88pt; }
+    }
+
+    /* ══════════════════════════════════════
+       SCREEN UI
+       ══════════════════════════════════════ */
+    .ui-label {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 10px;
+      font-weight: 300;
+      color: rgba(255,255,255,.5);
+      letter-spacing: 0.2em;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .ui-note {
+      margin-top: 16px;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 9.5px;
+      font-weight: 300;
+      color: rgba(255,255,255,.35);
+      letter-spacing: 0.14em;
+      text-align: center;
+      line-height: 2;
+    }
+
+  </style>
+</head>
+<body>
+
+<p class="ui-label">Mi Montessori JAPAN — 壁面掲示ポスター A2（スクリーンプレビュー）</p>
+
+<div class="poster">
+
+  <!-- 写真 -->
+  <div class="photo">
+    <img src="ゴムと鈴と赤ちゃん.png" alt="">
+  </div>
+
+  <!-- ロゴ -->
+  <div class="logo">
+    <img src="完成ロゴ.png" alt="Mi Montessori JAPAN">
+  </div>
+
+  <!-- 縦書き添え文字 -->
+  <span class="vertical-caption">子どもの中にある、育つ力を信じる。</span>
+
+  <!-- 写真下罫線 -->
+  <div class="copy-rule"></div>
+
+  <!-- ブランドブロック -->
+  <div class="brand-block">
+    <p class="brand-en">Mi Montessori JAPAN</p>
+    <p class="brand-ja">子どもの部屋｜田園調布</p>
+  </div>
+
+  <!-- メインコピー -->
+  <div class="main-block">
+    <h1 class="main-heading">
+      <span class="heading-line1">0歳からの</span><br>
+      <span class="heading-line2">モンテッソーリ教室</span>
+    </h1>
+    <p class="main-sub">
+      出産前から6歳まで。<br>
+      お子さまの"育つ力"を大切にする
+    </p>
+  </div>
+
+  <!-- QRブロック（右・体験レッスン受付中→QR→教室の詳細はこちら） -->
+  <div class="qr-block">
+    <p class="qr-label-top">体験レッスン・教室案内</p>
+    <div class="qr-frame">
+      <img src="qr_line.png" alt="LINE QR コード">
+    </div>
+    <p class="qr-label-bottom">教室の雰囲気はこちら</p>
+  </div>
+
+  <!-- 入り口ナビ（最下部） -->
+  <div class="entrance-bar">
+    <span class="cta-arrow">←</span>
+    <span class="cta-text">入り口は玄関入って左の扉</span>
+  </div>
+
+</div>
+
+<p class="ui-note">
+  印刷: ブラウザの印刷 → 用紙サイズ A2 / 余白なし<br>
+  QR コードは実際の LINE QR 画像に差し替えて使用してください
+</p>
+
+</body>
+</html>
