@@ -1614,6 +1614,31 @@
       color: var(--text-mid);
       line-height: 1.85;
     }
+
+    /* ===== CLASSROOM GALLERY ===== */
+    .classroom-gallery {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+    }
+    .classroom-gallery img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-main {
+      grid-column: 1 / -1;
+      height: 280px;
+    }
+    .gallery-sub {
+      height: 160px;
+    }
+    @media (max-width: 600px) {
+      .gallery-main { height: 200px; }
+      .gallery-sub { height: 120px; }
+    }
   </style>
 </head>
 <body>
@@ -2028,6 +2053,14 @@
   <div class="inner">
     <p class="eyebrow tc fi">our classroom</p>
     <h2 class="h2 tc fi d1">子どもの部屋の環境</h2>
+
+    <div class="classroom-gallery fi d2">
+      <img src="classroom_main.jpg" alt="子どもの部屋・教室全体" class="gallery-main">
+      <img src="classroom_nido.jpg" alt="ニドクラス棚" class="gallery-sub">
+      <img src="classroom_infant.jpg" alt="乳児教具棚" class="gallery-sub">
+      <img src="classroom_shelf.jpg" alt="モンテッソーリ教具棚" class="gallery-sub">
+    </div>
+
     <div class="feature-grid fi d2">
 
       <div class="feature-card">
