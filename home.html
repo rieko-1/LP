@@ -759,6 +759,54 @@
     .footer p { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; line-height: 2; }
     .footer a { color: rgba(255,255,255,0.45); }
 
+    /* ===== CLASSROOM GALLERY ===== */
+    .classroom-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .classroom-gallery img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-main {
+      grid-column: 1 / -1;
+      height: 260px;
+    }
+    .gallery-sub {
+      height: 150px;
+    }
+    @media (max-width: 600px) {
+      .gallery-main { height: 200px; }
+      .gallery-sub { height: 120px; }
+    }
+
+    /* ===== ACTIVITY STRIP ===== */
+    .activity-strip {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-top: 20px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .activity-strip::-webkit-scrollbar { height: 4px; }
+    .activity-strip::-webkit-scrollbar-track { background: #e8e6e0; border-radius: 2px; }
+    .activity-strip::-webkit-scrollbar-thumb { background: #3d8fa8; border-radius: 2px; }
+    .activity-strip img {
+      width: 200px;
+      height: 260px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 10px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 400px) {
       .nav-links a { padding: 8px 7px; font-size: 10px; }
@@ -1103,6 +1151,22 @@
   </div>
 </section>
 
+<!-- ========== ACTIVITY PHOTOS ========== -->
+<section class="sec bg-off">
+  <div class="inner">
+    <p class="eyebrow" style="text-align:center;">activity</p>
+    <h2 class="sec-title">活動の様子</h2>
+    <div class="activity-strip">
+      <img src="activity_03.jpg" alt="ユリを虫眼鏡で観察する子ども">
+      <img src="activity_01.jpg" alt="積み木で建築する子ども">
+      <img src="activity_02.jpg" alt="ピンクタワーで活動する子ども">
+      <img src="activity_04.jpg" alt="黄金ビーズで数を学ぶ子ども">
+      <img src="activity_05.jpg" alt="黄金ビーズの百のシートで学ぶ子ども">
+      <img src="activity_06.jpg" alt="構成三角形で幾何学を学ぶ子ども">
+    </div>
+  </div>
+</section>
+
 <!-- ========== SCHEDULE ========== -->
 <section class="sec" id="schedule">
   <div class="inner">
@@ -1229,6 +1293,20 @@
     <p class="instructor-bio" style="text-align: left; margin-top: 16px;">
       教室でのレッスンのほか各ご家庭への訪問・環境づくりのアドバイス、教具を持参した訪問レッスンも行ってまいりました。この度、田園調布駅徒歩4分の地に移転し、保護者の皆様にも一緒に学んでいただける教室を開講いたしました。皆様のお越しをお待ちしております。
     </p>
+  </div>
+</section>
+
+<!-- ========== CLASSROOM GALLERY ========== -->
+<section class="sec">
+  <div class="inner">
+    <p class="eyebrow" style="text-align:center;">our classroom</p>
+    <h2 class="sec-title">子どもの部屋の環境</h2>
+    <div class="classroom-gallery">
+      <img src="classroom_main.jpg" alt="子どもの部屋・教室全体" class="gallery-main">
+      <img src="classroom_nido.jpg" alt="ニドクラス棚" class="gallery-sub">
+      <img src="classroom_infant.jpg" alt="乳児教具棚" class="gallery-sub">
+      <img src="classroom_shelf.jpg" alt="モンテッソーリ教具棚" class="gallery-sub">
+    </div>
   </div>
 </section>
 
