@@ -375,13 +375,14 @@
     }
     /* Text block — left-bottom */
     .hero-logo-wrap {
-      display: inline-block;
-      margin-bottom: 8px;
+      position: absolute;
+      top: clamp(80px, 20vh, 220px);
+      left: 68px;
+      z-index: 3;
     }
     .hero-logo-overlay {
       display: block;
       width: 144px;
-      margin: 0 auto 10px;
     }
     .hero-top {
       position: relative;
@@ -1638,12 +1639,12 @@
 <section class="hero">
   <div class="hero-photo"></div>
   <div class="hero-gradient"></div>
-  <!-- テキストをヒーロー上部（白い壁・カーテン部分）に配置 -->
+  <div class="hero-logo-wrap">
+    <img src="logo_hero_clear.png" alt="Mi Montessori Japan 子どもの部屋" class="hero-logo-overlay">
+  </div>
+  <!-- テキストをヒーロー下部に配置 -->
   <div class="hero-top fi on">
-    <div class="hero-logo-wrap">
-      <img src="logo_hero_clear.png" alt="Mi Montessori Japan 子どもの部屋" class="hero-logo-overlay">
-      <p class="hero-badge">田園調布・AMIモンテッソーリ教室</p>
-    </div>
+    <p class="hero-badge">田園調布・AMIモンテッソーリ教室</p>
     <h1 class="hero-title">
       「ひとりでできた！」<br>
       その瞬間を、一緒に育てます。
