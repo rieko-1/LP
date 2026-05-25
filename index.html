@@ -374,6 +374,15 @@
       }
     }
     /* Text block — left-bottom */
+    .hero-logo-wrap {
+      margin: 0 -32px 12px -40px;
+      text-align: center;
+    }
+    .hero-logo-overlay {
+      display: inline-block;
+      width: 96px;
+      mix-blend-mode: multiply;
+    }
     .hero-top {
       position: relative;
       z-index: 2;
@@ -1214,6 +1223,80 @@
     }
     .instructor-bio + .instructor-bio { margin-top: 16px; }
 
+    /* ===== PHILOSOPHY ===== */
+    .philosophy-steps {
+      margin: 32px 0 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      background: var(--white);
+    }
+    .phil-step {
+      display: flex;
+      gap: 18px;
+      padding: 22px 22px;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .phil-step:last-child { border-bottom: none; }
+    .phil-step-num {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: var(--green);
+      white-space: nowrap;
+      padding-top: 3px;
+      min-width: 54px;
+      font-weight: 500;
+    }
+    .phil-step-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dark);
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+    .phil-step-text {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.9;
+      letter-spacing: 0.04em;
+    }
+    .phil-quote {
+      border-left: 3px solid var(--green);
+      background: var(--green-pale);
+      border-radius: 0 var(--r) var(--r) 0;
+      padding: 22px 20px;
+      margin: 0 0 20px;
+    }
+    .phil-quote-text {
+      font-family: var(--serif);
+      font-size: 15px;
+      color: var(--text-dark);
+      line-height: 2;
+      letter-spacing: 0.04em;
+    }
+    .phil-principle {
+      padding: 20px 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      background: var(--off-white);
+    }
+    .phil-principle-lead {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dark);
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    .phil-principle-text {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 2;
+      letter-spacing: 0.04em;
+    }
+
     /* ===== FAQ ===== */
     .faq-list { display: flex; flex-direction: column; gap: 10px; margin-top: 32px; }
     .faq-item {
@@ -1296,7 +1379,7 @@
     details.sec-accordion > summary {
       list-style: none; cursor: pointer;
       display: flex; align-items: center; justify-content: center;
-      gap: 8px; margin-top: 16px;
+      gap: 8px; margin-top: 12px; margin-bottom: 4px;
       padding: 13px 28px;
       background: #F5F0EB;
       border: 1px solid #D8CFC4;
@@ -1366,6 +1449,136 @@
     .map-wrap { margin-top: 28px; border-radius: var(--r); overflow: hidden; border: 1px solid var(--border); }
     .access-val a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
 
+    /* ===== INSTAGRAM LINK ===== */
+    .insta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 20px;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--text-mid);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--border);
+      transition: color 0.2s, text-decoration-color 0.2s;
+    }
+    .insta-link:hover { color: var(--text-dark); text-decoration-color: var(--text-mid); }
+
+    /* ===== PRICE RATIONALE ===== */
+    .price-rationale {
+      margin: 28px 0 20px;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 26px 24px 24px;
+    }
+    .price-rationale-label {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-dark);
+      letter-spacing: 0.04em;
+      line-height: 1.7;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .price-includes {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .price-includes li {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-mid);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.65;
+    }
+    .price-includes li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-size: 9px;
+      top: 5px;
+    }
+    .price-rationale-close {
+      font-family: var(--serif);
+      font-size: 14px;
+      color: var(--text-dark);
+      line-height: 1.85;
+      letter-spacing: 0.04em;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+
+    /* ===== TRIAL INCLUDES ===== */
+    .trial-includes {
+      background: var(--white);
+      border: 1px solid rgba(61,143,168,0.22);
+      border-radius: var(--r);
+      padding: 22px 22px 20px;
+      margin: 20px 0 24px;
+    }
+    .trial-includes-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--green);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .trial-includes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .trial-includes-list li {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-dark);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.65;
+    }
+    .trial-includes-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-size: 9px;
+      top: 5px;
+    }
+
+    /* ===== HERO FEATURE / TAGLINE ===== */
+    .hero-feature {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--text-mid);
+      letter-spacing: 0.08em;
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+    .hero-feature strong {
+      font-weight: 500;
+      color: var(--green-dark);
+    }
+    .hero-tagline {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-mid);
+      letter-spacing: 0.06em;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
     /* ===== CLASSROOM FEATURES ===== */
     .feature-grid {
       display: flex;
@@ -1411,10 +1624,9 @@
       <img src="logo_transparent.png" alt="Mi Montessori Japan 子どもの部屋" class="nav-logo">
     </a>
     <nav class="nav-links" aria-label="メインナビゲーション">
-      <a href="#news">お知らせ</a>
       <a href="#classes">クラス</a>
-      <a href="#curriculum">レッスン</a>
-      <a href="#schedule">スケジュール</a>
+      <a href="#classes">レッスン</a>
+      <a href="#classes">スケジュール</a>
       <a href="#instructor">講師紹介</a>
       <a href="#voices">保護者の声</a>
       <a href="#faq">FAQ</a>
@@ -1430,20 +1642,25 @@
   <div class="hero-gradient"></div>
   <!-- テキストをヒーロー上部（白い壁・カーテン部分）に配置 -->
   <div class="hero-top fi on">
+    <div class="hero-logo-wrap">
+      <img src="完成ロゴ.png" alt="Mi Montessori Japan 子どもの部屋" class="hero-logo-overlay">
+    </div>
+    <p class="hero-badge">田園調布・AMIモンテッソーリ教室</p>
     <h1 class="hero-title">
-      お子さまが何を見ているか、<br>
-      見えていますか。
+      「ひとりでできた！」<br>
+      その瞬間を、一緒に育てます。
     </h1>
+    <p class="hero-feature">毎回レッスン後に<strong>成長観察レター</strong>をお届け</p>
     <div class="hero-trust">
-      <span>体験60分 ¥5,000（税抜）</span>
-      <span>AMI国際資格（0〜6歳）</span>
-      <span>定員3名の少人数制</span>
-      <span>個別観察レター付き</span>
+      <span>0歳〜小学生</span>
+      <span>少人数3名制</span>
+      <span>AMI国際資格講師</span>
       <span>田園調布駅 徒歩4分</span>
     </div>
   </div>
 
   <div class="hero-bottom fi on" style="transition-delay: 0.2s;">
+    <p class="hero-tagline">お子さまの"今"を知ると、子育てが変わります</p>
     <a href="https://line.me/R/ti/p/@891nylpn" target="_blank" rel="noopener" class="cta">
       <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
@@ -1466,15 +1683,15 @@
     <ul class="pain-list fi d2">
       <li class="pain-item">
         <span class="pain-dot" aria-hidden="true"></span>
-        集中が続かない
+        集中して活動できる環境の整え方がわからない
       </li>
       <li class="pain-item">
         <span class="pain-dot" aria-hidden="true"></span>
-        すぐに「できない」と言う
+        「できない」と言うわが子に、どう声をかければいいかわからない
       </li>
       <li class="pain-item">
         <span class="pain-dot" aria-hidden="true"></span>
-        癇癪やイヤイヤが増えてきた
+        癇癪やイヤイヤへの対応に、疲れてきた
       </li>
       <li class="pain-item">
         <span class="pain-dot" aria-hidden="true"></span>
@@ -1486,18 +1703,18 @@
       </li>
       <li class="pain-item">
         <span class="pain-dot" aria-hidden="true"></span>
-        自分でできる力を育てたい
+        自立心はどうやって育てたらいいのか、わからない
       </li>
       <li class="pain-item">
         <span class="pain-dot" aria-hidden="true"></span>
-        習い事はあるが、本当に必要な力がつくかわからない
+        通っている教室で、本当に必要な力がついているかわからない
       </li>
     </ul>
     <p class="fi d3" style="font-family: var(--serif); font-size: 14px; color: var(--text-mid); text-align: center; line-height: 2; letter-spacing: 0.05em; margin: 0 0 22px;">
-      少しずつ、お子さまとの時間が穏やかになっていきます。
+      お子さまの行動の意味が、見えてくるようになります。
     </p>
     <div class="pain-close fi d3">
-      モンテッソーリ教育では、<br>お子さまの"できた"を大切に見守りながら、<br>自立心と安心感が、自然に育まれていきます。
+      モンテッソーリ教育では、<br>お子さまの"今"に寄り添いながら、<br>自立心と内なる力が、自然に育まれていきます。
     </div>
   </div>
 </section>
@@ -1528,7 +1745,7 @@
       </div>
       <div class="point-card">
         <span class="point-num">02</span>
-        <p class="point-text">「できた！」を積み重ねることで、次もやってみようという力が育まれる</p>
+        <p class="point-text">活動を繰り返す中で、次もやってみようという内なる力が自然に育まれる</p>
       </div>
       <div class="point-card">
         <span class="point-num">03</span>
@@ -1541,8 +1758,8 @@
 <!-- ========== CHANGES ========== -->
 <section class="sec bg-off">
   <div class="inner">
-    <p class="eyebrow fi">what you'll gain</p>
-    <h2 class="h2 fi d1">体験レッスンで<br>育まれること</h2>
+    <p class="eyebrow fi">what you'll discover</p>
+    <h2 class="h2 fi d1">体験レッスンでは</h2>
     <div class="change-list fi d2">
       <div class="change-item">
         <div class="change-icon" aria-hidden="true">01</div>
@@ -1550,22 +1767,22 @@
       </div>
       <div class="change-item">
         <div class="change-icon" aria-hidden="true">02</div>
-        <p class="change-text">保護者の方が環境づくりと見守り方に自信を持てるようになる</p>
+        <p class="change-text">保護者の方へのフィードバックで、環境づくりと見守ることへの理解が深まる</p>
       </div>
       <div class="change-item">
         <div class="change-icon" aria-hidden="true">03</div>
-        <p class="change-text">毎日のイライラが少しずつ減っていく</p>
+        <p class="change-text">お子さまが今どの発達段階にいるかが、具体的に見えてくる</p>
       </div>
       <div class="change-item">
         <div class="change-icon" aria-hidden="true">04</div>
-        <p class="change-text">お子さまの「今この瞬間」がいとおしくなる</p>
+        <p class="change-text">お子さまへの理解が深まると、関わり方が自然に変わっていく</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ========== TESTIMONIALS ========== -->
-<section class="sec bg-warm">
+<section class="sec bg-warm" id="voices">
   <div class="inner">
     <p class="eyebrow tc fi">voice</p>
     <h2 class="h2 tc fi d1">保護者の方からの声</h2>
@@ -1615,13 +1832,14 @@
     <!-- CTA bridge after testimonials -->
     <div class="fi d4" style="margin-top: 44px; text-align: center;">
       <p class="cta-lead">まずは、<br>教室の空気感をのぞいてみてください。</p>
-      <a href="https://line.me/R/ti/p/@891nylpn" target="_blank" rel="noopener" class="cta" style="margin: 0 auto; font-size: 14px; padding: 16px 28px;">
-        <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
+      <a href="https://www.instagram.com/rieko_montessori.japan/" target="_blank" rel="noopener" class="insta-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
         </svg>
-        教室の雰囲気を見てみる
+        教室の日常はInstagramでもご覧いただけます
       </a>
-      <p class="cta-note">無理な勧誘はありません</p>
     </div>
   </div>
 </section>
@@ -1642,27 +1860,26 @@
     <div class="instructor-tags fi d2">
       <span class="instructor-tag">AMI 0〜3歳ディプロマ</span>
       <span class="instructor-tag">AMI 2.5〜6歳ディプロマ</span>
+      <span class="instructor-tag">AMIエレメンタリー 入門修了</span>
       <span class="instructor-tag">保育士</span>
       <span class="instructor-tag">栄養士</span>
-      <span class="instructor-tag">認定ベビーシッター</span>
     </div>
-    <div class="trust-grid fi d3">
-      <div class="trust-item">
-        <div class="trust-num">1,000<span>件以上</span></div>
-        <div class="trust-label">シッティング<br>実績</div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-stars">★★★★★</div>
-        <div class="trust-label">全件<br>5つ星評価</div>
-      </div>
+    <p class="fi d3" style="font-size: 13px; color: var(--text-light); letter-spacing: 0.06em; line-height: 2; text-align: center; margin-bottom: 4px;">
+      0歳から12歳まで、AMIの学びで一貫してお子さまを見守れる講師です。
+    </p>
+    <div class="trust-grid fi d3" style="grid-template-columns: repeat(2, 1fr); max-width: 300px; margin: 16px auto 0;">
       <div class="trust-item">
         <div class="trust-num" style="font-size: 17px; letter-spacing: 0.04em;">AMI</div>
         <div class="trust-label">国際モンテッソーリ<br>公認教師</div>
       </div>
+      <div class="trust-item">
+        <div class="trust-stars">★★★★★</div>
+        <div class="trust-label">ご利用いただいた<br>全ご家庭の評価</div>
+      </div>
     </div>
     <p class="instructor-quote fi d3" style="text-align: left;">お子さまが「自分でできた」と嬉しそうに笑う瞬間が、何より好きです。</p>
     <p class="instructor-bio fi d4" style="text-align: left;">
-      二児の子育てをしながら絵本の読み聞かせ会に所属し、子育てがひと息ついてから保育園補助とベビーシッター業に従事。シッター業ではインターナショナルスクール・小学校受験を希望されるご家庭を中心に、具体物を使った家庭学習のフォローを得意としてきました。
+      二児の子育てをしながら絵本の読み聞かせ会に所属し、子育てがひと息ついてから保育園補助、そして教育ナニーとして多くのご家庭と関わりました。ペーパーに偏りがちな小学校受験に、具体物を使った方法でお子さまの理解を深めるサポートを得意としてきました。
     </p>
     <p class="instructor-bio fi d4" style="text-align: left;">
       そんな中でモンテッソーリスクールやモンテッソーリ教育を実践するご家庭に触れ、そのメソッドをもっと深く学びたいと資格取得を決意。東京国際教師トレーニングセンター（AMI）にて2.5〜6歳の資格を取得後、0〜3歳の資格も取得。さらにAMIエレメンタリー（6〜12歳）の入門クラスも修了し、幅広い年齢への理解を深めています。資格取得後は児童発達支援施設のモンテッソーリ教育部門を約1年半担当し、多くのお子様の個別レッスンを通じて実践経験を積みました。
@@ -1670,7 +1887,7 @@
     <p class="instructor-bio fi d4" style="text-align: left;">
       教室でのレッスンのほか各ご家庭への訪問・環境づくりのアドバイス、教具を持参した訪問レッスンも行ってまいりました。この度、田園調布駅徒歩4分の地に移転し、保護者の皆様にも一緒に学んでいただける教室を開講いたしました。皆様のお越しをお待ちしております。
     </p>
-    <p class="fi d4" style="margin-top: 28px; font-family: var(--serif); font-size: 13px; letter-spacing: 0.06em; line-height: 2.2; text-align: left;">"教える"のではなく、<br>お子さまをそっと観察し、<br>その子に合った環境を整えること……</p>
+    <p class="fi d4" style="margin-top: 28px; font-family: var(--serif); font-size: 13px; letter-spacing: 0.06em; line-height: 2.2; text-align: left;">"教える"のではなく、<br>お子さまをそっと観察し、<br>その子に合った環境を整えること。<br>それが、このレッスンの出発点です。</p>
     <p class="cta-bridge fi d4" style="margin-top: 48px;">まずは一度、<br>お子さまと一緒にいらしてください。</p>
 
     <div class="dual-cta fi d4">
@@ -1695,28 +1912,40 @@
   </div>
 </section>
 
-<!-- ========== DIFFERENCE ========== -->
+<!-- ========== PHILOSOPHY ========== -->
 <section class="sec bg-off">
   <div class="inner">
-    <p class="eyebrow tc fi">only here</p>
-    <h2 class="h2 tc fi d1">他のモンテッソーリ教室との<br>ちがい</h2>
-    <p class="body tc fi d2" style="margin-bottom: 0;">
-      AMIディプロマ・少人数・1対1。どれも大切な要素ですが、<br>
-      この教室だけの理由が、あと3つあります。
-    </p>
-    <div class="point-grid fi d3" style="margin-top: 32px;">
-      <div class="point-card">
-        <span class="point-num">01</span>
-        <p class="point-text">毎回レッスン後、24時間以内に「個別観察レター」を文章でお届け。お子さまへの「気づき」が、ご家庭での関わりを変えます。</p>
+    <p class="eyebrow tc fi">philosophy</p>
+    <h2 class="h2 tc fi d1">観察が、すべての始まりです。</h2>
+    <div class="philosophy-steps fi d2">
+      <div class="phil-step">
+        <span class="phil-step-num">STEP 01</span>
+        <div>
+          <p class="phil-step-title">環境を整える</p>
+          <p class="phil-step-text">毎回のレッスン前に、今の発達段階に合わせて室内の教具を配置し直します。</p>
+        </div>
       </div>
-      <div class="point-card">
-        <span class="point-num">02</span>
-        <p class="point-text">AMI 0〜3歳・2.5〜6歳の国際資格保有。成長の流れを深く理解した上で、今に合ったレッスンをご提供します。</p>
+      <div class="phil-step">
+        <span class="phil-step-num">STEP 02</span>
+        <div>
+          <p class="phil-step-title">教具を提供して、観察する</p>
+          <p class="phil-step-text">お子さまが興味を持ったものを提示します。正解は教えません。試行錯誤しながら繰り返す姿を、静かに観察します。</p>
+        </div>
       </div>
-      <div class="point-card">
-        <span class="point-num">03</span>
-        <p class="point-text">ご家庭の環境づくりへのアドバイスや訪問レッスンにも対応。教室での学びを日常に根付かせる、習い事で終わらせない関わりを大切にしています。</p>
+      <div class="phil-step">
+        <span class="phil-step-num">STEP 03</span>
+        <div>
+          <p class="phil-step-title">繰り返しが、答えです</p>
+          <p class="phil-step-text">繰り返すなら、教具を提供した時期が合っています。席を立てば、まだ早かったかもしれない。簡単にできるから、つまらなかったかもしれない。時期を見て再提供したり、他の教具を紹介したり。その気づきを、次回の環境づくりに生かします。</p>
+        </div>
       </div>
+    </div>
+    <div class="phil-quote fi d3">
+      <p class="phil-quote-text">お子さまは、そのままで完全な存在です。<br>「ああしなさい」と教え込むのではなく、<br>環境を整えて、大人がゆっくり示します。<br>子どもは、静かに真似をしていきます。</p>
+    </div>
+    <div class="phil-principle fi d4">
+      <p class="phil-principle-lead">大人にしないことは、子どもにもしません。</p>
+      <p class="phil-principle-text">生まれたての赤ちゃんにも、触れる前に「おむつを替えて良い？」「抱っこさせてね」と声をかけ、アイコンタクトをとりながら進めます。それが、子どもを尊重するということです。</p>
     </div>
   </div>
 </section>
@@ -1763,13 +1992,24 @@
       </div>
     </div>
 
+    <!-- 体験レッスン 含まれるもの -->
+    <div class="trial-includes fi d3">
+      <p class="trial-includes-label">体験レッスン ¥5,000（税抜）に含まれるもの</p>
+      <ul class="trial-includes-list">
+        <li>AMI国際資格講師による60分の個別レッスン</li>
+        <li>本物の季節の教材（花・野菜・果物）を使った活動</li>
+        <li>お子さまの発達段階に合わせたご家庭の環境づくりアドバイス</li>
+        <li>レッスン後24時間以内の成長観察レター</li>
+      </ul>
+    </div>
+
     <!-- Individual Feedback Block -->
     <div class="feedback-block fi d3">
       <p class="feedback-eyebrow">individual letter</p>
       <div class="feedback-time">
         <span class="feedback-num">24</span>時間以内にお届け
       </div>
-      <p class="feedback-title">個別観察レター</p>
+      <p class="feedback-title">成長観察レター</p>
       <p style="font-size: 13px; color: var(--text-mid); line-height: 1.9; margin-bottom: 16px;">体験レッスン後、お子さまの"今"を文章にしてお届けします。</p>
       <ul class="feedback-items">
         <li>お子さまの『今』に合わせた、ご家庭での環境づくり</li>
@@ -1777,17 +2017,6 @@
         <li>今伸びている力と、次のステップ</li>
       </ul>
       <p class="feedback-note">単なる体験ではなく、<br>「お子さま理解」の時間として大切にしています。</p>
-    </div>
-
-    <div class="tc fi d4">
-      <p class="cta-lead">お子さまの"今"を、<br>一緒に見つめてみませんか。</p>
-      <a href="https://line.me/R/ti/p/@891nylpn" target="_blank" rel="noopener" class="cta">
-        <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
-        </svg>
-        教室の雰囲気を見てみる
-      </a>
-      <p class="cta-note">無理な勧誘はありません</p>
     </div>
   </div>
 </section>
@@ -1802,31 +2031,28 @@
       <div class="feature-card">
         <div class="feature-icon">✦</div>
         <h3 class="feature-title">本物のモンテッソーリ教具</h3>
-        <p class="feature-body">正規規格に準じた本格教具を完備。サイズ・精度を基準に厳選した教具で、お子さまの感覚と知性を自然に引き出します。</p>
+        <p class="feature-body">正規規格に準じた本格教具を完備。サイズ・精度を基準に厳選した教具で、お子さまの感覚と知性を自然に引き出します。定員3名だからこそ、毎回のレッスンで必ずお子さまの手が教具に届きます。</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon">✦</div>
         <h3 class="feature-title">1クラス定員3名の少人数制</h3>
-        <p class="feature-body">一人ひとりにしっかり向き合うため、定員を最大3名に限定しています。</p>
+        <p class="feature-body">一人ひとりの活動をていねいに観察するため、定員を最大3名に限定しています。</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon">✦</div>
         <h3 class="feature-title">ご家庭と二人三脚で</h3>
-        <p class="feature-body">モンテッソーリの考え方をご両親にもお伝えしながら、教室とご家庭が連携してお子さまの育ちを一緒に支えます。</p>
+        <p class="feature-body">モンテッソーリ教育の考え方をご両親にもお伝えしながら、教室とご家庭が連携して、お子さまのモンテッソーリ教育を一緒に進めていきます。</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ========== CLASSES ========== -->
-<section class="sec" id="classes">
+<!-- ========== CLASSES / CURRICULUM / SCHEDULE ========== -->
+<section class="sec bg-off" id="classes" style="padding-top: 48px; padding-bottom: 48px;">
   <div class="inner">
-    <p class="eyebrow fi">classes</p>
-    <h2 class="sec-title fi d1">クラスメニュー・料金</h2>
-    <p class="fi d1" style="text-align: center; font-size: 13px; color: var(--text-mid); letter-spacing: 0.06em; margin: 6px 0 0;">月謝 ¥19,800〜¥32,000（税抜）· 体験レッスン ¥5,000（税抜）</p>
     <details class="sec-accordion">
     <summary>クラス一覧・料金を見る</summary>
 
@@ -2002,42 +2228,38 @@
       </div>
       <div class="trial-strip-price">¥5,000<small>（税抜）</small></div>
     </div>
+
+    <!-- 価格の根拠 -->
+    <div class="price-rationale">
+      <p class="price-rationale-label">この月謝ひとつに、すべて含まれています</p>
+      <ul class="price-includes">
+        <li>AMI国際資格講師による少人数レッスン（年42回）</li>
+        <li>本物の季節の教材（生花・野菜・果物）を使った活動</li>
+        <li>毎回の成長観察レター（レッスン後24時間以内）</li>
+        <li>ご家庭の環境づくりへのアドバイス</li>
+        <li>教材費・施設管理費・維持費</li>
+      </ul>
+      <p class="price-rationale-close">お子さまの育ちに寄り添う、<br>教育的パートナーシップです。</p>
+    </div>
+
     <p style="font-size: 12px; color: var(--text-light); letter-spacing: 0.06em; line-height: 1.9; margin-top: 12px; padding-left: 4px;">
       ※ 年間42回（お盆・年末年始を除く）。祝日は基本営業ですが、休講の場合は振替をご相談ください。<br>
       ※ 月謝制クラスへのご入会の際は、別途入室金 <strong style="color: var(--text-mid);">¥9,800（税抜）</strong> が必要です。<br>
       体験レッスン当日中にご入会いただいた方は入室金無料。<br>
       個別レッスン・訪問レッスンは入室金不要です。<br>
-      <strong style="color: var(--text-mid);">兄弟・姉妹割引：</strong>二人目以降は入室金半額 ＋ レッスン料 20%引き<br><br>
+      <strong style="color: var(--text-mid);">兄弟・姉妹割引：</strong>二人目以降は入室金無料<br><br>
       月謝にはレッスン料・教材費・管理費・施設維持費をすべて含みます。<br>
       モンテッソーリ教育では季節の生花・野菜・果物も教材として使用します。本物の素材を通じ、五感を育む豊かな体験をご提供しています。
     </p>
 
-    <div style="margin-top: 28px; text-align: center;">
-      <a href="https://line.me/R/ti/p/@891nylpn" target="_blank" rel="noopener" class="class-cta">
-        <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
-        </svg>
-        ご入会・ご予約はLINEから
-      </a>
-      <p class="class-note">ご質問だけでもお気軽にどうぞ</p>
-    </div>
-
     </details>
 
-  </div>
-</section>
-
-<!-- ========== CURRICULUM ========== -->
-<section class="sec bg-pale" id="curriculum">
-  <div class="inner">
-    <p class="eyebrow fi">curriculum</p>
-    <h2 class="sec-title fi d1">レッスン内容</h2>
-    <details class="sec-accordion">
+    <details class="sec-accordion" id="curriculum">
     <summary>レッスン内容を見る</summary>
     <p class="curriculum-intro">
       子どもの部屋では、モンテッソーリ教育の4つの領域を軸に、
       お子さま一人ひとりの発達段階と興味に合わせて活動をご用意しています。
-      「自分でできた！」という体験を積み重ねることが、
+      活動への自発的な関わりを積み重ねることが、
       生きる力の土台になると考えています。
     </p>
     <div class="curriculum-grid">
@@ -2081,15 +2303,8 @@
 
     </div>
     </details>
-  </div>
-</section>
 
-<!-- ========== SCHEDULE ========== -->
-<section class="sec" id="schedule">
-  <div class="inner">
-    <p class="eyebrow fi">schedule</p>
-    <h2 class="sec-title fi d1">スケジュール</h2>
-    <details class="sec-accordion">
+    <details class="sec-accordion" id="schedule">
     <summary>スケジュールを見る</summary>
     <div class="sched-legend">
       <span class="sched-badge nido">ニド</span>
@@ -2165,10 +2380,9 @@
       <a href="https://line.me/R/ti/p/@891nylpn" target="_blank" rel="noopener">LINEでお問い合わせ →</a>
     </p>
     </details>
+
   </div>
 </section>
-
-
 
 <!-- ========== FAQ ========== -->
 <section class="sec bg-off" id="faq">
@@ -2294,22 +2508,22 @@
 <section class="closing-sec">
   <div class="inner">
     <p class="eyebrow tc fi">closing</p>
-    <h2 class="closing-title fi d1">お子さまの"今"は、<br>今しかありません。</h2>
+    <h2 class="closing-title fi d1">今のお子さまを、<br>まるごと知ることから始めましょう。</h2>
     <div class="divider fi d2"></div>
     <p class="body tc fi d3" style="margin-bottom: 48px;">
       安心できる環境の中で、<br>
-      「やってみたい」「できた」を<br>
-      積み重ねていく。<br><br>
+      「やってみたい」という気持ちで、<br>
+      活動を積み重ねていく。<br><br>
       その小さな経験が、<br>
       お子さまの中に静かに積み上がっていきます。
     </p>
     <div class="tc fi d4">
-      <p class="cta-lead">まずは一度、<br>教室の空気感に触れてみてください。</p>
+      <p class="cta-lead">一歩、踏み出してみてください。</p>
       <a href="https://line.me/R/ti/p/@891nylpn" target="_blank" rel="noopener" class="cta">
         <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M24 4C12.95 4 4 12.4 4 22.8c0 5.66 2.93 10.7 7.5 14.08L10 42l5.58-2.88C17.64 39.69 20.76 40.6 24 40.6c11.05 0 20-8.4 20-18.8S35.05 4 24 4z"/>
         </svg>
-        教室の雰囲気を見てみる
+        体験レッスンをご予約・お問い合わせ
       </a>
       <p class="cta-note">ご質問だけでも、お気軽にどうぞ。</p>
     </div>
@@ -2325,10 +2539,9 @@
   <p style="font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 0.14em; margin-bottom: 20px;">Mi Montessori Japan <span style="font-size: 16.5px; font-weight: 500; color: rgba(255,255,255,0.8); letter-spacing: 0.06em;">子どもの部屋｜田園調布</span></p>
 
   <nav class="footer-nav" aria-label="フッターナビゲーション">
-    <a href="#news">お知らせ</a>
     <a href="#classes">クラス</a>
-    <a href="#curriculum">レッスン</a>
-    <a href="#schedule">スケジュール</a>
+    <a href="#classes">レッスン</a>
+    <a href="#classes">スケジュール</a>
     <a href="#instructor">講師紹介</a>
     <a href="#voices">保護者の声</a>
     <a href="#faq">FAQ</a>
@@ -2415,7 +2628,7 @@
   }, { threshold: 0.05 });
 
   stickyObserver.observe(hero);
-  stickyObserver.observe(lineCta);
+  if (lineCta) stickyObserver.observe(lineCta);
 
   const voiceToggle = document.getElementById('voiceToggle');
   const voiceMore = document.getElementById('voiceMore');

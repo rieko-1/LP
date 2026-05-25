@@ -492,6 +492,80 @@
       line-height: 2;
     }
     .instructor-bio + .instructor-bio { margin-top: 16px; }
+
+    /* ===== PHILOSOPHY ===== */
+    .philosophy-steps {
+      margin: 32px 0 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      background: var(--white);
+    }
+    .phil-step {
+      display: flex;
+      gap: 18px;
+      padding: 22px 22px;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .phil-step:last-child { border-bottom: none; }
+    .phil-step-num {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: var(--green);
+      white-space: nowrap;
+      padding-top: 3px;
+      min-width: 54px;
+      font-weight: 500;
+    }
+    .phil-step-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dark);
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+    .phil-step-text {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.9;
+      letter-spacing: 0.04em;
+    }
+    .phil-quote {
+      border-left: 3px solid var(--green);
+      background: var(--green-pale);
+      border-radius: 0 var(--r) var(--r) 0;
+      padding: 22px 20px;
+      margin: 0 0 20px;
+    }
+    .phil-quote-text {
+      font-family: var(--serif);
+      font-size: 15px;
+      color: var(--text-dark);
+      line-height: 2;
+      letter-spacing: 0.04em;
+    }
+    .phil-principle {
+      padding: 20px 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      background: var(--off-white);
+    }
+    .phil-principle-lead {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dark);
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    .phil-principle-text {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 2;
+      letter-spacing: 0.04em;
+    }
     .trust-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -983,7 +1057,7 @@
     <p class="curriculum-intro">
       子どもの部屋では、モンテッソーリ教育の4つの領域を軸に、
       お子さま一人ひとりの発達段階と興味に合わせて活動をご用意しています。
-      「自分でできた！」という体験を積み重ねることが、
+      活動への自発的な関わりを積み重ねることが、
       生きる力の土台になると考えています。
     </p>
     <div class="curriculum-grid">
@@ -1131,27 +1205,23 @@
     <div class="instructor-tags">
       <span class="instructor-tag">AMI 0〜3歳ディプロマ</span>
       <span class="instructor-tag">AMI 2.5〜6歳ディプロマ</span>
+      <span class="instructor-tag">AMIエレメンタリー 入門修了</span>
       <span class="instructor-tag">保育士</span>
       <span class="instructor-tag">栄養士</span>
-      <span class="instructor-tag">認定ベビーシッター</span>
     </div>
-    <div class="trust-grid">
-      <div class="trust-item">
-        <div class="trust-num">1,000<span>件以上</span></div>
-        <div class="trust-label">シッティング<br>実績</div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-stars">★★★★★</div>
-        <div class="trust-label">全件<br>5つ星評価</div>
-      </div>
+    <div class="trust-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 300px; margin: 16px auto 0;">
       <div class="trust-item">
         <div class="trust-num" style="font-size:17px; letter-spacing:0.04em;">AMI</div>
         <div class="trust-label">国際モンテッソーリ<br>公認教師</div>
       </div>
+      <div class="trust-item">
+        <div class="trust-stars">★★★★★</div>
+        <div class="trust-label">ご利用いただいた<br>全ご家庭の評価</div>
+      </div>
     </div>
     <p class="instructor-quote" style="text-align: left;">お子さまが「自分でできた」と嬉しそうに笑う瞬間が、何より好きです。</p>
     <p class="instructor-bio" style="text-align: left;">
-      二児の子育てをしながら絵本の読み聞かせ会に所属し、子育てがひと息ついてから保育園補助とベビーシッター業に従事。シッター業ではインターナショナルスクール・小学校受験を希望されるご家庭を中心に、具体物を使った家庭学習のフォローを得意としてきました。
+      二児の子育てをしながら絵本の読み聞かせ会に所属し、子育てがひと息ついてから保育園補助、そして教育ナニーとして多くのご家庭と関わりました。ペーパーに偏りがちな小学校受験に、具体物を使った方法でお子さまの理解を深めるサポートを得意としてきました。
     </p>
     <p class="instructor-bio" style="text-align: left; margin-top: 16px;">
       そんな中でモンテッソーリスクールやモンテッソーリ教育を実践するご家庭に触れ、そのメソッドをもっと深く学びたいと資格取得を決意。東京国際教師トレーニングセンター（AMI）にて2.5〜6歳の資格を取得後、0〜3歳の資格も取得。さらにAMIエレメンタリー（6〜12歳）の入門クラスも修了し、幅広い年齢への理解を深めています。資格取得後は児童発達支援施設のモンテッソーリ教育部門を約1年半担当し、多くのお子様の個別レッスンを通じて実践経験を積みました。
@@ -1159,6 +1229,44 @@
     <p class="instructor-bio" style="text-align: left; margin-top: 16px;">
       教室でのレッスンのほか各ご家庭への訪問・環境づくりのアドバイス、教具を持参した訪問レッスンも行ってまいりました。この度、田園調布駅徒歩4分の地に移転し、保護者の皆様にも一緒に学んでいただける教室を開講いたしました。皆様のお越しをお待ちしております。
     </p>
+  </div>
+</section>
+
+<!-- ========== PHILOSOPHY ========== -->
+<section class="sec bg-off">
+  <div class="inner">
+    <p class="eyebrow" style="text-align: center;">philosophy</p>
+    <h2 class="sec-title" style="text-align: center;">観察が、すべての始まりです。</h2>
+    <div class="philosophy-steps">
+      <div class="phil-step">
+        <span class="phil-step-num">STEP 01</span>
+        <div>
+          <p class="phil-step-title">環境を整える</p>
+          <p class="phil-step-text">毎回のレッスン前に、今の発達段階に合わせて室内の教具を配置し直します。</p>
+        </div>
+      </div>
+      <div class="phil-step">
+        <span class="phil-step-num">STEP 02</span>
+        <div>
+          <p class="phil-step-title">教具を提供して、観察する</p>
+          <p class="phil-step-text">お子さまが興味を持ったものを提示します。正解は教えません。試行錯誤しながら繰り返す姿を、静かに観察します。</p>
+        </div>
+      </div>
+      <div class="phil-step">
+        <span class="phil-step-num">STEP 03</span>
+        <div>
+          <p class="phil-step-title">繰り返しが、答えです</p>
+          <p class="phil-step-text">繰り返すなら、教具を提供した時期が合っています。席を立てば、まだ早かったかもしれない。簡単にできるから、つまらなかったかもしれない。時期を見て再提供したり、他の教具を紹介したり。その気づきを、次回の環境づくりに生かします。</p>
+        </div>
+      </div>
+    </div>
+    <div class="phil-quote">
+      <p class="phil-quote-text">お子さまは、そのままで完全な存在です。<br>「ああしなさい」と教え込むのではなく、<br>環境を整えて、大人がゆっくり示します。<br>子どもは、静かに真似をしていきます。</p>
+    </div>
+    <div class="phil-principle">
+      <p class="phil-principle-lead">大人にしないことは、子どもにもしません。</p>
+      <p class="phil-principle-text">生まれたての赤ちゃんにも、触れる前に「おむつを替えて良い？」「抱っこさせてね」と声をかけ、アイコンタクトをとりながら進めます。それが、子どもを尊重するということです。</p>
+    </div>
   </div>
 </section>
 
@@ -1276,7 +1384,7 @@
         </summary>
         <div class="faq-answer">
           <span class="faq-a-label">A</span><br>
-          一般的な習い事は講師主導で「教える」スタイルですが、モンテッソーリ教育はお子さまの「自分でやりたい」という意欲を大切にし、お子さま自身が選んで活動します。教具はお子さまの発達段階にあわせて環境に用意され、特に感覚教育の教具は数学的に正確につくられています。「手を使って考える」ことを大切にしており、自分で選択した活動を心が満足するまで繰り返すことで、お子さまが「自分でできた」という喜びを積み重ね、集中力・主体性・自己肯定感が自然に育まれていきます。
+          一般的な教室は講師主導で「教える」スタイルですが、モンテッソーリ教育はお子さまの「自分でやりたい」という意欲を大切にし、お子さま自身が選んで活動します。教具はお子さまの発達段階にあわせて環境に用意され、特に感覚教育の教具は数学的に正確につくられています。「手を使って考える」ことを大切にしており、自分で選択した活動を心が満足するまで繰り返す中で、集中力・主体性・自己肯定感が自然に育まれていきます。
         </div>
       </details>
 
