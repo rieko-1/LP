@@ -1640,6 +1640,29 @@
       .gallery-main { height: 200px; }
       .gallery-sub { height: 120px; }
     }
+
+    /* ===== ACTIVITY STRIP ===== */
+    .activity-strip {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-top: 8px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .activity-strip::-webkit-scrollbar { height: 4px; }
+    .activity-strip::-webkit-scrollbar-track { background: var(--border); border-radius: 2px; }
+    .activity-strip::-webkit-scrollbar-thumb { background: var(--green); border-radius: 2px; }
+    .activity-strip img {
+      width: 200px;
+      height: 260px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 10px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+    }
   </style>
 </head>
 <body>
@@ -2082,6 +2105,22 @@
         <p class="feature-body">モンテッソーリ教育の考え方をご両親にもお伝えしながら、教室とご家庭が連携して、お子さまのモンテッソーリ教育を一緒に進めていきます。</p>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ========== ACTIVITY PHOTOS ========== -->
+<section class="sec">
+  <div class="inner">
+    <p class="eyebrow tc fi">activity</p>
+    <h2 class="h2 tc fi d1">活動の様子</h2>
+    <div class="activity-strip fi d2">
+      <img src="activity_03.jpg" alt="ユリを虫眼鏡で観察する子ども">
+      <img src="activity_01.jpg" alt="積み木で建築する子ども">
+      <img src="activity_02.jpg" alt="ピンクタワーで活動する子ども">
+      <img src="activity_04.jpg" alt="黄金ビーズで数を学ぶ子ども">
+      <img src="activity_05.jpg" alt="黄金ビーズの百のシートで学ぶ子ども">
+      <img src="activity_06.jpg" alt="構成三角形で幾何学を学ぶ子ども">
     </div>
   </div>
 </section>
