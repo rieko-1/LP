@@ -446,11 +446,43 @@
       align-items: center;
       gap: 16px;
       justify-content: space-between;
+      flex-wrap: wrap;
+      cursor: pointer;
+      user-select: none;
     }
     .trial-strip-text { font-family: var(--serif); font-size: 14px; color: var(--text-dark); line-height: 1.6; }
     .trial-strip-text small { display: block; font-family: var(--sans); font-size: 11px; color: var(--text-light); margin-top: 3px; letter-spacing: 0.04em; }
-    .trial-strip-price { font-family: var(--serif); font-size: 20px; color: var(--green); white-space: nowrap; flex-shrink: 0; }
+    .trial-strip-price {
+      display: none;
+      width: 100%;
+      margin-top: 10px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(61,143,168,0.2);
+      font-family: var(--serif);
+      font-size: 20px;
+      color: var(--green);
+    }
     .trial-strip-price small { font-size: 11px; font-family: var(--sans); color: var(--text-light); }
+    .trial-strip.open .trial-strip-price { display: block; animation: ccardExpand 0.22s ease; }
+
+    /* ===== COLLAPSIBLE ACCORDION ===== */
+    .ccard-head { cursor: pointer; user-select: none; }
+    .ccard-chevron {
+      flex-shrink: 0;
+      width: 18px; height: 18px;
+      transition: transform 0.3s ease;
+      align-self: center;
+      opacity: 0.8;
+    }
+    .ccard.open .ccard-chevron,
+    .trial-strip.open .ccard-chevron { transform: rotate(180deg); }
+    .trial-strip .ccard-chevron { color: var(--green); opacity: 0.6; }
+    .ccard-body { display: none; }
+    .ccard.open .ccard-body { display: block; animation: ccardExpand 0.22s ease; }
+    @keyframes ccardExpand {
+      from { opacity: 0; transform: translateY(-5px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
     /* ===== CURRICULUM ===== */
     .curriculum-intro {
@@ -1004,6 +1036,7 @@
             <p class="ccard-age">0〜1歳半</p>
           </div>
           <span class="ccard-badge">親子同室</span>
+          <svg class="ccard-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
         <div class="ccard-body">
           <div class="ccard-metas">
@@ -1029,6 +1062,7 @@
             <p class="ccard-age">1歳半〜3歳</p>
           </div>
           <span class="ccard-badge">少人数</span>
+          <svg class="ccard-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
         <div class="ccard-body">
           <div class="ccard-metas">
@@ -1054,6 +1088,7 @@
             <p class="ccard-age">3〜6歳</p>
           </div>
           <span class="ccard-badge">少人数</span>
+          <svg class="ccard-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
         <div class="ccard-body">
           <div class="ccard-metas">
@@ -1079,6 +1114,7 @@
             <p class="ccard-age">6歳〜応相談</p>
           </div>
           <span class="ccard-badge">少人数</span>
+          <svg class="ccard-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
         <div class="ccard-body">
           <div class="ccard-metas">
@@ -1110,6 +1146,7 @@
             <p class="ccard-age">0歳〜6歳 · 小学生（算数検定対策）</p>
           </div>
           <span class="ccard-badge">個別</span>
+          <svg class="ccard-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
         <div class="ccard-body">
           <div class="ccard-metas">
@@ -1135,6 +1172,7 @@
             <p class="ccard-age">全年齢対応 · ご自宅へ伺います</p>
           </div>
           <span class="ccard-badge">訪問</span>
+          <svg class="ccard-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
         <div class="ccard-body">
           <div class="ccard-metas">
@@ -1160,8 +1198,9 @@
     <div class="trial-strip">
       <div class="trial-strip-text">
         はじめての方へ — 体験レッスン
-        <small>60分 · 0歳〜小学生</small>
+        <small>60分 · 0歳〜小学生 — タップして料金を見る</small>
       </div>
+      <svg class="ccard-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       <div class="trial-strip-price">¥5,000<small>（税抜）</small></div>
     </div>
     <p style="font-size: 12px; color: var(--text-light); letter-spacing: 0.06em; line-height: 1.9; margin-top: 12px; padding-left: 4px;">
@@ -1764,6 +1803,18 @@
     });
   }, { threshold: 0.35 });
   sections.forEach(s => io.observe(s));
+
+  // Collapsible class cards
+  document.querySelectorAll('.ccard-head').forEach(head => {
+    head.addEventListener('click', () => {
+      head.closest('.ccard').classList.toggle('open');
+    });
+  });
+  // Collapsible trial strip
+  const trialStrip = document.querySelector('.trial-strip');
+  if (trialStrip) {
+    trialStrip.addEventListener('click', () => trialStrip.classList.toggle('open'));
+  }
 
   // Hamburger menu
   const hamburger = document.querySelector('.nav-hamburger');
