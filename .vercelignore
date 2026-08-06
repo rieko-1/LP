@@ -1,24 +1,23 @@
-# macOS
+# 公開サイトに含めないもの（削除はせずローカルに残す）
 .DS_Store
-
-# Node.js / tools (not needed for the site)
 node_modules/
 package.json
 package-lock.json
 
-# Scripts (not part of the published site)
+# スクリプト類
 export_poster.py
 pdf.js
 screenshot.js
 
-# Unused files
+# 旧版・作業中ファイル（公開しない）
+montessori-lp.html
+Untitled-1
+
+# 印刷用・未使用素材
 poster-a2.pdf
 poster-a2.png
 入稿ポスター.pdf
 ロゴのコピー.png
 ロゴ_枠付き透明.png
 完成ロゴ.png
-
-# Japanese-named original (replaced by hero.png)
 ゴムと鈴と赤ちゃん.png
-.vercel
